@@ -331,7 +331,7 @@ h3 { font-size: 1.15rem; }
   .hero {
     background:
       linear-gradient(90deg, rgba(0, 0, 0, .68) 0, rgba(0, 0, 0, .68) 660px, rgba(0, 0, 0, .2) 900px, rgba(0, 0, 0, 0) 1080px),
-      url("images/hero-banner.jpg") right center / cover no-repeat,
+      url("images/hero-banner.png") right center / cover no-repeat,
       var(--black);
   }
 }
