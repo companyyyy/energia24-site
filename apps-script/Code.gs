@@ -14,7 +14,7 @@
  */
 
 const SHEET_NAME   = 'Заявки';        // назва вкладки в таблиці (створиться автоматично)
-const SECRET       = 'CHANGE_ME';     // має точно збігатися зі значенням у script.js
+const SECRET       = 'dgyru47365jte4uty4nt383tg3i48';  // має точно збігатися з PARTNER_ENDPOINT_SECRET у script.js
 const NOTIFY_EMAIL = '';              // одна або кілька адрес через кому; порожньо = не слати
                                      // напр. 'sales@energia24.com.ua, director@energia24.com.ua'
 

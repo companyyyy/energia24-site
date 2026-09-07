@@ -4,6 +4,11 @@
 (function () {
   "use strict";
 
+  /* ---- Ендпоінт для заявок партнерства (Google Apps Script Web App) ---- */
+  /* Порожній PARTNER_ENDPOINT = форма працює у демо-режимі (лог у консоль). */
+  var PARTNER_ENDPOINT = "https://script.google.com/macros/s/AKfycbzGIC2t8e0U0pXcAwP1pGrST2NFkz-7XPLsl8QWWydYk_srLePo7h2ixrE7GmohpW4ozw/exec";
+  var PARTNER_ENDPOINT_SECRET = "dgyru47365jte4uty4nt383tg3i48";
+
   /* ---- Поточний рік у футері ---- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -83,10 +88,12 @@
   });
 
   /* ---- Допоміжне: показати статус під формою ---- */
-  function showStatus(el, text) {
+  function showStatus(el, text, isError) {
     if (!el) return;
     el.textContent = text;
     el.classList.add("is-visible");
+    el.classList.toggle("form-status--err", !!isError);
+    el.classList.toggle("form-status--ok", !isError);
   }
 
   /* ---- Проста перевірка обов'язкових полів ---- */
@@ -151,25 +158,58 @@
   /* ---- Анкета партнера (partnership.html) ---- */
   var partnerForm = document.getElementById("partnerForm");
   if (partnerForm) {
+    var partnerBtn = partnerForm.querySelector('button[type="submit"]');
+
     partnerForm.addEventListener("submit", function (e) {
       e.preventDefault();
       var status = document.getElementById("partnerStatus");
 
       if (!validate(partnerForm)) {
-        showStatus(status, "Заповніть, будь ласка, всі обов'язкові поля (позначені *).");
+        showStatus(status, "Заповніть, будь ласка, всі обов'язкові поля (позначені *).", true);
         return;
       }
 
       var data = collect(partnerForm);
-      console.log("[ENERGIA24] Заявка на партнерство:", data);
+      var okText = "Заявку надіслано! Ми перевіримо анкету та звʼяжемося з вами за вказаними контактами.";
 
-      // За бажанням - відправка на пошту через поштовий клієнт:
-      // var body = Object.keys(data).map(function (k) { return k + ": " + data[k]; }).join("\n");
-      // window.location.href = "mailto:info@energia24.ua?subject=" +
-      //   encodeURIComponent("Заявка на партнерство") + "&body=" + encodeURIComponent(body);
+      // Демо-режим: ендпоінт не налаштований.
+      if (!PARTNER_ENDPOINT) {
+        console.log("[ENERGIA24] Заявка на партнерство:", data);
+        showStatus(status, okText);
+        partnerForm.reset();
+        return;
+      }
 
-      showStatus(status, "Заявку надіслано! Ми перевіримо анкету та звʼяжемося з вами за вказаними контактами.");
-      partnerForm.reset();
+      data.secret = PARTNER_ENDPOINT_SECRET;
+
+      var btnText = partnerBtn ? partnerBtn.textContent : "";
+      if (partnerBtn) { partnerBtn.disabled = true; partnerBtn.textContent = "Надсилаємо…"; }
+      showStatus(status, "Надсилаємо заявку…");
+
+      function restoreBtn() {
+        if (partnerBtn) { partnerBtn.disabled = false; partnerBtn.textContent = btnText; }
+      }
+
+      fetch(PARTNER_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(data)
+      })
+        .then(function () {
+          showStatus(status, okText);
+          partnerForm.reset();
+          restoreBtn();
+        })
+        .catch(function () {
+          showStatus(
+            status,
+            "Не вдалося надіслати заявку. Перевірте з'єднання і спробуйте ще раз " +
+              "або зателефонуйте: +38 077 888 00 24.",
+            true
+          );
+          restoreBtn();
+        });
     });
   }
 })();

@@ -756,6 +756,12 @@ h3 { font-size: 1.15rem; }
   border: 1px solid var(--green-light);
 }
 
+.form-status--err {
+  background: rgba(200, 60, 40, .12);
+  color: #b23b28;
+  border: 1px solid rgba(200, 60, 40, .4);
+}
+
 /* ---------- Футер ---------- */
 .footer {
   background: var(--black);

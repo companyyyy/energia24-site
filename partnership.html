@@ -149,6 +149,10 @@
             <input type="tel" id="pf-phone" name="phone" required autocomplete="tel" placeholder="+38 0__ ___ __ __" />
           </div>
 
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">
+            <label>Не заповнюйте це поле<input type="text" name="hp" tabindex="-1" autocomplete="off" /></label>
+          </div>
+
           <button type="submit" class="btn btn--primary btn--block btn--lg">Надіслати заявку</button>
           <p class="form__note">Надсилаючи анкету, ви погоджуєтесь на обробку наданих даних згідно з <a href="privacy.html">Політикою конфіденційності</a>.</p>
           <div class="form-status form-status--ok" id="partnerStatus" role="status"></div>
