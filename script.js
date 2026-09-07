@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ENERGIA24 — інтерактив (без бекенду)
+   ENERGIA24 - інтерактив (без бекенду)
    ========================================================================== */
 (function () {
   "use strict";
@@ -43,7 +43,7 @@
         revealObserver.observe(el);
       });
     } else {
-      // Немає підтримки IntersectionObserver — просто показуємо все
+      // Немає підтримки IntersectionObserver - просто показуємо все
       Array.prototype.forEach.call(revealEls, function (el) {
         el.classList.add("is-visible");
       });
@@ -163,7 +163,7 @@
       var data = collect(partnerForm);
       console.log("[ENERGIA24] Заявка на партнерство:", data);
 
-      // За бажанням — відправка на пошту через поштовий клієнт:
+      // За бажанням - відправка на пошту через поштовий клієнт:
       // var body = Object.keys(data).map(function (k) { return k + ": " + data[k]; }).join("\n");
       // window.location.href = "mailto:info@energia24.ua?subject=" +
       //   encodeURIComponent("Заявка на партнерство") + "&body=" + encodeURIComponent(body);

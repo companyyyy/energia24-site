@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ENERGIA24 — стилі
+   ENERGIA24 - стилі
    Кольори: яскраво-зелений / чорний / білий
    ========================================================================== */
 
@@ -80,7 +80,7 @@ h3 { font-size: 1.15rem; }
   transform: none;
 }
 
-/* Каскад для елементів сітки — кожен наступний трохи пізніше за попередній */
+/* Каскад для елементів сітки - кожен наступний трохи пізніше за попередній */
 .cats .cat.reveal:nth-child(1) { transition-delay: 0s; }
 .cats .cat.reveal:nth-child(2) { transition-delay: .1s; }
 .cats .cat.reveal:nth-child(3) { transition-delay: .2s; }
@@ -201,7 +201,7 @@ h3 { font-size: 1.15rem; }
   transform: translateY(-2px);
 }
 
-/* Обвідка для темних фонів (напр. hero) — .btn--ghost там непомітний */
+/* Обвідка для темних фонів (напр. hero) - .btn--ghost там непомітний */
 .btn--outline {
   background: transparent;
   color: var(--white);
@@ -325,7 +325,7 @@ h3 { font-size: 1.15rem; }
 
 /* Фото-банер вмикаємо лише на справді широких екранах: тільки там
    гарантовано лишається достатньо темного простору зліва для тексту,
-   щоб він не наліз на світлий корпус інвертора. На вужчих —
+   щоб він не наліз на світлий корпус інвертора. На вужчих -
    фірмовий чорно-зелений градієнт без фото. */
 @media (min-width: 1180px) {
   .hero {
@@ -889,4 +889,40 @@ h3 { font-size: 1.15rem; }
   .grid-2 { grid-template-columns: 1fr; }
   .header__phone { font-size: 1rem; }
   .btn--ghost.header__contact-btn { display: none; }
+}
+
+/* ---------- Юридичні сторінки ---------- */
+.legal {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.legal > p.legal__updated {
+  color: var(--gray-text);
+  font-size: .9rem;
+  margin-top: 0;
+}
+
+.legal h2 {
+  font-size: 1.25rem;
+  margin: 34px 0 10px;
+}
+
+.legal h2:first-of-type { margin-top: 8px; }
+
+.legal p,
+.legal li {
+  font-size: .98rem;
+}
+
+.legal ul {
+  padding-left: 22px;
+  margin: 10px 0;
+}
+
+.legal li { margin: 6px 0; }
+
+.legal a {
+  color: var(--green-dark);
+  text-decoration: underline;
 }
