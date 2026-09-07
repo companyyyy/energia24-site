@@ -6,7 +6,7 @@
 
   /* ---- Ендпоінт для заявок партнерства (Google Apps Script Web App) ---- */
   /* Порожній PARTNER_ENDPOINT = форма працює у демо-режимі (лог у консоль). */
-  var PARTNER_ENDPOINT = "https://script.google.com/macros/s/AKfycbzGIC2t8e0U0pXcAwP1pGrST2NFkz-7XPLsl8QWWydYk_srLePo7h2ixrE7GmohpW4ozw/exec";
+  var PARTNER_ENDPOINT = "https://script.google.com/macros/s/AKfycbz1w4K7bYmuBETX5s7fP6RJSfMGoTc1ohSqSA5ohWh5kVvJLFzG8ePu6XmqGslSpr9phQ/exec";
   var PARTNER_ENDPOINT_SECRET = "dgyru47365jte4uty4nt383tg3i48";
 
   /* ---- Поточний рік у футері ---- */
