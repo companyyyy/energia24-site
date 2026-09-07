@@ -15,7 +15,8 @@
 
 const SHEET_NAME   = 'Заявки';        // назва вкладки в таблиці (створиться автоматично)
 const SECRET       = 'CHANGE_ME';     // має точно збігатися зі значенням у script.js
-const NOTIFY_EMAIL = '';              // напр. 'sales@energia24.com.ua'; порожньо = не слати
+const NOTIFY_EMAIL = '';              // одна або кілька адрес через кому; порожньо = не слати
+                                     // напр. 'sales@energia24.com.ua, director@energia24.com.ua'
 
 // Порядок і заголовки колонок. Ключі зліва - це name полів форми.
 const FIELDS = [
