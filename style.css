@@ -909,8 +909,17 @@ h3 { font-size: 1.15rem; }
 @media (max-width: 560px) {
   .section { padding: 52px 0; }
   .grid-2 { grid-template-columns: 1fr; }
-  .header__phone { font-size: 1rem; }
+  .header__bar { padding: 12px 14px; gap: 10px 12px; }
+  .logo { gap: 5px; font-size: 1.05rem; }
+  .logo__img { height: 26px; }
+  .logo--onlight .logo__img { height: 30px; padding: 3px 4px; }
+  .logo__mark { padding: 4px 6px 4px 7px; }
+  .logo__num { padding: 4px 7px 4px 5px; }
+  .header__actions { gap: 10px; }
+  .header__phone { font-size: 1rem; padding: 9px; border-radius: 50%; }
+  .header__phone-text { display: none; }
   .btn--ghost.header__contact-btn { display: none; }
+  .nav-toggle { padding: 6px; }
 }
 
 /* ---------- Юридичні сторінки ---------- */
