@@ -126,11 +126,26 @@ h3 { font-size: 1.15rem; }
 .logo {
   display: inline-flex;
   align-items: center;
+  gap: 10px;
   flex-shrink: 0;
   font-weight: 800;
   font-size: 1.5rem;
   letter-spacing: -0.03em;
   line-height: 1;
+}
+
+.logo__img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* На темному фоні (футер) іконка отримує світлу підкладку, бо лого чорне */
+.logo--onlight .logo__img {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 4px 6px;
+  height: 44px;
 }
 
 .logo__mark {
