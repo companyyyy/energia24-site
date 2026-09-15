@@ -802,6 +802,7 @@ h3 { font-size: 1.15rem; }
 
 .footer__col a { display: block; padding: 4px 0; font-size: .92rem; }
 .footer__col a:hover { color: var(--green-light); }
+.footer__col a.logo { display: inline-flex; padding: 0; }
 
 .footer__phone {
   font-size: 1.3rem;
