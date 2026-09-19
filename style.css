@@ -555,6 +555,11 @@ h3 { font-size: 1.15rem; }
   color: var(--gray-text);
 }
 
+.card__price--soon {
+  color: var(--gray-text);
+  font-size: 1.1rem;
+}
+
 /* ---------- CTA «Стати партнером» ---------- */
 .partner-banner {
   background: var(--black);
