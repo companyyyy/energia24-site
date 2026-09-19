@@ -232,6 +232,8 @@ h3 { font-size: 1.15rem; }
 
 .btn--block {
   width: 100%;
+  white-space: normal;
+  text-align: center;
 }
 
 .btn--lg {
@@ -250,8 +252,6 @@ h3 { font-size: 1.15rem; }
 
 .header__bar {
   display: flex;
-  flex-wrap: wrap;
-  row-gap: 10px;
   align-items: center;
   gap: 16px 22px;
   padding: 14px 20px;
@@ -261,13 +261,15 @@ h3 { font-size: 1.15rem; }
 
 .header__nav {
   display: flex;
-  gap: 26px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 14px;
   margin-left: auto;
 }
 
 .header__nav a {
   font-weight: 600;
-  font-size: .95rem;
+  font-size: .88rem;
   color: var(--ink);
   padding: 6px 2px;
   border-bottom: 2px solid transparent;
