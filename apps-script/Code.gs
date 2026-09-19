@@ -1,5 +1,6 @@
 /**
- * ENERGIA24 - приймання заявок з форми партнерства (partnership.html) у Google Sheet.
+ * ENERGIA24 - приймання заявок з форми партнерства (partnership.html)
+ * та форми контактів (index.html) у Google Sheet.
  *
  * Розгортання:
  *   1. Створити Google-таблицю, відкрити Розширення -> Apps Script.
@@ -13,26 +14,41 @@
  *   6. Після кожної зміни коду робити Deploy -> Manage deployments -> Edit -> Version: New version.
  */
 
-const SHEET_NAME   = 'Заявки';        // назва вкладки в таблиці (створиться автоматично)
 const SECRET       = 'dgyru47365jte4uty4nt383tg3i48';  // має точно збігатися з PARTNER_ENDPOINT_SECRET у script.js
 const NOTIFY_EMAIL = '';              // одна або кілька адрес через кому; порожньо = не слати
                                      // напр. 'sales@energia24.com.ua, director@energia24.com.ua'
 
-// Порядок і заголовки колонок. Ключі зліва - це name полів форми.
-const FIELDS = [
-  ['email',     'Email'],
-  ['company',   'Компанія'],
-  ['edrpou',    'ЄДРПОУ'],
-  ['activity',  'Діяльність'],
-  ['region',    'Регіон'],
-  ['site',      'Сайт'],
-  ['brands',    'Бренди'],
-  ['payment',   'Оплата'],
-  ['volume',    'Обсяг на місяць'],
-  ['suppliers', 'Поточні постачальники'],
-  ['prepay',    'Готовність до передоплати'],
-  ['phone',     'Телефон']
-];
+// Дві форми пишуться у різні вкладки з різним набором колонок.
+// Ключ "form" у тілі запиту визначає, яку форму обробляємо (значення шлють script.js).
+const FORMS = {
+  contact: {
+    sheetName: 'Заявки з сайту',
+    subject: 'Нова заявка з сайту',
+    fields: [
+      ['name',    "Ім'я"],
+      ['phone',   'Телефон'],
+      ['message', 'Повідомлення']
+    ]
+  },
+  partnership: {
+    sheetName: 'Заявки',
+    subject: 'Нова заявка на партнерство',
+    fields: [
+      ['email',     'Email'],
+      ['company',   'Компанія'],
+      ['edrpou',    'ЄДРПОУ'],
+      ['activity',  'Діяльність'],
+      ['region',    'Регіон'],
+      ['site',      'Сайт'],
+      ['brands',    'Бренди'],
+      ['payment',   'Оплата'],
+      ['volume',    'Обсяг на місяць'],
+      ['suppliers', 'Поточні постачальники'],
+      ['prepay',    'Готовність до передоплати'],
+      ['phone',     'Телефон']
+    ]
+  }
+};
 
 function doPost(e) {
   var lock = LockService.getScriptLock();
@@ -49,17 +65,21 @@ function doPost(e) {
       return json({ result: 'success' });
     }
 
+    // Старі заявки без поля "form" (до додавання форми контактів) - вважати партнерськими.
+    var formKey = FORMS[body.form] ? body.form : 'partnership';
+    var form = FORMS[formKey];
+
     var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
+    var sheet = ss.getSheetByName(form.sheetName) || ss.insertSheet(form.sheetName);
 
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(['Дата'].concat(FIELDS.map(function (f) { return f[1]; })));
+      sheet.appendRow(['Дата'].concat(form.fields.map(function (f) { return f[1]; })));
       sheet.setFrozenRows(1);
-      sheet.getRange(1, 1, 1, FIELDS.length + 1).setFontWeight('bold');
+      sheet.getRange(1, 1, 1, form.fields.length + 1).setFontWeight('bold');
     }
 
     var row = [new Date()];
-    FIELDS.forEach(function (f) {
+    form.fields.forEach(function (f) {
       var v = body[f[0]];
       if (Array.isArray(v)) v = v.join(', ');
       row.push(v == null ? '' : String(v));
@@ -67,14 +87,14 @@ function doPost(e) {
     sheet.appendRow(row);
 
     if (NOTIFY_EMAIL) {
-      var lines = FIELDS.map(function (f) {
+      var lines = form.fields.map(function (f) {
         var v = body[f[0]];
         if (Array.isArray(v)) v = v.join(', ');
         return f[1] + ': ' + (v == null ? '' : v);
       });
       MailApp.sendEmail(
         NOTIFY_EMAIL,
-        'Нова заявка на партнерство - ' + (body.company || body.phone || ''),
+        form.subject + ' - ' + (body.name || body.company || body.phone || ''),
         lines.join('\n')
       );
     }
@@ -88,7 +108,7 @@ function doPost(e) {
 }
 
 function doGet() {
-  return json({ result: 'ok', info: 'ENERGIA24 partnership form endpoint' });
+  return json({ result: 'ok', info: 'ENERGIA24 forms endpoint' });
 }
 
 function json(obj) {

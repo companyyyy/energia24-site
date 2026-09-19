@@ -138,6 +138,8 @@
   /* ---- Форма зворотного звʼязку (index.html) ---- */
   var contactForm = document.getElementById("contactForm");
   if (contactForm) {
+    var contactBtn = contactForm.querySelector('button[type="submit"]');
+
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
       var status = document.getElementById("contactStatus");
@@ -148,10 +150,47 @@
       }
 
       var data = collect(contactForm);
-      console.log("[ENERGIA24] Заявка зі сторінки контактів:", data);
+      var okText = "Дякуємо, " + data.name + "! Ми зателефонуємо вам найближчим часом.";
 
-      showStatus(status, "Дякуємо, " + data.name + "! Ми зателефонуємо вам найближчим часом.");
-      contactForm.reset();
+      // Демо-режим: ендпоінт не налаштований.
+      if (!PARTNER_ENDPOINT) {
+        console.log("[ENERGIA24] Заявка зі сторінки контактів:", data);
+        showStatus(status, okText);
+        contactForm.reset();
+        return;
+      }
+
+      data.form = "contact";
+      data.secret = PARTNER_ENDPOINT_SECRET;
+
+      var btnText = contactBtn ? contactBtn.textContent : "";
+      if (contactBtn) { contactBtn.disabled = true; contactBtn.textContent = "Надсилаємо…"; }
+      showStatus(status, "Надсилаємо заявку…");
+
+      function restoreBtn() {
+        if (contactBtn) { contactBtn.disabled = false; contactBtn.textContent = btnText; }
+      }
+
+      fetch(PARTNER_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(data)
+      })
+        .then(function () {
+          showStatus(status, okText);
+          contactForm.reset();
+          restoreBtn();
+        })
+        .catch(function () {
+          showStatus(
+            status,
+            "Не вдалося надіслати заявку. Перевірте з'єднання і спробуйте ще раз " +
+              "або зателефонуйте: +38 077 888 00 24.",
+            true
+          );
+          restoreBtn();
+        });
     });
   }
 
@@ -180,6 +219,7 @@
         return;
       }
 
+      data.form = "partnership";
       data.secret = PARTNER_ENDPOINT_SECRET;
 
       var btnText = partnerBtn ? partnerBtn.textContent : "";
