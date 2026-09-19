@@ -84,7 +84,13 @@ function doPost(e) {
       if (Array.isArray(v)) v = v.join(', ');
       row.push(v == null ? '' : String(v));
     });
-    sheet.appendRow(row);
+
+    var targetRow = sheet.getLastRow() + 1;
+    var range = sheet.getRange(targetRow, 1, 1, row.length);
+    // Колонки з даними (усе, крім дати) - примусово як текст, інакше Sheets
+    // намагається розпарсити телефон "+380..." як формулу і показує #ERROR!.
+    range.offset(0, 1, 1, row.length - 1).setNumberFormat('@');
+    range.setValues([row]);
 
     if (NOTIFY_EMAIL) {
       var lines = form.fields.map(function (f) {
@@ -108,7 +114,9 @@ function doPost(e) {
 }
 
 function doGet() {
-  return json({ result: 'ok', info: 'ENERGIA24 forms endpoint' });
+  // version росте з кожним оновленням коду - зручно звірити, що деплой підхопив
+  // саме цю версію (відкрити URL у браузері й порівняти значення).
+  return json({ result: 'ok', info: 'ENERGIA24 forms endpoint', version: 2 });
 }
 
 function json(obj) {
