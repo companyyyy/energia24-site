@@ -15,7 +15,7 @@
  */
 
 const SECRET       = 'dgyru47365jte4uty4nt383tg3i48';  // має точно збігатися з PARTNER_ENDPOINT_SECRET у script.js
-const NOTIFY_EMAIL = '';              // одна або кілька адрес через кому; порожньо = не слати
+const NOTIFY_EMAIL = 'energia24.info@gmail.com'; // одна або кілька адрес через кому; порожньо = не слати
                                      // напр. 'sales@energia24.com.ua, director@energia24.com.ua'
 
 // Дві форми пишуться у різні вкладки з різним набором колонок.
