@@ -171,7 +171,10 @@ def build_feed(price_map, date_str):
             price_line = price
 
         lines.append(f'      <offer id="{pid}" available="{available}">')
+        # name/description вже українською - дублюємо в *_ua, інакше Prom.ua
+        # вважає <name> російським варіантом і позначає товар як "Відсутня назва українською".
         lines.append(f'        <name>{name}</name>')
+        lines.append(f'        <name_ua>{name}</name_ua>')
         if price_line is not None:
             lines.append(f'        <price>{price_line}</price>')
         lines.append('        <currencyId>UAH</currencyId>')
@@ -179,6 +182,7 @@ def build_feed(price_map, date_str):
         lines.append(f'        <picture>{SITE_URL}/images/products/{img}</picture>')
         lines.append(f'        <vendor>{vendor}</vendor>')
         lines.append(f'        <description><![CDATA[{desc}]]></description>')
+        lines.append(f'        <description_ua><![CDATA[{desc}]]></description_ua>')
         lines.append('      </offer>')
 
     lines.append('')
