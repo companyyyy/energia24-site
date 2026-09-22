@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2026-09-22 07:50">
+<yml_catalog date="2026-09-22 09:11">
   <shop>
     <name>ENERGIA24</name>
     <company>ENERGIA24</company>
@@ -9,10 +9,10 @@
       <currency id="UAH" rate="1"/>
     </currencies>
     <categories>
-      <category id="1">Інвертори</category>
-      <category id="2">Акумулятори</category>
-      <category id="3">Системи зберігання енергії 2 в 1</category>
-      <category id="4">Зарядні станції</category>
+      <category id="1" portal_id="5140401">Інвертори</category>
+      <category id="2" portal_id="5280501">Акумулятори</category>
+      <category id="3" portal_id="14191106">Системи зберігання енергії 2 в 1</category>
+      <category id="4" portal_id="71109">Зарядні станції</category>
     </categories>
     <offers>
 
