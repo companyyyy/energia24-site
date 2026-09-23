@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2026-09-23 09:11">
+<yml_catalog date="2026-09-23 14:48">
   <shop>
     <name>ENERGIA24</name>
     <company>ENERGIA24</company>
@@ -92,10 +92,9 @@
         <description><![CDATA[Гібридний інвертор Felicity IVEM6048-II. Потужність: 6 кВт. Напруга АКБ: 48 В. Вага: 12.5 кг.]]></description>
         <description_ua><![CDATA[Гібридний інвертор Felicity IVEM6048-II. Потужність: 6 кВт. Напруга АКБ: 48 В. Вага: 12.5 кг.]]></description_ua>
       </offer>
-      <offer id="8" available="true">
+      <offer id="8" available="false">
         <name>Гібридний інвертор Felicity IVEM8048-II</name>
         <name_ua>Гібридний інвертор Felicity IVEM8048-II</name_ua>
-        <price>35800</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-ivem8048.jpg</picture>
