@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2026-09-22 19:38">
+<yml_catalog date="2026-09-23 09:11">
   <shop>
     <name>ENERGIA24</name>
     <company>ENERGIA24</company>
@@ -300,10 +300,9 @@
         <description_ua><![CDATA[Акумулятор Felicity FLB48314TG1-H. Напруга/ємність: 51.2 В · 314 Аг. Енергія: 16 кВт·год. Тип комірок: LiFePO4. Функція: вбудований підігрів. Конструкція: на колесах. Вага: 121 кг.]]></description_ua>
       </offer>
 
-      <offer id="27" available="true">
+      <offer id="27" available="false">
         <name>Система зберігання енергії 2в1 MUST HBP18-1012 OS</name>
         <name_ua>Система зберігання енергії 2в1 MUST HBP18-1012 OS</name_ua>
-        <price>25000</price>
         <currencyId>UAH</currencyId>
         <categoryId>3</categoryId>
         <picture>https://energia24.com.ua/images/products/sys-hbp18-1012.jpg</picture>
