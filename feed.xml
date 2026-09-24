@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2026-09-24 09:09">
+<yml_catalog date="2026-09-24 14:45">
   <shop>
     <name>ENERGIA24</name>
     <company>ENERGIA24</company>
@@ -246,7 +246,7 @@
       <offer id="22" available="true">
         <name>Акумулятор Felicity FLA48230</name>
         <name_ua>Акумулятор Felicity FLA48230</name_ua>
-        <price>69500</price>
+        <price>70000</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-fla48230.jpg</picture>
