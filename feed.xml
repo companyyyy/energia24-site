@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2026-09-24 19:53">
+<yml_catalog date="2026-09-25 09:29">
   <shop>
     <name>ENERGIA24</name>
     <company>ENERGIA24</company>
@@ -309,10 +309,9 @@
         <description><![CDATA[Система зберігання енергії 2в1 MUST HBP18-1012 OS. Потужність: 1.2 кВт. Ємність: 1280 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі.]]></description>
         <description_ua><![CDATA[Система зберігання енергії 2в1 MUST HBP18-1012 OS. Потужність: 1.2 кВт. Ємність: 1280 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі.]]></description_ua>
       </offer>
-      <offer id="28" available="true">
+      <offer id="28" available="false">
         <name>Система зберігання енергії 2в1 MUST HBP18-3024OS</name>
         <name_ua>Система зберігання енергії 2в1 MUST HBP18-3024OS</name_ua>
-        <price>52000</price>
         <currencyId>UAH</currencyId>
         <categoryId>3</categoryId>
         <picture>https://energia24.com.ua/images/products/sys-hbp18-3024.jpg</picture>
