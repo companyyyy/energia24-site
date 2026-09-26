@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2026-09-26 09:14">
+<yml_catalog date="2026-09-26 14:15">
   <shop>
     <name>ENERGIA24</name>
     <company>ENERGIA24</company>
@@ -279,7 +279,7 @@
       <offer id="25" available="true">
         <name>Акумулятор Felicity FLA48314-EU</name>
         <name_ua>Акумулятор Felicity FLA48314-EU</name_ua>
-        <price>86000</price>
+        <price>85500</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-fla48314eu.jpg</picture>
@@ -290,7 +290,7 @@
       <offer id="26" available="true">
         <name>Акумулятор Felicity FLB48314TG1-H</name>
         <name_ua>Акумулятор Felicity FLB48314TG1-H</name_ua>
-        <price>87200</price>
+        <price>85500</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-flb48314tg1.jpg</picture>
