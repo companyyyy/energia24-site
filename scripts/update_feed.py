@@ -60,6 +60,9 @@ FEEDS = [
         "rate": 45,
         "currency": "UAH",
         "skip_missing": True,
+        # Фото з фіду DFI (dfi2.com.ua/price_xml/avtonomka.txt), збережені в
+        # images/dfi/<id товару>.jpg; якщо такого немає - беремо звичайне фото.
+        "photo_dir": "images/dfi",
     },
 ]
 
@@ -187,7 +190,7 @@ def match_prices(rows, cfg):
     return result
 
 
-def build_feed(price_map, date_str, currency, skip_missing):
+def build_feed(price_map, date_str, currency, skip_missing, photo_dir=None):
     lines = []
     lines.append('<?xml version="1.0" encoding="UTF-8"?>')
     lines.append('<!DOCTYPE yml_catalog SYSTEM "shops.dtd">')
@@ -232,7 +235,9 @@ def build_feed(price_map, date_str, currency, skip_missing):
             lines.append(f'        <price>{price_line}</price>')
         lines.append(f'        <currencyId>{currency}</currencyId>')
         lines.append(f'        <categoryId>{cat}</categoryId>')
-        if img:
+        if photo_dir and (ROOT / photo_dir / f"{pid}.jpg").exists():
+            lines.append(f'        <picture>{SITE_URL}/{photo_dir}/{pid}.jpg</picture>')
+        elif img:
             lines.append(f'        <picture>{SITE_URL}/images/products/{img}</picture>')
         lines.append(f'        <vendor>{vendor}</vendor>')
         lines.append(f'        <description><![CDATA[{desc}]]></description>')
@@ -254,7 +259,7 @@ def main():
     for cfg in FEEDS:
         rows = fetch_rows(cfg["sheet_url"])
         price_map = match_prices(rows, cfg)
-        feed = build_feed(price_map, date_str, cfg["currency"], cfg["skip_missing"])
+        feed = build_feed(price_map, date_str, cfg["currency"], cfg["skip_missing"], cfg.get("photo_dir"))
         cfg["path"].write_text(feed, encoding="utf-8")
         print(f"{cfg['path'].name} оновлено ({date_str} UTC)")
 
