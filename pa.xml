@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2026-09-28 13:46">
+<yml_catalog date="2026-09-28 14:24">
   <shop>
     <name>ENERGIA24</name>
     <company>ENERGIA24</company>
@@ -22,7 +22,7 @@
         <price>8100</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/1.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/1.jpg</picture>
         <vendor>Must</vendor>
         <description><![CDATA[Гибридный инвертор Must PV18-1012VPK. Мощность: 1 кВт. Напряжение АКБ: 12 В. Вес: 5 кг.]]></description>
         <description_ua><![CDATA[Гібридний інвертор Must PV18-1012VPK. Потужність: 1 кВт. Напруга АКБ: 12 В. Вага: 5 кг.]]></description_ua>
@@ -33,7 +33,7 @@
         <price>9000</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/2.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/2.jpg</picture>
         <vendor>Must</vendor>
         <description><![CDATA[Гибридный инвертор Must PV18-1512 VPM II. Мощность: 1.5 кВт. Напряжение АКБ: 12 В. Вес: 5.5 кг.]]></description>
         <description_ua><![CDATA[Гібридний інвертор Must PV18-1512 VPM II. Потужність: 1.5 кВт. Напруга АКБ: 12 В. Вага: 5.5 кг.]]></description_ua>
@@ -44,7 +44,7 @@
         <price>12150</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/3.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/3.jpg</picture>
         <vendor>Must</vendor>
         <description><![CDATA[Гибридный инвертор Must PV18-3224VPM II. Мощность: 3.2 кВт. Напряжение АКБ: 24 В. Вес: 5.6 кг.]]></description>
         <description_ua><![CDATA[Гібридний інвертор Must PV18-3224VPM II. Потужність: 3.2 кВт. Напруга АКБ: 24 В. Вага: 5.6 кг.]]></description_ua>
@@ -55,7 +55,7 @@
         <price>13950</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/4.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/4.jpg</picture>
         <vendor>Must</vendor>
         <description><![CDATA[Гибридный инвертор MUST PV19-4024 EXP. Мощность: 4 кВт. Напряжение АКБ: 24 В. Вес: 9.5 кг.]]></description>
         <description_ua><![CDATA[Гібридний інвертор MUST PV19-4024 EXP. Потужність: 4 кВт. Напруга АКБ: 24 В. Вага: 9.5 кг.]]></description_ua>
@@ -66,7 +66,7 @@
         <price>21150</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/5.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/5.jpg</picture>
         <vendor>Must</vendor>
         <description><![CDATA[Гибридный инвертор Must PV19-6048EXP. Мощность: 6 кВт. Напряжение АКБ: 48 В. Вес: 14 кг.]]></description>
         <description_ua><![CDATA[Гібридний інвертор Must PV19-6048EXP. Потужність: 6 кВт. Напруга АКБ: 48 В. Вага: 14 кг.]]></description_ua>
@@ -77,7 +77,7 @@
         <price>15075</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/6.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/6.jpg</picture>
         <vendor>Felicity</vendor>
         <description><![CDATA[Гибридный инвертор Felicity IVEM4024-II. Мощность: 4 кВт. Напряжение АКБ: 24 В. Вес: 10.4 кг.]]></description>
         <description_ua><![CDATA[Гібридний інвертор Felicity IVEM4024-II. Потужність: 4 кВт. Напруга АКБ: 24 В. Вага: 10.4 кг.]]></description_ua>
@@ -88,7 +88,7 @@
         <price>21150</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/7.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/7.jpg</picture>
         <vendor>Felicity</vendor>
         <description><![CDATA[Гибридный инвертор Felicity IVEM6048-II. Мощность: 6 кВт. Напряжение АКБ: 48 В. Вес: 12.5 кг.]]></description>
         <description_ua><![CDATA[Гібридний інвертор Felicity IVEM6048-II. Потужність: 6 кВт. Напруга АКБ: 48 В. Вага: 12.5 кг.]]></description_ua>
@@ -100,7 +100,7 @@
         <price>11250</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/12.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/12.jpg</picture>
         <vendor>Must</vendor>
         <description><![CDATA[Аккумулятор MUST LP15-12100. Напряжение/емкость: 12 В · 100 Ач. Энергия: 1.2 кВт·ч. Тип ячеек: LiFePO4. Вес: 10.5 кг.]]></description>
         <description_ua><![CDATA[Акумулятор MUST LP15-12100. Напруга/ємність: 12 В · 100 Аг. Енергія: 1.2 кВт·год. Тип комірок: LiFePO4. Вага: 10.5 кг.]]></description_ua>
@@ -111,7 +111,7 @@
         <price>24750</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/14.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/14.jpg</picture>
         <vendor>Must</vendor>
         <description><![CDATA[Аккумулятор MUST LP16-24100. Напряжение/емкость: 25.6 В · 100 Ач. Энергия: 2.56 кВт·ч. Тип ячеек: LiFePO4. Вес: 23 кг.]]></description>
         <description_ua><![CDATA[Акумулятор MUST LP16-24100. Напруга/ємність: 25.6 В · 100 Аг. Енергія: 2.56 кВт·год. Тип комірок: LiFePO4. Вага: 23 кг.]]></description_ua>
@@ -122,7 +122,7 @@
         <price>34200</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/15.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/15.jpg</picture>
         <vendor>Must</vendor>
         <description><![CDATA[Аккумулятор MUST LP16-24200. Напряжение/емкость: 25.6 В · 200 Ач. Энергия: 5.12 кВт·ч. Тип ячеек: LiFePO4. Вес: 45 кг.]]></description>
         <description_ua><![CDATA[Акумулятор MUST LP16-24200. Напруга/ємність: 25.6 В · 200 Аг. Енергія: 5.12 кВт·год. Тип комірок: LiFePO4. Вага: 45 кг.]]></description_ua>
@@ -133,7 +133,7 @@
         <price>35100</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/16.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/16.jpg</picture>
         <vendor>Must</vendor>
         <description><![CDATA[Аккумулятор MUST LP16-48100. Напряжение/емкость: 48 В · 100 Ач. Энергия: 4.8 кВт·ч. Тип ячеек: LiFePO4. Вес: 44 кг.]]></description>
         <description_ua><![CDATA[Акумулятор MUST LP16-48100. Напруга/ємність: 48 В · 100 Аг. Енергія: 4.8 кВт·год. Тип комірок: LiFePO4. Вага: 44 кг.]]></description_ua>
@@ -144,7 +144,7 @@
         <price>78750</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/17.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/17.jpg</picture>
         <vendor>Must</vendor>
         <description><![CDATA[Аккумулятор MUST LP16-48300. Напряжение/емкость: 51.2 В · 300 Ач. Энергия: 15.36 кВт·ч. Тип ячеек: LiFePO4. Конструкция: на колесах. Вес: 117 кг.]]></description>
         <description_ua><![CDATA[Акумулятор MUST LP16-48300. Напруга/ємність: 51.2 В · 300 Аг. Енергія: 15.36 кВт·год. Тип комірок: LiFePO4. Конструкція: на колесах. Вага: 117 кг.]]></description_ua>
@@ -155,7 +155,7 @@
         <price>12150</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/18.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/18.jpg</picture>
         <vendor>Felicity</vendor>
         <description><![CDATA[Аккумулятор Felicity FLA12100PG2. Напряжение/емкость: 12.8 В · 100 Ач. Энергия: 1.28 кВт·ч. Тип ячеек: LiFePO4. Вес: 10 кг.]]></description>
         <description_ua><![CDATA[Акумулятор Felicity FLA12100PG2. Напруга/ємність: 12.8 В · 100 Аг. Енергія: 1.28 кВт·год. Тип комірок: LiFePO4. Вага: 10 кг.]]></description_ua>
@@ -166,7 +166,7 @@
         <price>36900</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/19.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/19.jpg</picture>
         <vendor>Felicity</vendor>
         <description><![CDATA[Аккумулятор Felicity FLA24230. Напряжение/емкость: 25.6 В · 230 Ач. Энергия: 5.89 кВт·ч. Тип ячеек: LiFePO4. Вес: 52.5 кг.]]></description>
         <description_ua><![CDATA[Акумулятор Felicity FLA24230. Напруга/ємність: 25.6 В · 230 Аг. Енергія: 5.89 кВт·год. Тип комірок: LiFePO4. Вага: 52.5 кг.]]></description_ua>
@@ -177,7 +177,7 @@
         <price>36225</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/20.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/20.jpg</picture>
         <vendor>Felicity</vendor>
         <description><![CDATA[Аккумулятор Felicity FLB48100WG1-H. Напряжение/емкость: 51.2 В · 100 Ач. Энергия: 5.12 кВт·ч. Тип ячеек: LiFePO4. Функция: встроенный подогрев. Вес: 48.5 кг.]]></description>
         <description_ua><![CDATA[Акумулятор Felicity FLB48100WG1-H. Напруга/ємність: 51.2 В · 100 Аг. Енергія: 5.12 кВт·год. Тип комірок: LiFePO4. Функція: вбудований підігрів. Вага: 48.5 кг.]]></description_ua>
@@ -188,7 +188,7 @@
         <price>67500</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/22.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/22.jpg</picture>
         <vendor>Felicity</vendor>
         <description><![CDATA[Аккумулятор Felicity FLA48230. Напряжение/емкость: 51.2 В · 230 Ач. Энергия: 11.78 кВт·ч. Тип ячеек: LiFePO4. Вес: 97 кг.]]></description>
         <description_ua><![CDATA[Акумулятор Felicity FLA48230. Напруга/ємність: 51.2 В · 230 Аг. Енергія: 11.78 кВт·год. Тип комірок: LiFePO4. Вага: 97 кг.]]></description_ua>
@@ -199,7 +199,7 @@
         <price>68400</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/23.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/23.jpg</picture>
         <vendor>Felicity</vendor>
         <description><![CDATA[Аккумулятор Felicity FLB48230WG1-H. Напряжение/емкость: 51.2 В · 230 Ач. Энергия: 11.78 кВт·ч. Тип ячеек: LiFePO4. Функция: встроенный подогрев. Вес: 91 кг.]]></description>
         <description_ua><![CDATA[Акумулятор Felicity FLB48230WG1-H. Напруга/ємність: 51.2 В · 230 Аг. Енергія: 11.78 кВт·год. Тип комірок: LiFePO4. Функція: вбудований підігрів. Вага: 91 кг.]]></description_ua>
@@ -210,7 +210,7 @@
         <price>83250</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/25.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/25.jpg</picture>
         <vendor>Felicity</vendor>
         <description><![CDATA[Аккумулятор Felicity FLA48314-EU. Напряжение/емкость: 51.2 В · 314 Ач. Энергия: 16 кВт·ч. Тип ячеек: LiFePO4. Конструкция: на колесах. Вес: 121.5 кг.]]></description>
         <description_ua><![CDATA[Акумулятор Felicity FLA48314-EU. Напруга/ємність: 51.2 В · 314 Аг. Енергія: 16 кВт·год. Тип комірок: LiFePO4. Конструкція: на колесах. Вага: 121.5 кг.]]></description_ua>
@@ -221,7 +221,7 @@
         <price>83250</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/26.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/26.jpg</picture>
         <vendor>Felicity</vendor>
         <description><![CDATA[Аккумулятор Felicity FLB48314TG1-H. Напряжение/емкость: 51.2 В · 314 Ач. Энергия: 16 кВт·ч. Тип ячеек: LiFePO4. Функция: встроенный подогрев. Конструкция: на колесах. Вес: 121 кг.]]></description>
         <description_ua><![CDATA[Акумулятор Felicity FLB48314TG1-H. Напруга/ємність: 51.2 В · 314 Аг. Енергія: 16 кВт·год. Тип комірок: LiFePO4. Функція: вбудований підігрів. Конструкція: на колесах. Вага: 121 кг.]]></description_ua>
@@ -233,7 +233,7 @@
         <price>20250</price>
         <currencyId>UAH</currencyId>
         <categoryId>3</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/27.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/27.jpg</picture>
         <vendor>Must</vendor>
         <description><![CDATA[Система хранения энергии 2в1 MUST HBP18-1212 OS. Мощность: 1.2 кВт. Емкость: 1280 Вт·ч. Конструкция: инвертор + аккумулятор в одном корпусе.]]></description>
         <description_ua><![CDATA[Система зберігання енергії 2в1 MUST HBP18-1212 OS. Потужність: 1.2 кВт. Ємність: 1280 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі.]]></description_ua>
@@ -244,7 +244,7 @@
         <price>42750</price>
         <currencyId>UAH</currencyId>
         <categoryId>3</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/28.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/28.jpg</picture>
         <vendor>Must</vendor>
         <description><![CDATA[Система хранения энергии 2в1 MUST HBP18-3024OS. Мощность: 3 кВт. Емкость: 3072 Вт·ч. Конструкция: инвертор + аккумулятор в одном корпусе, на колесах. Вес: 33 кг.]]></description>
         <description_ua><![CDATA[Система зберігання енергії 2в1 MUST HBP18-3024OS. Потужність: 3 кВт. Ємність: 3072 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі, на колесах. Вага: 33 кг.]]></description_ua>
@@ -255,7 +255,7 @@
         <price>58500</price>
         <currencyId>UAH</currencyId>
         <categoryId>3</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/29.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/29.jpg</picture>
         <vendor>Must</vendor>
         <description><![CDATA[Система хранения энергии 2в1 MUST HBP19-5548 VPM. Мощность: 5.5 кВт. Емкость: 5120 Вт·ч. Конструкция: инвертор + аккумулятор в одном корпусе. Вес: 58 кг.]]></description>
         <description_ua><![CDATA[Система зберігання енергії 2в1 MUST HBP19-5548 VPM. Потужність: 5.5 кВт. Ємність: 5120 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі. Вага: 58 кг.]]></description_ua>
@@ -267,7 +267,7 @@
         <price>32850</price>
         <currencyId>UAH</currencyId>
         <categoryId>4</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/30.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/30.jpg</picture>
         <vendor>EcoFlow</vendor>
         <description><![CDATA[Портативная зарядная станция EcoFlow Delta 2. Мощность: 1800 Вт. Емкость: 1024 Вт·ч.]]></description>
         <description_ua><![CDATA[Портативна зарядна станція EcoFlow Delta 2. Потужність: 1800 Вт. Ємність: 1024 Вт·год.]]></description_ua>
@@ -278,7 +278,7 @@
         <price>32400</price>
         <currencyId>UAH</currencyId>
         <categoryId>4</categoryId>
-        <picture>https://energia24.com.ua/images/dfi/31.jpg</picture>
+        <picture>https://energia24.com.ua/images/pa/31.jpg</picture>
         <vendor>EcoFlow</vendor>
         <description><![CDATA[Портативная зарядная станция EcoFlow Delta 3. Мощность: 1800 Вт. Емкость: 1024 Вт·ч.]]></description>
         <description_ua><![CDATA[Портативна зарядна станція EcoFlow Delta 3. Потужність: 1800 Вт. Ємність: 1024 Вт·год.]]></description_ua>

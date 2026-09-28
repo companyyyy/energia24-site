@@ -60,9 +60,9 @@ FEEDS = [
         "rate": 45,
         "currency": "UAH",
         "skip_missing": True,
-        # Фото з фіду DFI (dfi2.com.ua/price_xml/avtonomka.txt), збережені в
-        # images/dfi/<id товару>.jpg; якщо такого немає - беремо звичайне фото.
-        "photo_dir": "images/dfi",
+        # Фото для фіду PA: images/pa/<id товару>.jpg;
+        # якщо такого немає - беремо звичайне фото.
+        "photo_dir": "images/pa",
         # <name>/<description> - російською (Prom.ua вважає їх російською версією).
         "russian": True,
     },
