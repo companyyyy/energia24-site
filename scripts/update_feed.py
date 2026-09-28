@@ -63,6 +63,8 @@ FEEDS = [
         # Фото з фіду DFI (dfi2.com.ua/price_xml/avtonomka.txt), збережені в
         # images/dfi/<id товару>.jpg; якщо такого немає - беремо звичайне фото.
         "photo_dir": "images/dfi",
+        # <name>/<description> - російською (Prom.ua вважає їх російською версією).
+        "russian": True,
     },
 ]
 
@@ -144,6 +146,35 @@ CATEGORIES = {
     4: ("Зарядні станції", 71109),
 }
 
+# Назви й описи в PRODUCTS шаблонні, тому російська версія для Prom.ua
+# будується заміною фраз. Порядок важливий: довші фрази - раніше.
+RU_REPLACEMENTS = [
+    ("Система зберігання енергії", "Система хранения энергии"),
+    ("Портативна зарядна станція", "Портативная зарядная станция"),
+    ("Гібридний інвертор", "Гибридный инвертор"),
+    ("інвертор + акумулятор в одному корпусі", "инвертор + аккумулятор в одном корпусе"),
+    ("Акумулятор", "Аккумулятор"),
+    ("Потужність", "Мощность"),
+    ("Напруга/ємність", "Напряжение/емкость"),
+    ("Напруга АКБ", "Напряжение АКБ"),
+    ("Ємність", "Емкость"),
+    ("Енергія", "Энергия"),
+    ("Тип комірок", "Тип ячеек"),
+    ("Конструкція", "Конструкция"),
+    ("Функція: вбудований підігрів", "Функция: встроенный подогрев"),
+    ("Вага", "Вес"),
+    ("·год", "·ч"),
+    (" Аг", " Ач"),
+]
+
+
+def to_ru(text):
+    for ua, ru in RU_REPLACEMENTS:
+        text = text.replace(ua, ru)
+    if re.search(r"[ІіЇїЄєҐґ]", text):
+        print(f"[warn] неповний переклад російською: {text!r}", file=sys.stderr)
+    return text
+
 
 def fetch_rows(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -190,7 +221,7 @@ def match_prices(rows, cfg):
     return result
 
 
-def build_feed(price_map, date_str, currency, skip_missing, photo_dir=None):
+def build_feed(price_map, date_str, currency, skip_missing, photo_dir=None, russian=False):
     lines = []
     lines.append('<?xml version="1.0" encoding="UTF-8"?>')
     lines.append('<!DOCTYPE yml_catalog SYSTEM "shops.dtd">')
@@ -227,9 +258,11 @@ def build_feed(price_map, date_str, currency, skip_missing, photo_dir=None):
             price_line = price
 
         lines.append(f'      <offer id="{pid}" available="{available}">')
-        # name/description вже українською - дублюємо в *_ua, інакше Prom.ua
-        # вважає <name> російським варіантом і позначає товар як "Відсутня назва українською".
-        lines.append(f'        <name>{name}</name>')
+        # Prom.ua вважає <name>/<description> російським варіантом, а *_ua - українським.
+        # Без перекладу дублюємо українську в обидва, інакше товар позначається
+        # як "Відсутня назва українською".
+        name_ru, desc_ru = (to_ru(name), to_ru(desc)) if russian else (name, desc)
+        lines.append(f'        <name>{name_ru}</name>')
         lines.append(f'        <name_ua>{name}</name_ua>')
         if price_line is not None:
             lines.append(f'        <price>{price_line}</price>')
@@ -240,7 +273,7 @@ def build_feed(price_map, date_str, currency, skip_missing, photo_dir=None):
         elif img:
             lines.append(f'        <picture>{SITE_URL}/images/products/{img}</picture>')
         lines.append(f'        <vendor>{vendor}</vendor>')
-        lines.append(f'        <description><![CDATA[{desc}]]></description>')
+        lines.append(f'        <description><![CDATA[{desc_ru}]]></description>')
         lines.append(f'        <description_ua><![CDATA[{desc}]]></description_ua>')
         lines.append('      </offer>')
 
@@ -259,7 +292,8 @@ def main():
     for cfg in FEEDS:
         rows = fetch_rows(cfg["sheet_url"])
         price_map = match_prices(rows, cfg)
-        feed = build_feed(price_map, date_str, cfg["currency"], cfg["skip_missing"], cfg.get("photo_dir"))
+        feed = build_feed(price_map, date_str, cfg["currency"], cfg["skip_missing"],
+                          cfg.get("photo_dir"), cfg.get("russian", False))
         cfg["path"].write_text(feed, encoding="utf-8")
         print(f"{cfg['path'].name} оновлено ({date_str} UTC)")
 
