@@ -65,6 +65,7 @@ FEEDS = [
 
 # id -> (унікальний підрядок для пошуку в колонці "Найменування і характеристики",
 #        categoryId, шлях до фото, виробник, назва товару, опис без ціни/наявності)
+# Фото - тільки на білому фоні; якщо такого фото немає, ставимо None і товар іде без фото.
 PRODUCTS = [
     (1, "PV18-1012VPK", 1, "inv-pv18-1012vpk.jpg", "Must", "Гібридний інвертор Must PV18-1012VPK",
      "Гібридний інвертор Must PV18-1012VPK. Потужність: 1 кВт. Напруга АКБ: 12 В. Вага: 5 кг."),
@@ -120,9 +121,9 @@ PRODUCTS = [
      "Акумулятор Felicity FLB48314TG1-H. Напруга/ємність: 51.2 В · 314 Аг. Енергія: 16 кВт·год. Тип комірок: LiFePO4. Функція: вбудований підігрів. Конструкція: на колесах. Вага: 121 кг."),
     (27, "HBP18-1212", 3, "sys-hbp18-1012.jpg", "Must", "Система зберігання енергії 2в1 MUST HBP18-1212 OS",
      "Система зберігання енергії 2в1 MUST HBP18-1212 OS. Потужність: 1.2 кВт. Ємність: 1280 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі."),
-    (28, "HBP18-3024OS", 3, "sys-hbp18-3024.jpg", "Must", "Система зберігання енергії 2в1 MUST HBP18-3024OS",
+    (28, "HBP18-3024OS", 3, None, "Must", "Система зберігання енергії 2в1 MUST HBP18-3024OS",
      "Система зберігання енергії 2в1 MUST HBP18-3024OS. Потужність: 3 кВт. Ємність: 3072 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі, на колесах. Вага: 33 кг."),
-    (29, "HBP19-5548", 3, "sys-hbp19-5548.jpg", "Must", "Система зберігання енергії 2в1 MUST HBP19-5548 VPM",
+    (29, "HBP19-5548", 3, None, "Must", "Система зберігання енергії 2в1 MUST HBP19-5548 VPM",
      "Система зберігання енергії 2в1 MUST HBP19-5548 VPM. Потужність: 5.5 кВт. Ємність: 5120 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі. Вага: 58 кг."),
     (30, "Delta 2", 4, "station-delta2.jpg", "EcoFlow", "Портативна зарядна станція EcoFlow Delta 2",
      "Портативна зарядна станція EcoFlow Delta 2. Потужність: 1800 Вт. Ємність: 1024 Вт·год."),
@@ -231,7 +232,8 @@ def build_feed(price_map, date_str, currency, skip_missing):
             lines.append(f'        <price>{price_line}</price>')
         lines.append(f'        <currencyId>{currency}</currencyId>')
         lines.append(f'        <categoryId>{cat}</categoryId>')
-        lines.append(f'        <picture>{SITE_URL}/images/products/{img}</picture>')
+        if img:
+            lines.append(f'        <picture>{SITE_URL}/images/products/{img}</picture>')
         lines.append(f'        <vendor>{vendor}</vendor>')
         lines.append(f'        <description><![CDATA[{desc}]]></description>')
         lines.append(f'        <description_ua><![CDATA[{desc}]]></description_ua>')
