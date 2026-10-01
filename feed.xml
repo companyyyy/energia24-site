@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2026-09-30 20:39">
+<yml_catalog date="2026-10-01 10:48">
   <shop>
     <name>ENERGIA24</name>
     <company>ENERGIA24</company>
@@ -82,9 +82,10 @@
         <description><![CDATA[Гібридний інвертор Felicity IVEM4024-II. Потужність: 4 кВт. Напруга АКБ: 24 В. Вага: 10.4 кг.]]></description>
         <description_ua><![CDATA[Гібридний інвертор Felicity IVEM4024-II. Потужність: 4 кВт. Напруга АКБ: 24 В. Вага: 10.4 кг.]]></description_ua>
       </offer>
-      <offer id="7" available="false">
+      <offer id="7" available="true">
         <name>Гібридний інвертор Felicity IVEM6048-II</name>
         <name_ua>Гібридний інвертор Felicity IVEM6048-II</name_ua>
+        <price>25000</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-ivem6048.jpg</picture>
@@ -156,9 +157,10 @@
         <description><![CDATA[Акумулятор MUST LP15-24100. Напруга/ємність: 25.6 В · 100 Аг. Енергія: 2.56 кВт·год. Тип комірок: LiFePO4. Вага: 23 кг.]]></description>
         <description_ua><![CDATA[Акумулятор MUST LP15-24100. Напруга/ємність: 25.6 В · 100 Аг. Енергія: 2.56 кВт·год. Тип комірок: LiFePO4. Вага: 23 кг.]]></description_ua>
       </offer>
-      <offer id="14" available="false">
+      <offer id="14" available="true">
         <name>Акумулятор MUST LP16-24100</name>
         <name_ua>Акумулятор MUST LP16-24100</name_ua>
+        <price>30000</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-lp16-24100.jpg</picture>
@@ -313,17 +315,16 @@
       <offer id="28" available="true">
         <name>Система зберігання енергії 2в1 MUST HBP18-3024OS</name>
         <name_ua>Система зберігання енергії 2в1 MUST HBP18-3024OS</name_ua>
-        <price>52000</price>
+        <price>47400</price>
         <currencyId>UAH</currencyId>
         <categoryId>3</categoryId>
         <vendor>Must</vendor>
         <description><![CDATA[Система зберігання енергії 2в1 MUST HBP18-3024OS. Потужність: 3 кВт. Ємність: 3072 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі, на колесах. Вага: 33 кг.]]></description>
         <description_ua><![CDATA[Система зберігання енергії 2в1 MUST HBP18-3024OS. Потужність: 3 кВт. Ємність: 3072 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі, на колесах. Вага: 33 кг.]]></description_ua>
       </offer>
-      <offer id="29" available="true">
+      <offer id="29" available="false">
         <name>Система зберігання енергії 2в1 MUST HBP19-5548 VPM</name>
         <name_ua>Система зберігання енергії 2в1 MUST HBP19-5548 VPM</name_ua>
-        <price>70000</price>
         <currencyId>UAH</currencyId>
         <categoryId>3</categoryId>
         <vendor>Must</vendor>
