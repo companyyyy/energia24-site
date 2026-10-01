@@ -22,6 +22,8 @@ import sys
 import urllib.request
 from pathlib import Path
 
+from datasheet_specs import LABELS_RU, SPECS, translate_value_ru
+
 ROOT = Path(__file__).resolve().parent.parent
 SITE_URL = "https://energia24.com.ua"
 
@@ -176,6 +178,40 @@ def to_ru(text):
     return text
 
 
+def build_description(pid, desc, russian):
+    """Опис товару для фіду: короткий текст + характеристики з даташиту (якщо є).
+
+    Повертає (опис для <description>, опис для <description_ua>)."""
+    to_lang = to_ru if russian else (lambda t: t)
+    if pid not in SPECS:
+        return to_lang(desc), desc
+
+    # Короткі дані з PRODUCTS (вага, енергія) можуть розходитися з даташитом,
+    # тому при наявності даташиту лишаємо з них лише назву і функцію підігріву.
+    intro = desc.split(". ")[0] + "."
+    if "вбудований підігрів" in desc:
+        intro += " Функція: вбудований підігрів."
+
+    _pdf, specs = SPECS[pid]
+
+    def render(intro_text, heading, rows):
+        items = "".join(f"<li><b>{label}:</b> {value}</li>" for label, value in rows)
+        return f"<p>{intro_text}</p><h3>{heading}</h3><ul>{items}</ul>"
+
+    desc_ua = render(intro, "Технічні характеристики", specs)
+    if not russian:
+        return desc_ua, desc_ua
+    rows_ru = []
+    for label, value in specs:
+        if label not in LABELS_RU:
+            sys.exit(f"[error] немає перекладу назви характеристики {label!r}")
+        rows_ru.append((LABELS_RU[label], translate_value_ru(value)))
+    desc_ru = render(to_ru(intro), "Технические характеристики", rows_ru)
+    if re.search(r"[ІіЇїЄєҐґ]", desc_ru):
+        print(f"[warn] неповний переклад характеристик id={pid}: {desc_ru!r}", file=sys.stderr)
+    return desc_ru, desc_ua
+
+
 def fetch_rows(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=30) as resp:
@@ -261,7 +297,8 @@ def build_feed(price_map, date_str, currency, skip_missing, photo_dir=None, russ
         # Prom.ua вважає <name>/<description> російським варіантом, а *_ua - українським.
         # Без перекладу дублюємо українську в обидва, інакше товар позначається
         # як "Відсутня назва українською".
-        name_ru, desc_ru = (to_ru(name), to_ru(desc)) if russian else (name, desc)
+        name_ru = to_ru(name) if russian else name
+        desc_ru, desc_ua = build_description(pid, desc, russian)
         lines.append(f'        <name>{name_ru}</name>')
         lines.append(f'        <name_ua>{name}</name_ua>')
         if price_line is not None:
@@ -274,7 +311,7 @@ def build_feed(price_map, date_str, currency, skip_missing, photo_dir=None, russ
             lines.append(f'        <picture>{SITE_URL}/images/products/{img}</picture>')
         lines.append(f'        <vendor>{vendor}</vendor>')
         lines.append(f'        <description><![CDATA[{desc_ru}]]></description>')
-        lines.append(f'        <description_ua><![CDATA[{desc}]]></description_ua>')
+        lines.append(f'        <description_ua><![CDATA[{desc_ua}]]></description_ua>')
         lines.append('      </offer>')
 
     lines.append('')
