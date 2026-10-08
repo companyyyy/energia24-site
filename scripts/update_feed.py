@@ -3,28 +3,32 @@
 Оновлює feed.xml (фід для імпорту в Prom.ua) цінами та наявністю
 з Google Sheet, опублікованого для читання в форматі CSV.
 
-Метадані товарів (назва, категорія, фото, опис) задані тут статично -
-з Google Sheet підтягуються тільки ціна та наявність. Це зроблено
-навмисно: текст у таблиці "Найменування і характеристики" не має
-фіксованої структури, і його автоматичний розбір на структуровані поля
-(потужність/напруга/вага) був би ненадійним.
+Метадані товарів (назва, категорія, фото, опис, характеристики) лежать
+у data/products/<id>.json і редагуються через адмінку /admin (Sveltia CMS).
+З Google Sheet підтягуються тільки ціна та наявність: текст у таблиці
+"Найменування і характеристики" не має фіксованої структури, і його
+автоматичний розбір на структуровані поля був би ненадійним.
 
 Генерує кілька фідів (див. FEEDS): основний feed.xml і окремі фіди
 під конкретних клієнтів з іншими цінами.
 
-Запускається за розкладом через .github/workflows/update-feed.yml.
+Запускається через .github/workflows/update-feed.yml - за розкладом
+і після кожної зміни товарів в адмінці. Якщо дані товарів некоректні,
+фіди не перезаписуються, а скрипт завершується з помилкою.
 """
 
 import csv
 import io
+import json
 import re
 import sys
 import urllib.request
 from pathlib import Path
 
-from datasheet_specs import LABELS_RU, SPECS, translate_value_ru
+from translate_ru import LABELS_RU, to_ru, translate_value_ru
 
 ROOT = Path(__file__).resolve().parent.parent
+PRODUCTS_DIR = ROOT / "data" / "products"
 SITE_URL = "https://energia24.com.ua"
 
 # Кожен фід: звідки брати ціни і куди писати результат.
@@ -70,76 +74,6 @@ FEEDS = [
     },
 ]
 
-# id -> (унікальний підрядок для пошуку в колонці "Найменування і характеристики",
-#        categoryId, шлях до фото, виробник, назва товару, опис без ціни/наявності)
-# Фото - тільки на білому фоні; якщо такого фото немає, ставимо None і товар іде без фото.
-PRODUCTS = [
-    (1, "PV18-1012VPK", 1, "inv-pv18-1012vpk.jpg", "Must", "Гібридний інвертор Must PV18-1012VPK",
-     "Гібридний інвертор Must PV18-1012VPK. Потужність: 1 кВт. Напруга АКБ: 12 В. Вага: 5 кг."),
-    (2, "PV18-1512", 1, "inv-pv18-1512vpm.jpg", "Must", "Гібридний інвертор Must PV18-1512 VPM II",
-     "Гібридний інвертор Must PV18-1512 VPM II. Потужність: 1.5 кВт. Напруга АКБ: 12 В. Вага: 5.5 кг."),
-    (3, "PV18-3224", 1, "inv-pv18-3224vpm.jpg", "Must", "Гібридний інвертор Must PV18-3224VPM II",
-     "Гібридний інвертор Must PV18-3224VPM II. Потужність: 3.2 кВт. Напруга АКБ: 24 В. Вага: 5.6 кг."),
-    (4, "PV19-4024", 1, "inv-pv19-4024exp.jpg", "Must", "Гібридний інвертор MUST PV19-4024 EXP",
-     "Гібридний інвертор MUST PV19-4024 EXP. Потужність: 4 кВт. Напруга АКБ: 24 В. Вага: 9.5 кг."),
-    (5, "PV19-6048", 1, "inv-pv19-6048exp.jpg", "Must", "Гібридний інвертор Must PV19-6048EXP",
-     "Гібридний інвертор Must PV19-6048EXP. Потужність: 6 кВт. Напруга АКБ: 48 В. Вага: 14 кг."),
-    (6, "IVEM4024", 1, "inv-ivem4024.jpg", "Felicity", "Гібридний інвертор Felicity IVEM4024-II",
-     "Гібридний інвертор Felicity IVEM4024-II. Потужність: 4 кВт. Напруга АКБ: 24 В. Вага: 10.4 кг."),
-    (7, "IVEM6048", 1, "inv-ivem6048.jpg", "Felicity", "Гібридний інвертор Felicity IVEM6048-II",
-     "Гібридний інвертор Felicity IVEM6048-II. Потужність: 6 кВт. Напруга АКБ: 48 В. Вага: 12.5 кг."),
-    (8, "IVEM8048", 1, "inv-ivem8048.jpg", "Felicity", "Гібридний інвертор Felicity IVEM8048-II",
-     "Гібридний інвертор Felicity IVEM8048-II. Потужність: 8 кВт. Напруга АКБ: 48 В. Вага: 23.7 кг."),
-    (9, "IVEM12048", 1, "inv-ivem12048.jpg", "Felicity", "Гібридний інвертор Felicity IVEM12048-II",
-     "Гібридний інвертор Felicity IVEM12048-II. Потужність: 12 кВт. Напруга АКБ: 48 В. Вага: 26.8 кг."),
-    (10, "SE-F5", 2, "bat-sef5-proc.jpg", "Deye", "Акумулятор DEYE SE-F5 Pro-C",
-     "Акумулятор DEYE SE-F5 Pro-C. Напруга/ємність: 51.2 В · 100 Аг. Енергія: 5.12 кВт·год. Тип комірок: LiFePO4. Вага: 45 кг."),
-    (11, "F16", 2, "bat-sef16-c.jpg", "Deye", "Акумулятор Deye SE-F16-C",
-     "Акумулятор Deye SE-F16-C. Напруга/ємність: 51.2 В · 314 Аг. Енергія: 16 кВт·год. Тип комірок: LiFePO4. Вага: 109 кг."),
-    (12, "LP15-12100", 2, "bat-lp15-12100.jpg", "Must", "Акумулятор MUST LP15-12100",
-     "Акумулятор MUST LP15-12100. Напруга/ємність: 12 В · 100 Аг. Енергія: 1.2 кВт·год. Тип комірок: LiFePO4. Вага: 10.5 кг."),
-    (13, "LP15-24100", 2, "bat-lp15-24100.jpg", "Must", "Акумулятор MUST LP15-24100",
-     "Акумулятор MUST LP15-24100. Напруга/ємність: 25.6 В · 100 Аг. Енергія: 2.56 кВт·год. Тип комірок: LiFePO4. Вага: 23 кг."),
-    (14, "LP16-24100", 2, "bat-lp16-24100.jpg", "Must", "Акумулятор MUST LP16-24100",
-     "Акумулятор MUST LP16-24100. Напруга/ємність: 25.6 В · 100 Аг. Енергія: 2.56 кВт·год. Тип комірок: LiFePO4. Вага: 23 кг."),
-    (15, "LP16-24200", 2, "bat-lp16-24200.jpg", "Must", "Акумулятор MUST LP16-24200",
-     "Акумулятор MUST LP16-24200. Напруга/ємність: 25.6 В · 200 Аг. Енергія: 5.12 кВт·год. Тип комірок: LiFePO4. Вага: 45 кг."),
-    (16, "LP16-48100", 2, "bat-lp16-48100.jpg", "Must", "Акумулятор MUST LP16-48100",
-     "Акумулятор MUST LP16-48100. Напруга/ємність: 48 В · 100 Аг. Енергія: 4.8 кВт·год. Тип комірок: LiFePO4. Вага: 44 кг."),
-    (17, "LP16-48300", 2, "bat-lp16-48300.jpg", "Must", "Акумулятор MUST LP16-48300",
-     "Акумулятор MUST LP16-48300. Напруга/ємність: 51.2 В · 300 Аг. Енергія: 15.36 кВт·год. Тип комірок: LiFePO4. Конструкція: на колесах. Вага: 117 кг."),
-    (18, "FLA12100", 2, "bat-fla12100pg2.jpg", "Felicity", "Акумулятор Felicity FLA12100PG2",
-     "Акумулятор Felicity FLA12100PG2. Напруга/ємність: 12.8 В · 100 Аг. Енергія: 1.28 кВт·год. Тип комірок: LiFePO4. Вага: 10 кг."),
-    (19, "FLA24230", 2, "bat-fla24230.jpg", "Felicity", "Акумулятор Felicity FLA24230",
-     "Акумулятор Felicity FLA24230. Напруга/ємність: 25.6 В · 230 Аг. Енергія: 5.89 кВт·год. Тип комірок: LiFePO4. Вага: 52.5 кг."),
-    (20, "FLB48100", 2, "bat-flb48100wg1.jpg", "Felicity", "Акумулятор Felicity FLB48100WG1-H",
-     "Акумулятор Felicity FLB48100WG1-H. Напруга/ємність: 51.2 В · 100 Аг. Енергія: 5.12 кВт·год. Тип комірок: LiFePO4. Функція: вбудований підігрів. Вага: 48.5 кг."),
-    (21, "FLA48171", 2, "bat-fla48171.jpg", "Felicity", "Акумулятор Felicity FLA48171",
-     "Акумулятор Felicity FLA48171. Напруга/ємність: 51.2 В · 171 Аг. Енергія: 8.76 кВт·год. Тип комірок: LiFePO4. Вага: 68 кг."),
-    (22, "FLA48230", 2, "bat-fla48230.jpg", "Felicity", "Акумулятор Felicity FLA48230",
-     "Акумулятор Felicity FLA48230. Напруга/ємність: 51.2 В · 230 Аг. Енергія: 11.78 кВт·год. Тип комірок: LiFePO4. Вага: 97 кг."),
-    (23, "FLB48230", 2, "bat-flb48230wg1.jpg", "Felicity", "Акумулятор Felicity FLB48230WG1-H",
-     "Акумулятор Felicity FLB48230WG1-H. Напруга/ємність: 51.2 В · 230 Аг. Енергія: 11.78 кВт·год. Тип комірок: LiFePO4. Функція: вбудований підігрів. Вага: 91 кг."),
-    (24, "FLA48280", 2, "bat-fla48280.jpg", "Felicity", "Акумулятор Felicity FLA48280",
-     "Акумулятор Felicity FLA48280. Напруга/ємність: 51.2 В · 280 Аг. Енергія: 14.34 кВт·год. Тип комірок: LiFePO4. Конструкція: на колесах. Вага: 135 кг."),
-    (25, "FLA48314", 2, "bat-fla48314eu.jpg", "Felicity", "Акумулятор Felicity FLA48314-EU",
-     "Акумулятор Felicity FLA48314-EU. Напруга/ємність: 51.2 В · 314 Аг. Енергія: 16 кВт·год. Тип комірок: LiFePO4. Конструкція: на колесах. Вага: 121.5 кг."),
-    (26, "FLB48314", 2, "bat-flb48314tg1.jpg", "Felicity", "Акумулятор Felicity FLB48314TG1-H",
-     "Акумулятор Felicity FLB48314TG1-H. Напруга/ємність: 51.2 В · 314 Аг. Енергія: 16 кВт·год. Тип комірок: LiFePO4. Функція: вбудований підігрів. Конструкція: на колесах. Вага: 121 кг."),
-    (32, "48460", 2, "bat-fla48460tg2.jpg", "Felicity", "Акумулятор Felicity FLA48460TG2-EU",
-     "Акумулятор Felicity FLA48460TG2-EU. Напруга/ємність: 51.2 В · 460 Аг. Енергія: 23.5 кВт·год. Тип комірок: LiFePO4. Конструкція: на колесах. Вага: 220 кг."),
-    (27, "HBP18-1212", 3, "sys-hbp18-1012.jpg", "Must", "Система зберігання енергії 2в1 MUST HBP18-1212 OS",
-     "Система зберігання енергії 2в1 MUST HBP18-1212 OS. Потужність: 1.2 кВт. Ємність: 1280 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі."),
-    (28, "HBP18-3024OS", 3, None, "Must", "Система зберігання енергії 2в1 MUST HBP18-3024OS",
-     "Система зберігання енергії 2в1 MUST HBP18-3024OS. Потужність: 3 кВт. Ємність: 3072 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі, на колесах. Вага: 33 кг."),
-    (29, "HBP19-5548", 3, None, "Must", "Система зберігання енергії 2в1 MUST HBP19-5548 VPM",
-     "Система зберігання енергії 2в1 MUST HBP19-5548 VPM. Потужність: 5.5 кВт. Ємність: 5120 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі. Вага: 58 кг."),
-    (30, "Delta 2", 4, "station-delta2.jpg", "EcoFlow", "Портативна зарядна станція EcoFlow Delta 2",
-     "Портативна зарядна станція EcoFlow Delta 2. Потужність: 1800 Вт. Ємність: 1024 Вт·год."),
-    (31, "Delta 3", 4, "station-delta3.jpg", "EcoFlow", "Портативна зарядна станція EcoFlow Delta 3",
-     "Портативна зарядна станція EcoFlow Delta 3. Потужність: 1800 Вт. Ємність: 1024 Вт·год."),
-]
-
 # id -> (назва, portal_id - ID відповідної категорії в каталозі Prom.ua,
 #        щоб маркетплейс не вгадував категорію сам і не плутав, напр., із Samsung).
 # ID звірені з категоріями конкурентів, що продають ті самі бренди (MUST/Felicity/EcoFlow).
@@ -150,64 +84,85 @@ CATEGORIES = {
     4: ("Зарядні станції", 71109),
 }
 
-# Назви й описи в PRODUCTS шаблонні, тому російська версія для Prom.ua
-# будується заміною фраз. Порядок важливий: довші фрази - раніше.
-RU_REPLACEMENTS = [
-    ("Система зберігання енергії", "Система хранения энергии"),
-    ("Портативна зарядна станція", "Портативная зарядная станция"),
-    ("Гібридний інвертор", "Гибридный инвертор"),
-    ("інвертор + акумулятор в одному корпусі", "инвертор + аккумулятор в одном корпусе"),
-    ("Акумулятор", "Аккумулятор"),
-    ("Потужність", "Мощность"),
-    ("Напруга/ємність", "Напряжение/емкость"),
-    ("Напруга АКБ", "Напряжение АКБ"),
-    ("Ємність", "Емкость"),
-    ("Енергія", "Энергия"),
-    ("Тип комірок", "Тип ячеек"),
-    ("Конструкція", "Конструкция"),
-    ("Функція: вбудований підігрів", "Функция: встроенный подогрев"),
-    ("Вага", "Вес"),
-    ("·год", "·ч"),
-    (" Аг", " Ач"),
-]
+REQUIRED_FIELDS = ("id", "category", "vendor", "name", "key", "summary")
 
 
-def to_ru(text):
-    for ua, ru in RU_REPLACEMENTS:
-        text = text.replace(ua, ru)
-    if re.search(r"[ІіЇїЄєҐґ]", text):
-        print(f"[warn] неповний переклад російською: {text!r}", file=sys.stderr)
-    return text
+def load_products():
+    """Читає data/products/*.json, перевіряє і повертає увімкнені товари
+    у порядку фіду (категорія, потім поле "order").
+
+    При будь-якій помилці в даних - завершує скрипт, щоб не зіпсувати фіди."""
+    products, errors = [], []
+    for path in sorted(PRODUCTS_DIR.glob("*.json")):
+        try:
+            p = json.loads(path.read_text(encoding="utf-8"))
+        except ValueError as e:
+            errors.append(f"{path.name}: некоректний JSON ({e})")
+            continue
+        missing = [f for f in REQUIRED_FIELDS if p.get(f) in (None, "")]
+        if missing:
+            errors.append(f"{path.name}: не заповнено {', '.join(missing)}")
+            continue
+        # Адмінка може зберегти числа рядком - приводимо до int.
+        try:
+            p["id"], p["category"] = int(p["id"]), int(p["category"])
+            p["order"] = int(p.get("order") or 0)
+        except (TypeError, ValueError):
+            errors.append(f"{path.name}: id, категорія і порядок мають бути числами")
+            continue
+        if p["category"] not in CATEGORIES:
+            errors.append(f"{path.name}: невідома категорія {p['category']!r}")
+        photo = p.get("photo") or ""
+        if photo and not (ROOT / photo.lstrip("/")).is_file():
+            errors.append(f"{path.name}: фото {photo!r} не знайдено")
+        for i, row in enumerate(p.get("specs") or [], 1):
+            if not (row.get("label") or "").strip() or not (row.get("value") or "").strip():
+                errors.append(f"{path.name}: характеристика №{i} без назви або значення")
+        p["_file"] = path.name
+        products.append(p)
+
+    ids = {}
+    for p in products:
+        if p["id"] in ids:
+            errors.append(f"{p['_file']}: id={p['id']} вже є у {ids[p['id']]}")
+        ids[p["id"]] = p["_file"]
+    if errors:
+        sys.exit("[error] помилки в даних товарів, фіди не оновлено:\n  " + "\n  ".join(errors))
+
+    products = [p for p in products if p.get("enabled", True)]
+    products.sort(key=lambda p: (p["category"], p.get("order") or 0, p["id"]))
+    return products
 
 
-def build_description(pid, desc, russian):
-    """Опис товару для фіду: короткий текст + характеристики з даташиту (якщо є).
+def build_description(p, russian):
+    """Опис товару для фіду: короткий текст + характеристики (якщо є).
 
     Повертає (опис для <description>, опис для <description_ua>)."""
+    pid, desc, specs = p["id"], p["summary"], p.get("specs") or []
     to_lang = to_ru if russian else (lambda t: t)
-    if pid not in SPECS:
+    if not specs:
         return to_lang(desc), desc
 
-    # Короткі дані з PRODUCTS (вага, енергія) можуть розходитися з даташитом,
-    # тому при наявності даташиту лишаємо з них лише назву і функцію підігріву.
-    intro = desc.split(". ")[0] + "."
+    # Короткі дані з опису (вага, енергія) можуть розходитися з даташитом,
+    # тому при наявності характеристик лишаємо з опису лише назву і функцію підігріву.
+    intro = desc.split(". ")[0].rstrip(".") + "."
     if "вбудований підігрів" in desc:
         intro += " Функція: вбудований підігрів."
-
-    _pdf, specs = SPECS[pid]
 
     def render(intro_text, heading, rows):
         items = "".join(f"<li><b>{label}:</b> {value}</li>" for label, value in rows)
         return f"<p>{intro_text}</p><h3>{heading}</h3><ul>{items}</ul>"
 
-    desc_ua = render(intro, "Технічні характеристики", specs)
+    desc_ua = render(intro, "Технічні характеристики", [(r["label"], r["value"]) for r in specs])
     if not russian:
         return desc_ua, desc_ua
     rows_ru = []
-    for label, value in specs:
-        if label not in LABELS_RU:
-            sys.exit(f"[error] немає перекладу назви характеристики {label!r}")
-        rows_ru.append((LABELS_RU[label], translate_value_ru(value)))
+    for r in specs:
+        label_ru = r.get("label_ru") or LABELS_RU.get(r["label"])
+        if not label_ru:
+            print(f"[warn] id={pid}: немає перекладу назви характеристики {r['label']!r}", file=sys.stderr)
+            label_ru = r["label"]
+        rows_ru.append((label_ru, r.get("value_ru") or translate_value_ru(r["value"])))
     desc_ru = render(to_ru(intro), "Технические характеристики", rows_ru)
     if re.search(r"[ІіЇїЄєҐґ]", desc_ru):
         print(f"[warn] неповний переклад характеристик id={pid}: {desc_ru!r}", file=sys.stderr)
@@ -229,7 +184,7 @@ def find_column(rows, header):
     sys.exit(f"[error] колонку {header!r} не знайдено в таблиці")
 
 
-def match_prices(rows, cfg):
+def match_prices(products, rows, cfg):
     """Повертає {product_id: (price:int|None, available:bool)}"""
     name_col, stock_col = cfg["name_col"], cfg["stock_col"]
     price_col = cfg["price_col"]
@@ -238,7 +193,8 @@ def match_prices(rows, cfg):
     min_len = max(c for c in (name_col, price_col, stock_col) if c is not None) + 1
 
     result = {}
-    for pid, key, *_ in PRODUCTS:
+    for p in products:
+        pid, key = p["id"], p["key"].strip()
         matches = [row for row in rows if len(row) >= min_len and key.lower() in (row[name_col] or "").lower()]
         if len(matches) == 0:
             print(f"[warn] {cfg['path'].name}: товар id={pid} (key={key!r}) не знайдено в таблиці", file=sys.stderr)
@@ -259,7 +215,7 @@ def match_prices(rows, cfg):
     return result
 
 
-def build_feed(price_map, date_str, currency, skip_missing, photo_dir=None, russian=False):
+def build_feed(products, price_map, date_str, currency, skip_missing, photo_dir=None, russian=False):
     lines = []
     lines.append('<?xml version="1.0" encoding="UTF-8"?>')
     lines.append('<!DOCTYPE yml_catalog SYSTEM "shops.dtd">')
@@ -278,7 +234,8 @@ def build_feed(price_map, date_str, currency, skip_missing, photo_dir=None, russ
     lines.append('    <offers>')
 
     current_cat = None
-    for pid, _key, cat, img, vendor, name, desc in PRODUCTS:
+    for p in products:
+        pid, cat, name = p["id"], p["category"], p["name"]
         update = price_map.get(pid)
         if update is None and skip_missing:
             continue
@@ -299,8 +256,8 @@ def build_feed(price_map, date_str, currency, skip_missing, photo_dir=None, russ
         # Prom.ua вважає <name>/<description> російським варіантом, а *_ua - українським.
         # Без перекладу дублюємо українську в обидва, інакше товар позначається
         # як "Відсутня назва українською".
-        name_ru = to_ru(name) if russian else name
-        desc_ru, desc_ua = build_description(pid, desc, russian)
+        name_ru = (p.get("name_ru") or to_ru(name)) if russian else name
+        desc_ru, desc_ua = build_description(p, russian)
         lines.append(f'        <name>{name_ru}</name>')
         lines.append(f'        <name_ua>{name}</name_ua>')
         if price_line is not None:
@@ -309,9 +266,9 @@ def build_feed(price_map, date_str, currency, skip_missing, photo_dir=None, russ
         lines.append(f'        <categoryId>{cat}</categoryId>')
         if photo_dir and (ROOT / photo_dir / f"{pid}.jpg").exists():
             lines.append(f'        <picture>{SITE_URL}/{photo_dir}/{pid}.jpg</picture>')
-        elif img:
-            lines.append(f'        <picture>{SITE_URL}/images/products/{img}</picture>')
-        lines.append(f'        <vendor>{vendor}</vendor>')
+        elif p.get("photo"):
+            lines.append(f'        <picture>{SITE_URL}/{p["photo"].lstrip("/")}</picture>')
+        lines.append(f'        <vendor>{p["vendor"]}</vendor>')
         lines.append(f'        <description><![CDATA[{desc_ru}]]></description>')
         lines.append(f'        <description_ua><![CDATA[{desc_ua}]]></description_ua>')
         lines.append('      </offer>')
@@ -327,14 +284,19 @@ def build_feed(price_map, date_str, currency, skip_missing, photo_dir=None, russ
 def main():
     import datetime
 
-    date_str = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M")
+    products = load_products()
+    date_str = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M")
+    feeds = []
     for cfg in FEEDS:
         rows = fetch_rows(cfg["sheet_url"])
-        price_map = match_prices(rows, cfg)
-        feed = build_feed(price_map, date_str, cfg["currency"], cfg["skip_missing"],
+        price_map = match_prices(products, rows, cfg)
+        feed = build_feed(products, price_map, date_str, cfg["currency"], cfg["skip_missing"],
                           cfg.get("photo_dir"), cfg.get("russian", False))
-        cfg["path"].write_text(feed, encoding="utf-8")
-        print(f"{cfg['path'].name} оновлено ({date_str} UTC)")
+        feeds.append((cfg["path"], feed))
+    # Пишемо лише коли всі фіди зібрано, щоб збій однієї таблиці не лишив їх неузгодженими.
+    for path, feed in feeds:
+        path.write_text(feed, encoding="utf-8")
+        print(f"{path.name} оновлено ({date_str} UTC)")
 
 
 if __name__ == "__main__":

@@ -3,9 +3,19 @@ name: Deploy to server
 on:
   push:
     branches: [ main ]
+  # Коміти бота з оновленими фідами (через GITHUB_TOKEN) не запускають push-подію,
+  # тому викладаємо на сервер ще й після кожного оновлення фідів.
+  workflow_run:
+    workflows: [ "Update product feed from Google Sheet" ]
+    types: [ completed ]
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
 
 jobs:
   deploy:
+    if: github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Deploy via SSH

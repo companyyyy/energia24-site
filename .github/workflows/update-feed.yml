@@ -4,10 +4,23 @@ on:
   schedule:
     # 3 рази на добу: ~06:00, 12:00, 18:00 за Києвом (зсув ±1г залежно від переходу на літній/зимовий час)
     - cron: '0 4,10,16 * * *'
+  # Зміни товарів з адмінки (/admin) і скриптів - фіди перебудовуються одразу.
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/products/**'
+      - 'images/products/**'
+      - 'images/pa/**'
+      - 'scripts/**'
   workflow_dispatch: {}
 
 permissions:
   contents: write
+
+# Не запускати два оновлення одночасно (розклад + збереження в адмінці).
+concurrency:
+  group: update-feed
+  cancel-in-progress: false
 
 jobs:
   update-feed:
@@ -27,5 +40,7 @@ jobs:
             echo "Змін немає"
           else
             git commit -m "Автооновлення feed.xml з Google Sheets"
+            # За час генерації в main могли з'явитися нові коміти (напр., з адмінки).
+            git pull --rebase
             git push
           fi

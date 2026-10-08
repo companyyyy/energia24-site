@@ -12,3 +12,6 @@ Thumbs.db
 
 # Claude Code local session state
 .claude/
+
+# Python
+__pycache__/
