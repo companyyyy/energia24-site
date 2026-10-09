@@ -1,28 +1,24 @@
 #!/usr/bin/env python3
 """
-Оновлює feed.xml (фід для імпорту в Prom.ua) цінами та наявністю
-з Google Sheet, опублікованого для читання в форматі CSV.
+Генерує XML-фіди для Prom.ua (feed.xml, pa.xml) з даних товарів
+у data/products/<id>.json.
 
-Метадані товарів (назва, категорія, фото, опис, характеристики) лежать
-у data/products/<id>.json і редагуються через адмінку /admin (Sveltia CMS).
-З Google Sheet підтягуються тільки ціна та наявність: текст у таблиці
-"Найменування і характеристики" не має фіксованої структури, і його
-автоматичний розбір на структуровані поля був би ненадійним.
+Усе - назви, фото, описи, характеристики, ціни й наявність - редагується
+в адмінці /admin (Sveltia CMS); ціни для обох фідів - на сторінці /admin/prices.html.
+Ціни в даних уже в гривнях, як підуть у фід.
 
 Генерує кілька фідів (див. FEEDS): основний feed.xml і окремі фіди
 під конкретних клієнтів з іншими цінами.
 
-Запускається через .github/workflows/update-feed.yml - за розкладом
-і після кожної зміни товарів в адмінці. Якщо дані товарів некоректні,
-фіди не перезаписуються, а скрипт завершується з помилкою.
+Запускається через .github/workflows/update-feed.yml після кожної зміни
+товарів. Якщо дані товарів некоректні, фіди не перезаписуються, а скрипт
+завершується з помилкою.
 """
 
-import csv
-import io
+import datetime
 import json
 import re
 import sys
-import urllib.request
 from pathlib import Path
 
 from translate_ru import LABELS_RU, to_ru, translate_value_ru
@@ -31,41 +27,24 @@ ROOT = Path(__file__).resolve().parent.parent
 PRODUCTS_DIR = ROOT / "data" / "products"
 SITE_URL = "https://energia24.com.ua"
 
-# Кожен фід: звідки брати ціни і куди писати результат.
-#   name_col / stock_col - індекси колонок (stock_col=None - наявність визначається лише ціною);
-#   price_col - індекс колонки або назва заголовка, яку шукаємо в таблиці;
-#   rate - множник для ціни з таблиці (курс USD->UAH), якщо прайс у доларах;
-#   skip_missing - True: товари, яких немає в таблиці, не потрапляють у фід взагалі
-#                  (для клієнтських фідів, де прайс містить тільки частину асортименту).
+# Кожен фід: куди писати і з яких полів товару брати ціну/наявність.
+#   price_field / stock_field - поля в data/products/*.json;
+#   include_field - якщо задано, у фід потрапляють лише товари з цим полем = true
+#                   (для клієнтських фідів, де прайс містить тільки частину асортименту).
 FEEDS = [
     {
         "path": ROOT / "feed.xml",
-        "sheet_url": (
-            "https://docs.google.com/spreadsheets/d/"
-            "1vxMdT03FDGt2yi9u_b8RNWlek1avd4rzngiv_ptJBPA/export"
-            "?format=csv&gid=1763821507"
-        ),
-        "name_col": 1,
-        "price_col": 5,
-        "stock_col": None,
+        "price_field": "price",
+        "stock_field": "in_stock",
         "currency": "UAH",
-        "skip_missing": False,
     },
     {
-        # Клієнт PA: дилерський прайс у доларах, ціна з колонки "До 5 шт",
-        # у фід іде в гривнях за фіксованим курсом.
+        # Клієнт PA: окремі (дилерські) ціни і власний набір товарів.
         "path": ROOT / "pa.xml",
-        "sheet_url": (
-            "https://docs.google.com/spreadsheets/d/"
-            "1OXsQttcSS0pSZrGsuZOVnJ8y6ahDiOTUh53P2F2Hzu8/export"
-            "?format=csv&gid=672977454"
-        ),
-        "name_col": 0,
-        "price_col": "До 5 шт",
-        "stock_col": 3,
-        "rate": 45,
+        "price_field": "pa_price",
+        "stock_field": "pa_in_stock",
+        "include_field": "pa",
         "currency": "UAH",
-        "skip_missing": True,
         # Фото для фіду PA: images/pa/<id товару>.jpg;
         # якщо такого немає - беремо звичайне фото.
         "photo_dir": "images/pa",
@@ -84,7 +63,7 @@ CATEGORIES = {
     4: ("Зарядні станції", 71109),
 }
 
-REQUIRED_FIELDS = ("id", "category", "vendor", "name", "key", "summary")
+REQUIRED_FIELDS = ("id", "category", "vendor", "name", "summary")
 
 
 def load_products():
@@ -112,6 +91,14 @@ def load_products():
             continue
         if p["category"] not in CATEGORIES:
             errors.append(f"{path.name}: невідома категорія {p['category']!r}")
+        for f in ("price", "pa_price"):
+            v = p.get(f)
+            if v in ("", None):
+                p[f] = None
+            elif isinstance(v, bool) or not isinstance(v, (int, float)) or v <= 0:
+                errors.append(f"{path.name}: ціна {f}={v!r} має бути додатним числом або порожньою")
+            else:
+                p[f] = round(v)
         photo = p.get("photo") or ""
         if photo and not (ROOT / photo.lstrip("/")).is_file():
             errors.append(f"{path.name}: фото {photo!r} не знайдено")
@@ -169,53 +156,8 @@ def build_description(p, russian):
     return desc_ru, desc_ua
 
 
-def fetch_rows(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        raw = resp.read().decode("utf-8")
-    return list(csv.reader(io.StringIO(raw)))
-
-
-def find_column(rows, header):
-    for row in rows:
-        for i, cell in enumerate(row):
-            if cell.strip().lower() == header.lower():
-                return i
-    sys.exit(f"[error] колонку {header!r} не знайдено в таблиці")
-
-
-def match_prices(products, rows, cfg):
-    """Повертає {product_id: (price:int|None, available:bool)}"""
-    name_col, stock_col = cfg["name_col"], cfg["stock_col"]
-    price_col = cfg["price_col"]
-    if isinstance(price_col, str):
-        price_col = find_column(rows, price_col)
-    min_len = max(c for c in (name_col, price_col, stock_col) if c is not None) + 1
-
-    result = {}
-    for p in products:
-        pid, key = p["id"], p["key"].strip()
-        matches = [row for row in rows if len(row) >= min_len and key.lower() in (row[name_col] or "").lower()]
-        if len(matches) == 0:
-            print(f"[warn] {cfg['path'].name}: товар id={pid} (key={key!r}) не знайдено в таблиці", file=sys.stderr)
-            result[pid] = None
-            continue
-        if len(matches) > 1:
-            print(f"[warn] {cfg['path'].name}: товар id={pid} (key={key!r}) неоднозначний ({len(matches)} збігів)", file=sys.stderr)
-            result[pid] = None
-            continue
-        row = matches[0]
-        price_cell = (row[price_col] or "").strip().replace(" ", "")
-        in_stock = stock_col is None or bool((row[stock_col] or "").strip())
-        if re.fullmatch(r"\d+([.,]\d+)?", price_cell):
-            price = round(float(price_cell.replace(",", ".")) * cfg.get("rate", 1))
-            result[pid] = (price, in_stock)
-        else:
-            result[pid] = (None, False)
-    return result
-
-
-def build_feed(products, price_map, date_str, currency, skip_missing, photo_dir=None, russian=False):
+def build_feed(products, cfg, date_str):
+    currency, photo_dir, russian = cfg["currency"], cfg.get("photo_dir"), cfg.get("russian", False)
     lines = []
     lines.append('<?xml version="1.0" encoding="UTF-8"?>')
     lines.append('<!DOCTYPE yml_catalog SYSTEM "shops.dtd">')
@@ -236,21 +178,14 @@ def build_feed(products, price_map, date_str, currency, skip_missing, photo_dir=
     current_cat = None
     for p in products:
         pid, cat, name = p["id"], p["category"], p["name"]
-        update = price_map.get(pid)
-        if update is None and skip_missing:
+        if cfg.get("include_field") and not p.get(cfg["include_field"]):
             continue
         if cat != current_cat:
             lines.append('')
             current_cat = cat
-        if update is None:
-            # немає надійних даних з таблиці - лишаємо позицію недоступною,
-            # щоб не публікувати застарілу ціну без підтвердження.
-            available = "false"
-            price_line = None
-        else:
-            price, is_avail = update
-            available = "true" if is_avail else "false"
-            price_line = price
+        # Без ціни товар не може бути в наявності.
+        price_line = p.get(cfg["price_field"])
+        available = "true" if price_line is not None and p.get(cfg["stock_field"]) else "false"
 
         lines.append(f'      <offer id="{pid}" available="{available}">')
         # Prom.ua вважає <name>/<description> російським варіантом, а *_ua - українським.
@@ -282,20 +217,11 @@ def build_feed(products, price_map, date_str, currency, skip_missing, photo_dir=
 
 
 def main():
-    import datetime
-
     products = load_products()
     date_str = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M")
-    feeds = []
     for cfg in FEEDS:
-        rows = fetch_rows(cfg["sheet_url"])
-        price_map = match_prices(products, rows, cfg)
-        feed = build_feed(products, price_map, date_str, cfg["currency"], cfg["skip_missing"],
-                          cfg.get("photo_dir"), cfg.get("russian", False))
-        feeds.append((cfg["path"], feed))
-    # Пишемо лише коли всі фіди зібрано, щоб збій однієї таблиці не лишив їх неузгодженими.
-    for path, feed in feeds:
-        path.write_text(feed, encoding="utf-8")
+        path = cfg["path"]
+        path.write_text(build_feed(products, cfg, date_str), encoding="utf-8")
         print(f"{path.name} оновлено ({date_str} UTC)")
 
 

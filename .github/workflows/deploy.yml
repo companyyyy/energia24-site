@@ -6,7 +6,7 @@ on:
   # Коміти бота з оновленими фідами (через GITHUB_TOKEN) не запускають push-подію,
   # тому викладаємо на сервер ще й після кожного оновлення фідів.
   workflow_run:
-    workflows: [ "Update product feed from Google Sheet" ]
+    workflows: [ "Update product feed" ]
     types: [ completed ]
 
 concurrency:

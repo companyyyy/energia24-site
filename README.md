@@ -13,7 +13,7 @@
 | `script.js` | Мобільне меню, кнопки «Замовити», валідація та обробка форм |
 | `admin/` | Адмінка товарів для XML-фідів Prom.ua (Sveltia CMS), див. [admin/README.md](admin/README.md) |
 | `data/products/` | Товари для фідів (по файлу на товар), редагуються через адмінку |
-| `scripts/update_feed.py` | Генерація `feed.xml` і `pa.xml`: товари з `data/products/` + ціни з Google-таблиць |
+| `scripts/update_feed.py` | Генерація `feed.xml` і `pa.xml` з `data/products/` |
 
 Чистий HTML/CSS/JS без фреймворків і бекенду. Форми виводять дані в консоль браузера
 та показують підтвердження користувачу.
