@@ -11,7 +11,7 @@
 | `partnership.html` | Сторінка «Співпраця» з анкетою партнера |
 | `style.css` | Стилі (зелений `#7CB342` / чорний / білий), адаптивна верстка, hover-ефекти |
 | `script.js` | Мобільне меню, кнопки «Замовити», валідація та обробка форм |
-| `admin/` | Адмінка товарів для XML-фідів Prom.ua (Sveltia CMS), див. [admin/README.md](admin/README.md) |
+| `admin/` | Адмінка для XML-фідів Prom.ua: таблиця цін (`/admin/`) і редактор товарів на Sveltia CMS (`/admin/cms/`), див. [admin/README.md](admin/README.md) |
 | `data/products/` | Товари для фідів (по файлу на товар), редагуються через адмінку |
 | `scripts/update_feed.py` | Генерація `feed.xml` і `pa.xml` з `data/products/` |
 

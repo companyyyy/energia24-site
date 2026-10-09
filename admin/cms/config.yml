@@ -1,7 +1,7 @@
 # Адмінка товарів для XML-фідів Prom.ua (feed.xml, pa.xml).
 # Кожне збереження - коміт у GitHub; після нього GitHub Actions
 # перебудовує фіди (.github/workflows/update-feed.yml) і викладає на сервер.
-# Ціни зручніше міняти масово на сторінці /admin/prices.html.
+# Ціни зручніше міняти масово на головній сторінці адмінки /admin/.
 
 backend:
   name: github
@@ -25,7 +25,7 @@ collections:
     label: Товари
     label_singular: Товар
     description: >-
-      Товари для фідів Prom.ua. Ціни всіх товарів одразу - на сторінці energia24.com.ua/admin/prices.html.
+      Ціни всіх товарів одразу, без відкриття кожного товару - на energia24.com.ua/admin/.
       Фіди оновлюються приблизно через 1–2 хвилини після збереження.
     folder: data/products
     format: json
@@ -34,7 +34,7 @@ collections:
     delete: true
     slug: "{{fields.id}}"
     identifier_field: name
-    summary: "{{id}} · {{name}} — {{price}} грн · PA {{pa_price}} грн"
+    summary: "{{id}} · {{name}} — {{price | default('без ціни')}} · PA {{pa_price | default('—')}}"
     sortable_fields: [id, name, category, order, price, pa_price]
     view_filters:
       - { label: Інвертори, field: category, eq: 1 }

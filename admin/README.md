@@ -1,15 +1,16 @@
 # Адмінка товарів для XML-фідів
 
-- Товари: **https://energia24.com.ua/admin/**
-- Ціни всіх товарів однією таблицею: **https://energia24.com.ua/admin/prices.html**
+- Ціни всіх товарів однією таблицею: **https://energia24.com.ua/admin/**
+- Редагування товарів (фото, описи, характеристики, нові товари): **https://energia24.com.ua/admin/cms/**
+  (або кнопка «Редагувати товари →» вгорі таблиці цін)
 
 Тут редагуються товари, які йдуть у фіди Prom.ua (`feed.xml`, `pa.xml`): назва, фото,
 опис, характеристики, категорія, ціни й наявність. Google-таблиці на фіди більше не впливають.
 
 ## Як змінити ціни
 
-1. Відкрити https://energia24.com.ua/admin/prices.html (вхід - той самий, що й в адмінці).
-2. Вписати нові ціни прямо в таблиці. **Enter** - перейти до наступного товару (Shift+Enter - до попереднього).
+1. Відкрити https://energia24.com.ua/admin/ (вхід - токеном GitHub, див. «Перший вхід»).
+2. Клацнути на ціну і вписати нову, прямо в таблиці. **Enter** - перейти до наступного товару (Shift+Enter - до попереднього).
    Пробіли в числах можна («12 500»).
 3. Для кожного фіду окремо: **Роздріб · feed.xml** і **PA · pa.xml**.
    - «В наявності» - галочка; товар без ціни завжди йде як «немає в наявності».
@@ -29,12 +30,13 @@
    - Repository access: *Only select repositories* → `companyyyy/energia24-site`.
    - Permissions → Repository permissions → **Contents: Read and write**.
    - Expiration - на свій розсуд (після закінчення терміну створити новий).
-2. Відкрити https://energia24.com.ua/admin/ → **Sign In with Token** → вставити токен.
+2. Відкрити https://energia24.com.ua/admin/ → вставити токен → **Увійти**.
+   Для редактора товарів (`/admin/cms/`) - **Sign In with Token** і той самий токен.
    Токен зберігається лише у вашому браузері. Нікому його не пересилайте.
 
 ## Як додати товар
 
-1. **Товари → New Товар**.
+1. https://energia24.com.ua/admin/cms/ → **Товари → Створити**.
 2. **ID товару** - наступне вільне число (найбільший ID у списку + 1).
 3. Заповнити категорію, виробника, назву українською.
 4. **Фото** - тільки на білому фоні (вимога Prom), бажано квадратне від 800 px.
@@ -64,6 +66,6 @@ Actions → «Update product feed» видно, що саме не так.
 
 - Товари: `data/products/<id>.json`, фото: `images/products/`.
 - Фото саме для фіду PA (якщо потрібне інше): `images/pa/<id>.jpg` - поки що лише вручну.
-- Адмінка - [Sveltia CMS](https://sveltiacms.app), налаштування в `admin/config.yml`.
-- Сторінка цін - `admin/prices.html` (комітить зміни через GitHub API тим самим токеном).
+- Таблиця цін - `admin/index.html` (комітить зміни через GitHub API).
+- Редактор товарів - [Sveltia CMS](https://sveltiacms.app) у `admin/cms/`, налаштування в `admin/cms/config.yml`.
 - Генерація фідів: `scripts/update_feed.py`, переклади: `scripts/translate_ru.py`.
