@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2026-10-10 10:08">
+<yml_catalog date="2026-10-10 15:30">
   <shop>
     <name>ENERGIA24</name>
     <company>ENERGIA24</company>
@@ -16,7 +16,7 @@
     </categories>
     <offers>
 
-      <offer id="1" available="true">
+      <offer id="1" available="false">
         <name>Гібридний інвертор Must PV18-1012VPK</name>
         <name_ua>Гібридний інвертор Must PV18-1012VPK</name_ua>
         <price>10000</price>
