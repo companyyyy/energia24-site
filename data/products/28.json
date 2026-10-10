@@ -1,8 +1,8 @@
 {
   "id": 28,
-  "enabled": true,
-  "order": 290,
+  "enabled": false,
   "category": 3,
+  "order": 290,
   "vendor": "Must",
   "name": "Система зберігання енергії 2в1 MUST HBP18-3024OS",
   "price": 47400,
@@ -16,131 +16,196 @@
   "specs": [
     {
       "label": "Номінальна потужність",
-      "value": "3000 Вт"
+      "value": "3000 Вт",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Номінальна напруга АКБ",
-      "value": "24 В"
+      "value": "24 В",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Макс. потужність PV",
-      "value": "1800 Вт"
+      "value": "1800 Вт",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Макс. струм сонячного заряджання",
-      "value": "60 А"
+      "value": "60 А",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Макс. сумарний струм заряджання",
-      "value": "120 А"
+      "value": "120 А",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Макс. напруга холостого ходу PV",
-      "value": "160 В"
+      "value": "160 В",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Діапазон напруги MPPT",
-      "value": "30–128 В"
+      "value": "30–128 В",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Макс. струм заряджання від мережі",
-      "value": "60 А"
+      "value": "60 А",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Енергія батареї",
-      "value": "3072 Вт·год"
+      "value": "3072 Вт·год",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Номінальна напруга батареї",
-      "value": "25.6 В"
+      "value": "25.6 В",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Ємність батареї",
-      "value": "120 А·год"
+      "value": "120 А·год",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Плата захисту (BMS)",
-      "value": "150 А"
+      "value": "150 А",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Форма вихідного сигналу",
-      "value": "чиста синусоїда"
+      "value": "чиста синусоїда",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Вихідна напруга",
-      "value": "230 В ±5%"
+      "value": "230 В ±5%",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Вихідна частота",
-      "value": "50 / 60 Гц (±0.2 Гц)"
+      "value": "50 / 60 Гц (±0.2 Гц)",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "ККД інвертора (пік.)",
-      "value": "90%"
+      "value": "90%",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Споживання в режимі очікування",
-      "value": "&lt; 25 Вт"
+      "value": "&lt; 25 Вт",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Тип сонячного контролера",
-      "value": "MPPT"
+      "value": "MPPT",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "ККД MPPT-контролера (макс.)",
-      "value": "98%"
+      "value": "98%",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Вхідна напруга AC",
-      "value": "230 В ±5%, допустимий діапазон 90–280 В"
+      "value": "230 В ±5%, допустимий діапазон 90–280 В",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Частота",
-      "value": "50 / 60 Гц (автовизначення)"
+      "value": "50 / 60 Гц (автовизначення)",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Час перемикання",
-      "value": "10 мс (UPS, VDE), 20 мс (APL)"
+      "value": "10 мс (UPS, VDE), 20 мс (APL)",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Алгоритм заряджання",
-      "value": "4-етапний (Li)"
+      "value": "4-етапний (Li)",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Виходи",
-      "value": "3 розетки 230 В, USB Type-C ×1, USB-A 12 В/1 А ×2, USB-A 5 В ×4"
+      "value": "3 розетки 230 В, USB Type-C ×1, USB-A 12 В/1 А ×2, USB-A 5 В ×4",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Тип акумулятора",
-      "value": "LiFePO4"
+      "value": "LiFePO4",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Стандартний струм заряду / розряду",
-      "value": "50 А"
+      "value": "50 А",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Температура заряджання",
-      "value": "0…+45 °C"
+      "value": "0…+45 °C",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Температура розряджання",
-      "value": "+10…+60 °C"
+      "value": "+10…+60 °C",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Сертифікація",
-      "value": "CE-EMC, LVD (EN 61000-6-3, EN 61000-6-1, EN IEC 62109-1, EN IEC 62109-2)"
+      "value": "CE-EMC, LVD (EN 61000-6-3, EN 61000-6-1, EN IEC 62109-1, EN IEC 62109-2)",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Розміри (Ш×В×Г)",
-      "value": "288×348×490 мм"
+      "value": "288×348×490 мм",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Розміри упаковки (Ш×В×Г)",
-      "value": "570×370×445 мм"
+      "value": "570×370×445 мм",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Вага нетто / брутто",
-      "value": "33 кг / 36 кг"
+      "value": "33 кг / 36 кг",
+      "label_ru": "",
+      "value_ru": ""
     }
-  ]
+  ],
+  "name_ru": ""
 }
