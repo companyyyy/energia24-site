@@ -1,8 +1,8 @@
 {
   "id": 13,
-  "enabled": true,
-  "order": 130,
+  "enabled": false,
   "category": 2,
+  "order": 130,
   "vendor": "Must",
   "name": "Акумулятор MUST LP15-24100",
   "price": 25000,
@@ -16,71 +16,106 @@
   "specs": [
     {
       "label": "Тип акумулятора",
-      "value": "LiFePO4"
+      "value": "LiFePO4",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Номінальна напруга",
-      "value": "25.6 В"
+      "value": "25.6 В",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Номінальна ємність",
-      "value": "100 А·год"
+      "value": "100 А·год",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Номінальна енергія",
-      "value": "2560 Вт·год"
+      "value": "2560 Вт·год",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Ресурс",
-      "value": "4000+ циклів (80% DOD)"
+      "value": "4000+ циклів (80% DOD)",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Рекомендований струм заряду",
-      "value": "20 А"
+      "value": "20 А",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Рекомендована напруга заряду",
-      "value": "29.2 В"
+      "value": "29.2 В",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Кінцева напруга розряду",
-      "value": "20 В"
+      "value": "20 В",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Стандартний струм заряду / розряду",
-      "value": "20 А / 50 А"
+      "value": "20 А / 50 А",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Макс. безперервний струм заряду / розряду",
-      "value": "100 А / 100 А"
+      "value": "100 А / 100 А",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Напруга відключення BMS",
-      "value": "заряд &lt;31.2 В, розряд &gt;16 В"
+      "value": "заряд &lt;31.2 В, розряд &gt;16 В",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Температура заряджання",
-      "value": "0…+45 °C"
+      "value": "0…+45 °C",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Температура розряджання",
-      "value": "−20…+55 °C"
+      "value": "−20…+55 °C",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Температура зберігання",
-      "value": "−5…+35 °C"
+      "value": "−5…+35 °C",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Матеріал корпусу",
-      "value": "ABS+PC"
+      "value": "ABS+PC",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Розміри (Д×Ш×В)",
-      "value": "483×170×240 мм"
+      "value": "483×170×240 мм",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Вага",
-      "value": "≈22.5 кг"
+      "value": "≈22.5 кг",
+      "label_ru": "",
+      "value_ru": ""
     }
-  ]
+  ],
+  "name_ru": ""
 }
