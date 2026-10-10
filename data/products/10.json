@@ -1,8 +1,8 @@
 {
   "id": 10,
-  "enabled": true,
-  "order": 100,
+  "enabled": false,
   "category": 2,
+  "order": 100,
   "vendor": "Deye",
   "name": "Акумулятор DEYE SE-F5 Pro-C",
   "price": 40365,
@@ -16,91 +16,136 @@
   "specs": [
     {
       "label": "Тип акумулятора",
-      "value": "LiFePO4"
+      "value": "LiFePO4",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Номінальна ємність",
-      "value": "100 А·год"
+      "value": "100 А·год",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Номінальна напруга",
-      "value": "51.2 В"
+      "value": "51.2 В",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Робоча напруга",
-      "value": "44.8–57.6 В"
+      "value": "44.8–57.6 В",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Номінальна енергія",
-      "value": "5.12 кВт·год"
+      "value": "5.12 кВт·год",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Струм заряду",
-      "value": "100 А безперервний, 150 А піковий (120 с)"
+      "value": "100 А безперервний, 150 А піковий (120 с)",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Струм розряду",
-      "value": "100 А безперервний, 150 А піковий (120 с)"
+      "value": "100 А безперервний, 150 А піковий (120 с)",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Рекомендована глибина розряду",
-      "value": "90% DoD"
+      "value": "90% DoD",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Індикація",
-      "value": "LED (SOC, робота, захист) і зумер"
+      "value": "LED (SOC, робота, захист) і зумер",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Ступінь захисту",
-      "value": "IP21"
+      "value": "IP21",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Температура заряджання",
-      "value": "0…+55 °C"
+      "value": "0…+55 °C",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Температура розряджання",
-      "value": "−20…+55 °C"
+      "value": "−20…+55 °C",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Температура зберігання",
-      "value": "0…+35 °C"
+      "value": "0…+35 °C",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Вологість",
-      "value": "до 95% (без конденсації)"
+      "value": "до 95% (без конденсації)",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Висота над рівнем моря",
-      "value": "до 3000 м"
+      "value": "до 3000 м",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Ресурс",
-      "value": "≥6000 циклів"
+      "value": "≥6000 циклів",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Паралельне з'єднання",
-      "value": "до 32 батарей"
+      "value": "до 32 батарей",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Монтаж",
-      "value": "настінний, підлоговий або модульний (стек)"
+      "value": "настінний, підлоговий або модульний (стек)",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Комунікація",
-      "value": "CAN 2.0, RS485, додатковий модуль Wi-Fi + Bluetooth (застосунок)"
+      "value": "CAN 2.0, RS485, додатковий модуль Wi-Fi + Bluetooth (застосунок)",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Енергетичний ресурс",
-      "value": "16 МВт·год"
+      "value": "16 МВт·год",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Розміри (Ш×В×Г)",
-      "value": "404×547×141 мм"
+      "value": "404×547×141 мм",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Вага",
-      "value": "≈44 кг"
+      "value": "≈44 кг",
+      "label_ru": "",
+      "value_ru": ""
     }
-  ]
+  ],
+  "name_ru": ""
 }
