@@ -1,8 +1,8 @@
 {
   "id": 24,
-  "enabled": true,
-  "order": 240,
+  "enabled": false,
   "category": 2,
+  "order": 240,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLA48280",
   "price": 72000,
@@ -16,95 +16,142 @@
   "specs": [
     {
       "label": "Тип акумулятора",
-      "value": "LiFePO4"
+      "value": "LiFePO4",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Номінальна енергія",
-      "value": "14.3 кВт·год"
+      "value": "14.3 кВт·год",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Номінальна ємність",
-      "value": "280 А·год"
+      "value": "280 А·год",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Номінальна напруга",
-      "value": "51.2 В"
+      "value": "51.2 В",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Робоча напруга",
-      "value": "44.8–57.6 В"
+      "value": "44.8–57.6 В",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Макс. безперервний струм заряду / розряду",
-      "value": "150 А"
+      "value": "150 А",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Піковий струм заряду / розряду (15 с)",
-      "value": "300 А"
+      "value": "300 А",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Макс. потужність заряду / розряду (15 с)",
-      "value": "7500 Вт"
+      "value": "7500 Вт",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Масштабування",
-      "value": "до 15 шт. паралельно (214.5 кВт·год)"
+      "value": "до 15 шт. паралельно (214.5 кВт·год)",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Глибина розряду (DOD)",
-      "value": "≥95%"
+      "value": "≥95%",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Дисплей",
-      "value": "LCD"
+      "value": "LCD",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Ступінь захисту",
-      "value": "IP21"
+      "value": "IP21",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Температура заряджання",
-      "value": "0…+55 °C"
+      "value": "0…+55 °C",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Температура розряджання",
-      "value": "−20…+55 °C"
+      "value": "−20…+55 °C",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Температура зберігання",
-      "value": "0…+35 °C"
+      "value": "0…+35 °C",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Вологість",
-      "value": "5–95%"
+      "value": "5–95%",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Комунікація",
-      "value": "RS485 / CAN, вбудовані Wi-Fi / Bluetooth"
+      "value": "RS485 / CAN, вбудовані Wi-Fi / Bluetooth",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Ресурс",
-      "value": "≥6000 циклів"
+      "value": "≥6000 циклів",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Монтаж",
-      "value": "підлоговий"
+      "value": "підлоговий",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Захист",
-      "value": "Smart BMS, автомат, запобіжник, аерозольна система пожежогасіння"
+      "value": "Smart BMS, автомат, запобіжник, аерозольна система пожежогасіння",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Сертифікація",
-      "value": "UN38.3"
+      "value": "UN38.3",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Розміри",
-      "value": "480×1100×300 мм"
+      "value": "480×1100×300 мм",
+      "label_ru": "",
+      "value_ru": ""
     },
     {
       "label": "Вага",
-      "value": "135 кг"
+      "value": "135 кг",
+      "label_ru": "",
+      "value_ru": ""
     }
-  ]
+  ],
+  "name_ru": ""
 }
