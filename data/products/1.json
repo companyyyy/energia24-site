@@ -6,7 +6,7 @@
   "vendor": "Must",
   "name": "Гібридний інвертор Must PV18-1012VPK",
   "price": 10000,
-  "in_stock": true,
+  "in_stock": false,
   "pa": false,
   "pa_price": 8100,
   "pa_in_stock": true,
