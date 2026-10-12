@@ -41,6 +41,7 @@ collections:
       - { label: Акумулятори, field: category, eq: 2 }
       - { label: "Системи 2 в 1", field: category, eq: 3 }
       - { label: Зарядні станції, field: category, eq: 4 }
+      - { label: Аксесуари, field: category, eq: 5 }
       - { label: Приховані, field: enabled, pattern: false }
     fields:
       - name: id
@@ -63,6 +64,7 @@ collections:
           - { label: Акумулятори, value: 2 }
           - { label: "Системи зберігання енергії 2 в 1", value: 3 }
           - { label: Зарядні станції, value: 4 }
+          - { label: Аксесуари для інверторів, value: 5 }
       - name: order
         label: Порядок у категорії
         widget: number
