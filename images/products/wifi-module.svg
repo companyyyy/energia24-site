@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Заглушка зображення Wi-Fi-модуля, доки немає фото товару -->
+  <rect x="120" y="96" width="160" height="150" rx="18" fill="#ffffff" stroke="#111111" stroke-width="6"/>
+  <rect x="172" y="246" width="56" height="26" rx="5" fill="#111111"/>
+  <rect x="182" y="252" width="8" height="14" rx="2" fill="#ffffff"/>
+  <rect x="196" y="252" width="8" height="14" rx="2" fill="#ffffff"/>
+  <rect x="210" y="252" width="8" height="14" rx="2" fill="#ffffff"/>
+  <g stroke="#7CB342" stroke-width="9" stroke-linecap="round">
+    <path d="M160 166a56 56 0 0 1 80 0"/>
+    <path d="M140 146a84 84 0 0 1 120 0"/>
+    <path d="M180 186a28 28 0 0 1 40 0"/>
+  </g>
+  <circle cx="200" cy="206" r="8" fill="#7CB342"/>
+  <circle cx="146" cy="224" r="5" fill="#7CB342"/>
+  <circle cx="162" cy="224" r="5" fill="#111111" opacity=".35"/>
+  <text x="200" y="66" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="30" font-weight="800" fill="#111111">MUST Wi-Fi</text>
+</svg>
