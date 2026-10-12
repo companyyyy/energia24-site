@@ -56,13 +56,11 @@ FEEDS = [
 # id -> (назва, portal_id - ID відповідної категорії в каталозі Prom.ua,
 #        щоб маркетплейс не вгадував категорію сам і не плутав, напр., із Samsung).
 # ID звірені з категоріями конкурентів, що продають ті самі бренди (MUST/Felicity/EcoFlow).
-# None - portal_id не передається, категорію Prom.ua визначає сам.
 CATEGORIES = {
     1: ("Інвертори", 5140401),
     2: ("Акумулятори", 5280501),
     3: ("Системи зберігання енергії 2 в 1", 14191106),
     4: ("Зарядні станції", 71109),
-    5: ("Аксесуари для інверторів", None),
 }
 
 REQUIRED_FIELDS = ("id", "category", "vendor", "name", "summary")
@@ -173,8 +171,7 @@ def build_feed(products, cfg, date_str):
     lines.append('    </currencies>')
     lines.append('    <categories>')
     for cid, (cname, portal_id) in CATEGORIES.items():
-        portal_attr = f' portal_id="{portal_id}"' if portal_id else ""
-        lines.append(f'      <category id="{cid}"{portal_attr}>{cname}</category>')
+        lines.append(f'      <category id="{cid}" portal_id="{portal_id}">{cname}</category>')
     lines.append('    </categories>')
     lines.append('    <offers>')
 
