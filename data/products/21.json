@@ -6,7 +6,7 @@
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLA48171",
   "price": 60100,
-  "in_stock": true,
+  "in_stock": false,
   "pa": false,
   "pa_price": null,
   "pa_in_stock": false,

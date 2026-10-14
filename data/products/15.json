@@ -6,7 +6,7 @@
   "vendor": "Must",
   "name": "Акумулятор MUST LP16-24200",
   "price": 37800,
-  "in_stock": true,
+  "in_stock": false,
   "pa": true,
   "pa_price": 38250,
   "pa_in_stock": true,
