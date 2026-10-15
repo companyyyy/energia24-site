@@ -1,11 +1,12 @@
 {
   "id": 7,
+  "avtonomka_id": "152085",
   "enabled": true,
   "order": 70,
   "category": 1,
   "vendor": "Felicity",
   "name": "Гібридний інвертор Felicity IVEM6048-II",
-  "price": 25000,
+  "price": 22649,
   "in_stock": true,
   "pa": true,
   "pa_price": 21150,
@@ -122,5 +123,7 @@
       "label": "Вага",
       "value": "12.5 кг"
     }
-  ]
+  ],
+  "feed_price": 22649,
+  "feed_in_stock": true
 }

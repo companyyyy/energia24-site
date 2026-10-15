@@ -1,11 +1,12 @@
 {
   "id": 3,
+  "avtonomka_id": "142723",
   "enabled": true,
   "order": 30,
   "category": 1,
   "vendor": "Must",
   "name": "Гібридний інвертор Must PV18-3224VPM II",
-  "price": 13500,
+  "price": 15137,
   "in_stock": true,
   "pa": true,
   "pa_price": 12150,
@@ -134,5 +135,7 @@
       "label": "Вага нетто / брутто",
       "value": "5.5 кг / 6.5 кг"
     }
-  ]
+  ],
+  "feed_price": 15137,
+  "feed_in_stock": true
 }

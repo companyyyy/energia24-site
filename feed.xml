@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2026-10-15 10:19">
+<yml_catalog date="2026-10-15 10:50">
   <shop>
     <name>ENERGIA24</name>
     <company>ENERGIA24</company>
@@ -30,7 +30,7 @@
       <offer id="2" available="true">
         <name>Гібридний інвертор Must PV18-1512 VPM II</name>
         <name_ua>Гібридний інвертор Must PV18-1512 VPM II</name_ua>
-        <price>11500</price>
+        <price>11571</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-pv18-1512vpm.jpg</picture>
@@ -41,7 +41,7 @@
       <offer id="3" available="true">
         <name>Гібридний інвертор Must PV18-3224VPM II</name>
         <name_ua>Гібридний інвертор Must PV18-3224VPM II</name_ua>
-        <price>13500</price>
+        <price>15137</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-pv18-3224vpm.jpg</picture>
@@ -49,9 +49,10 @@
         <description><![CDATA[<p>Гібридний інвертор Must PV18-3224VPM II.</p><h3>Технічні характеристики</h3><ul><li><b>Номінальна потужність:</b> 3200 Вт (3200 ВА)</li><li><b>Пікова потужність:</b> 6400 ВА</li><li><b>Форма вихідного сигналу:</b> чиста синусоїда</li><li><b>Вихідна напруга (режим АКБ):</b> 230 В AC</li><li><b>ККД інвертора (пік.):</b> 90–93%</li><li><b>Час перемикання:</b> 10 мс (UPS / VDE4105), 20 мс (APL)</li><li><b>Номінальна вхідна напруга AC:</b> 230 В</li><li><b>Діапазон вхідної напруги AC:</b> 170–280 В (UPS) / 90–280 В (APL) / 184–253 В (VDE)</li><li><b>Частота:</b> 50 / 60 Гц (автовизначення)</li><li><b>Номінальна напруга АКБ:</b> 24 В</li><li><b>Напруга плаваючого заряду:</b> 27.4 В</li><li><b>Захист від перезаряду:</b> 30 В</li><li><b>Тип сонячного контролера:</b> MPPT</li><li><b>Макс. напруга холостого ходу PV:</b> 160 В</li><li><b>Діапазон напруги MPPT:</b> 30–128 В</li><li><b>Макс. потужність PV:</b> 1600 Вт</li><li><b>Макс. струм сонячного заряджання:</b> 60 А</li><li><b>Макс. струм заряджання від мережі:</b> 60 А</li><li><b>Макс. сумарний струм заряджання:</b> 120 А</li><li><b>ККД MPPT-контролера (макс.):</b> 98%</li><li><b>Споживання в режимі очікування:</b> 2 Вт</li><li><b>Моніторинг:</b> USB, RS485, CAN; Wi-Fi (опційно)</li><li><b>Зв'язок з BMS літієвих АКБ:</b> так (порт CAN)</li><li><b>Сертифікація:</b> CE-EMC, LVD (EN 61000-6-3, EN 61000-6-1, EN IEC 62109-1, EN IEC 62109-2)</li><li><b>Робоча температура:</b> 0…+50 °C</li><li><b>Температура зберігання:</b> −15…+60 °C</li><li><b>Вологість:</b> 5–95% (без конденсації)</li><li><b>Розміри (Ш×В×Г):</b> 254.5×367.4×103 мм</li><li><b>Розміри упаковки (Ш×В×Г):</b> 436×331×189 мм</li><li><b>Вага нетто / брутто:</b> 5.5 кг / 6.5 кг</li></ul>]]></description>
         <description_ua><![CDATA[<p>Гібридний інвертор Must PV18-3224VPM II.</p><h3>Технічні характеристики</h3><ul><li><b>Номінальна потужність:</b> 3200 Вт (3200 ВА)</li><li><b>Пікова потужність:</b> 6400 ВА</li><li><b>Форма вихідного сигналу:</b> чиста синусоїда</li><li><b>Вихідна напруга (режим АКБ):</b> 230 В AC</li><li><b>ККД інвертора (пік.):</b> 90–93%</li><li><b>Час перемикання:</b> 10 мс (UPS / VDE4105), 20 мс (APL)</li><li><b>Номінальна вхідна напруга AC:</b> 230 В</li><li><b>Діапазон вхідної напруги AC:</b> 170–280 В (UPS) / 90–280 В (APL) / 184–253 В (VDE)</li><li><b>Частота:</b> 50 / 60 Гц (автовизначення)</li><li><b>Номінальна напруга АКБ:</b> 24 В</li><li><b>Напруга плаваючого заряду:</b> 27.4 В</li><li><b>Захист від перезаряду:</b> 30 В</li><li><b>Тип сонячного контролера:</b> MPPT</li><li><b>Макс. напруга холостого ходу PV:</b> 160 В</li><li><b>Діапазон напруги MPPT:</b> 30–128 В</li><li><b>Макс. потужність PV:</b> 1600 Вт</li><li><b>Макс. струм сонячного заряджання:</b> 60 А</li><li><b>Макс. струм заряджання від мережі:</b> 60 А</li><li><b>Макс. сумарний струм заряджання:</b> 120 А</li><li><b>ККД MPPT-контролера (макс.):</b> 98%</li><li><b>Споживання в режимі очікування:</b> 2 Вт</li><li><b>Моніторинг:</b> USB, RS485, CAN; Wi-Fi (опційно)</li><li><b>Зв'язок з BMS літієвих АКБ:</b> так (порт CAN)</li><li><b>Сертифікація:</b> CE-EMC, LVD (EN 61000-6-3, EN 61000-6-1, EN IEC 62109-1, EN IEC 62109-2)</li><li><b>Робоча температура:</b> 0…+50 °C</li><li><b>Температура зберігання:</b> −15…+60 °C</li><li><b>Вологість:</b> 5–95% (без конденсації)</li><li><b>Розміри (Ш×В×Г):</b> 254.5×367.4×103 мм</li><li><b>Розміри упаковки (Ш×В×Г):</b> 436×331×189 мм</li><li><b>Вага нетто / брутто:</b> 5.5 кг / 6.5 кг</li></ul>]]></description_ua>
       </offer>
-      <offer id="4" available="false">
+      <offer id="4" available="true">
         <name>Гібридний інвертор MUST PV19-4024 EXP</name>
         <name_ua>Гібридний інвертор MUST PV19-4024 EXP</name_ua>
+        <price>18660</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-pv19-4024exp.jpg</picture>
@@ -62,7 +63,7 @@
       <offer id="5" available="true">
         <name>Гібридний інвертор Must PV19-6048EXP</name>
         <name_ua>Гібридний інвертор Must PV19-6048EXP</name_ua>
-        <price>23000</price>
+        <price>24945</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-pv19-6048exp.jpg</picture>
@@ -83,7 +84,7 @@
       <offer id="7" available="true">
         <name>Гібридний інвертор Felicity IVEM6048-II</name>
         <name_ua>Гібридний інвертор Felicity IVEM6048-II</name_ua>
-        <price>25000</price>
+        <price>22649</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-ivem6048.jpg</picture>
@@ -115,7 +116,7 @@
       <offer id="12" available="true">
         <name>Акумулятор MUST LP15-12100</name>
         <name_ua>Акумулятор MUST LP15-12100</name_ua>
-        <price>14000</price>
+        <price>14236</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-lp15-12100.jpg</picture>
@@ -126,7 +127,7 @@
       <offer id="14" available="true">
         <name>Акумулятор MUST LP16-24100</name>
         <name_ua>Акумулятор MUST LP16-24100</name_ua>
-        <price>30000</price>
+        <price>31672</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-lp16-24100.jpg</picture>
@@ -134,10 +135,10 @@
         <description><![CDATA[<p>Акумулятор MUST LP16-24100.</p><h3>Технічні характеристики</h3><ul><li><b>Тип акумулятора:</b> LiFePO4</li><li><b>Номінальна напруга:</b> 25.6 В</li><li><b>Номінальна ємність:</b> 100 А·год</li><li><b>Номінальна енергія:</b> 2560 Вт·год</li><li><b>Рекомендована напруга заряду:</b> 29.2 В</li><li><b>Рекомендований струм заряду:</b> 20 А</li><li><b>Кінцева напруга розряду:</b> 22 В</li><li><b>Стандартний струм заряду / розряду:</b> 20 А / 50 А</li><li><b>Макс. безперервний струм заряду / розряду:</b> 100 А / 100 А</li><li><b>Ресурс:</b> 6000 циклів при 80% DOD, 25 °C</li><li><b>Температура заряджання:</b> 0…+45 °C</li><li><b>Температура розряджання:</b> −10…+55 °C</li><li><b>Температура зберігання:</b> −5…+35 °C</li><li><b>Паралельне з'єднання:</b> до 15 модулів</li><li><b>Комунікація:</b> CAN 2.0, RS232, RS485</li><li><b>BMS:</b> вбудована Smart BMS з Wi-Fi</li><li><b>Ступінь захисту:</b> IP21</li><li><b>Монтаж:</b> настінний, у стек або в стійку</li><li><b>Сертифікація:</b> CE, IEC, UN38.3</li><li><b>Розміри (В×Ш×Г):</b> 485.5×442×177 мм</li><li><b>Вага:</b> 27 кг</li></ul>]]></description>
         <description_ua><![CDATA[<p>Акумулятор MUST LP16-24100.</p><h3>Технічні характеристики</h3><ul><li><b>Тип акумулятора:</b> LiFePO4</li><li><b>Номінальна напруга:</b> 25.6 В</li><li><b>Номінальна ємність:</b> 100 А·год</li><li><b>Номінальна енергія:</b> 2560 Вт·год</li><li><b>Рекомендована напруга заряду:</b> 29.2 В</li><li><b>Рекомендований струм заряду:</b> 20 А</li><li><b>Кінцева напруга розряду:</b> 22 В</li><li><b>Стандартний струм заряду / розряду:</b> 20 А / 50 А</li><li><b>Макс. безперервний струм заряду / розряду:</b> 100 А / 100 А</li><li><b>Ресурс:</b> 6000 циклів при 80% DOD, 25 °C</li><li><b>Температура заряджання:</b> 0…+45 °C</li><li><b>Температура розряджання:</b> −10…+55 °C</li><li><b>Температура зберігання:</b> −5…+35 °C</li><li><b>Паралельне з'єднання:</b> до 15 модулів</li><li><b>Комунікація:</b> CAN 2.0, RS232, RS485</li><li><b>BMS:</b> вбудована Smart BMS з Wi-Fi</li><li><b>Ступінь захисту:</b> IP21</li><li><b>Монтаж:</b> настінний, у стек або в стійку</li><li><b>Сертифікація:</b> CE, IEC, UN38.3</li><li><b>Розміри (В×Ш×Г):</b> 485.5×442×177 мм</li><li><b>Вага:</b> 27 кг</li></ul>]]></description_ua>
       </offer>
-      <offer id="15" available="false">
+      <offer id="15" available="true">
         <name>Акумулятор MUST LP16-24200</name>
         <name_ua>Акумулятор MUST LP16-24200</name_ua>
-        <price>37800</price>
+        <price>42966</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-lp16-24200.jpg</picture>
@@ -148,7 +149,7 @@
       <offer id="17" available="true">
         <name>Акумулятор MUST LP16-48300</name>
         <name_ua>Акумулятор MUST LP16-48300</name_ua>
-        <price>81000</price>
+        <price>83819</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-lp16-48300.jpg</picture>
@@ -159,7 +160,7 @@
       <offer id="18" available="true">
         <name>Акумулятор Felicity FLA12100PG2</name>
         <name_ua>Акумулятор Felicity FLA12100PG2</name_ua>
-        <price>13700</price>
+        <price>13032</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-fla12100pg2.jpg</picture>
@@ -192,7 +193,7 @@
       <offer id="22" available="true">
         <name>Акумулятор Felicity FLA48230</name>
         <name_ua>Акумулятор Felicity FLA48230</name_ua>
-        <price>70000</price>
+        <price>77277</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-fla48230.jpg</picture>
@@ -203,7 +204,7 @@
       <offer id="23" available="true">
         <name>Акумулятор Felicity FLB48230WG1-H</name>
         <name_ua>Акумулятор Felicity FLB48230WG1-H</name_ua>
-        <price>70500</price>
+        <price>77300</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-flb48230wg1.jpg</picture>
@@ -214,7 +215,7 @@
       <offer id="25" available="true">
         <name>Акумулятор Felicity FLA48314-EU</name>
         <name_ua>Акумулятор Felicity FLA48314-EU</name_ua>
-        <price>85500</price>
+        <price>90015</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-fla48314eu.jpg</picture>
@@ -225,7 +226,7 @@
       <offer id="26" available="true">
         <name>Акумулятор Felicity FLB48314TG1-H</name>
         <name_ua>Акумулятор Felicity FLB48314TG1-H</name_ua>
-        <price>85500</price>
+        <price>90336</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-flb48314tg1.jpg</picture>
@@ -244,10 +245,10 @@
         <description_ua><![CDATA[<p>Акумулятор Felicity FLA48460TG2-EU.</p><h3>Технічні характеристики</h3><ul><li><b>Тип акумулятора:</b> LiFePO4</li><li><b>Номінальна енергія:</b> 23.5 кВт·год</li><li><b>Номінальна напруга:</b> 51.2 В</li><li><b>Робоча напруга:</b> 44.8–57.6 В</li><li><b>Масштабування:</b> до 15 шт. паралельно</li><li><b>Глибина розряду (DOD):</b> 95%</li><li><b>Комунікація:</b> RS485 / CAN, вбудовані Wi-Fi / Bluetooth</li><li><b>Ступінь захисту:</b> IP21</li><li><b>Температура заряджання:</b> 0…+55 °C</li><li><b>Температура розряджання:</b> −20…+55 °C</li><li><b>Монтаж:</b> підлоговий</li><li><b>Захист:</b> вбудована BMS, зовнішній запобіжник, аерозольна система пожежогасіння</li><li><b>Розміри:</b> 570×250×980 мм</li><li><b>Вага:</b> 220 кг</li></ul>]]></description_ua>
       </offer>
 
-      <offer id="27" available="false">
+      <offer id="27" available="true">
         <name>Система зберігання енергії 2в1 MUST HBP18-1212 OS</name>
         <name_ua>Система зберігання енергії 2в1 MUST HBP18-1212 OS</name_ua>
-        <price>25000</price>
+        <price>20673</price>
         <currencyId>UAH</currencyId>
         <categoryId>3</categoryId>
         <picture>https://energia24.com.ua/images/products/sys-hbp18-1012.jpg</picture>
@@ -255,9 +256,10 @@
         <description><![CDATA[<p>Система зберігання енергії 2в1 MUST HBP18-1212 OS.</p><h3>Технічні характеристики</h3><ul><li><b>Номінальна потужність:</b> 1200 Вт</li><li><b>Номінальна напруга АКБ:</b> 12 В</li><li><b>Макс. потужність PV:</b> 900 Вт</li><li><b>Макс. струм сонячного заряджання:</b> 60 А</li><li><b>Макс. сумарний струм заряджання:</b> 70 А</li><li><b>Макс. напруга холостого ходу PV:</b> 105 В</li><li><b>Діапазон напруги MPPT:</b> 15–105 В</li><li><b>Макс. струм заряджання від мережі:</b> 20 А</li><li><b>Енергія батареї:</b> 1280 Вт·год</li><li><b>Номінальна напруга батареї:</b> 12.8 В</li><li><b>Ємність батареї:</b> 100 А·год</li><li><b>Плата захисту (BMS):</b> 100 А</li><li><b>Форма вихідного сигналу:</b> чиста синусоїда</li><li><b>Вихідна напруга:</b> 230 В ±5%</li><li><b>Вихідна частота:</b> 50 / 60 Гц (±0.2 Гц)</li><li><b>ККД інвертора (пік.):</b> 90%</li><li><b>Споживання в режимі очікування:</b> &lt; 25 Вт</li><li><b>Тип сонячного контролера:</b> MPPT</li><li><b>ККД MPPT-контролера (макс.):</b> 98%</li><li><b>Вхідна напруга AC:</b> 230 В ±5%, допустимий діапазон 90–280 В</li><li><b>Частота:</b> 50 / 60 Гц (автовизначення)</li><li><b>Час перемикання:</b> 10 мс (UPS, VDE), 20 мс (APL)</li><li><b>Алгоритм заряджання:</b> 4-етапний (Li)</li><li><b>Виходи:</b> 3 розетки 230 В, USB Type-C ×1, USB-A 12 В/1 А ×2, USB-A 5 В ×4</li><li><b>Тип акумулятора:</b> LiFePO4</li><li><b>Стандартний струм заряду / розряду:</b> 50 А</li><li><b>Температура заряджання:</b> 0…+45 °C</li><li><b>Температура розряджання:</b> +10…+60 °C</li><li><b>Сертифікація:</b> CE-EMC, LVD (EN 61000-6-3, EN 61000-6-1, EN IEC 62109-1, EN IEC 62109-2)</li><li><b>Розміри (Ш×В×Г):</b> 225×295×363 мм</li><li><b>Розміри упаковки (Ш×В×Г):</b> 440×305×355 мм</li><li><b>Вага нетто / брутто:</b> 17 кг / 18.5 кг</li></ul>]]></description>
         <description_ua><![CDATA[<p>Система зберігання енергії 2в1 MUST HBP18-1212 OS.</p><h3>Технічні характеристики</h3><ul><li><b>Номінальна потужність:</b> 1200 Вт</li><li><b>Номінальна напруга АКБ:</b> 12 В</li><li><b>Макс. потужність PV:</b> 900 Вт</li><li><b>Макс. струм сонячного заряджання:</b> 60 А</li><li><b>Макс. сумарний струм заряджання:</b> 70 А</li><li><b>Макс. напруга холостого ходу PV:</b> 105 В</li><li><b>Діапазон напруги MPPT:</b> 15–105 В</li><li><b>Макс. струм заряджання від мережі:</b> 20 А</li><li><b>Енергія батареї:</b> 1280 Вт·год</li><li><b>Номінальна напруга батареї:</b> 12.8 В</li><li><b>Ємність батареї:</b> 100 А·год</li><li><b>Плата захисту (BMS):</b> 100 А</li><li><b>Форма вихідного сигналу:</b> чиста синусоїда</li><li><b>Вихідна напруга:</b> 230 В ±5%</li><li><b>Вихідна частота:</b> 50 / 60 Гц (±0.2 Гц)</li><li><b>ККД інвертора (пік.):</b> 90%</li><li><b>Споживання в режимі очікування:</b> &lt; 25 Вт</li><li><b>Тип сонячного контролера:</b> MPPT</li><li><b>ККД MPPT-контролера (макс.):</b> 98%</li><li><b>Вхідна напруга AC:</b> 230 В ±5%, допустимий діапазон 90–280 В</li><li><b>Частота:</b> 50 / 60 Гц (автовизначення)</li><li><b>Час перемикання:</b> 10 мс (UPS, VDE), 20 мс (APL)</li><li><b>Алгоритм заряджання:</b> 4-етапний (Li)</li><li><b>Виходи:</b> 3 розетки 230 В, USB Type-C ×1, USB-A 12 В/1 А ×2, USB-A 5 В ×4</li><li><b>Тип акумулятора:</b> LiFePO4</li><li><b>Стандартний струм заряду / розряду:</b> 50 А</li><li><b>Температура заряджання:</b> 0…+45 °C</li><li><b>Температура розряджання:</b> +10…+60 °C</li><li><b>Сертифікація:</b> CE-EMC, LVD (EN 61000-6-3, EN 61000-6-1, EN IEC 62109-1, EN IEC 62109-2)</li><li><b>Розміри (Ш×В×Г):</b> 225×295×363 мм</li><li><b>Розміри упаковки (Ш×В×Г):</b> 440×305×355 мм</li><li><b>Вага нетто / брутто:</b> 17 кг / 18.5 кг</li></ul>]]></description_ua>
       </offer>
-      <offer id="29" available="false">
+      <offer id="29" available="true">
         <name>Система зберігання енергії 2в1 MUST HBP19-5548 VPM</name>
         <name_ua>Система зберігання енергії 2в1 MUST HBP19-5548 VPM</name_ua>
+        <price>71948</price>
         <currencyId>UAH</currencyId>
         <categoryId>3</categoryId>
         <vendor>Must</vendor>
@@ -268,7 +270,7 @@
       <offer id="30" available="true">
         <name>Портативна зарядна станція EcoFlow Delta 2</name>
         <name_ua>Портативна зарядна станція EcoFlow Delta 2</name_ua>
-        <price>35000</price>
+        <price>36201</price>
         <currencyId>UAH</currencyId>
         <categoryId>4</categoryId>
         <picture>https://energia24.com.ua/images/products/station-delta2.jpg</picture>
@@ -279,7 +281,7 @@
       <offer id="31" available="true">
         <name>Портативна зарядна станція EcoFlow Delta 3</name>
         <name_ua>Портативна зарядна станція EcoFlow Delta 3</name_ua>
-        <price>35000</price>
+        <price>36341</price>
         <currencyId>UAH</currencyId>
         <categoryId>4</categoryId>
         <picture>https://energia24.com.ua/images/products/station-delta3.jpg</picture>

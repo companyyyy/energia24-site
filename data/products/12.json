@@ -1,11 +1,12 @@
 {
   "id": 12,
+  "avtonomka_id": "150599",
   "enabled": true,
   "order": 120,
   "category": 2,
   "vendor": "Must",
   "name": "Акумулятор MUST LP15-12100",
-  "price": 14000,
+  "price": 14236,
   "in_stock": true,
   "pa": true,
   "pa_price": 11250,
@@ -82,5 +83,7 @@
       "label": "Вага",
       "value": "≈12 кг"
     }
-  ]
+  ],
+  "feed_price": 14236,
+  "feed_in_stock": true
 }

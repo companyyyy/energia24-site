@@ -1,11 +1,12 @@
 {
   "id": 25,
+  "avtonomka_id": "151617",
   "enabled": true,
   "order": 250,
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLA48314-EU",
-  "price": 85500,
+  "price": 90015,
   "in_stock": true,
   "pa": true,
   "pa_price": 79650,
@@ -94,5 +95,7 @@
       "label": "Вага",
       "value": "121.5 кг"
     }
-  ]
+  ],
+  "feed_price": 90015,
+  "feed_in_stock": true
 }

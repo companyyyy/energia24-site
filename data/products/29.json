@@ -1,12 +1,13 @@
 {
   "id": 29,
+  "avtonomka_id": "150416",
   "enabled": true,
   "order": 300,
   "category": 3,
   "vendor": "Must",
   "name": "Система зберігання енергії 2в1 MUST HBP19-5548 VPM",
-  "price": null,
-  "in_stock": false,
+  "price": 71948,
+  "in_stock": true,
   "pa": false,
   "pa_price": null,
   "pa_in_stock": false,
@@ -138,5 +139,7 @@
       "label": "Вага нетто / брутто",
       "value": "58 кг / 61 кг"
     }
-  ]
+  ],
+  "feed_price": 71948,
+  "feed_in_stock": true
 }

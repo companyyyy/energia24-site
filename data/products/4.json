@@ -1,12 +1,13 @@
 {
   "id": 4,
+  "avtonomka_id": "152725",
   "enabled": true,
   "order": 40,
   "category": 1,
   "vendor": "Must",
   "name": "Гібридний інвертор MUST PV19-4024 EXP",
-  "price": null,
-  "in_stock": false,
+  "price": 18660,
+  "in_stock": true,
   "pa": true,
   "pa_price": 13950,
   "pa_in_stock": true,
@@ -122,5 +123,7 @@
       "label": "Розміри (Ш×В×Г)",
       "value": "322×486×134 мм"
     }
-  ]
+  ],
+  "feed_price": 18660,
+  "feed_in_stock": true
 }

@@ -1,11 +1,12 @@
 {
   "id": 31,
+  "avtonomka_id": "148245",
   "enabled": true,
   "order": 320,
   "category": 4,
   "vendor": "EcoFlow",
   "name": "Портативна зарядна станція EcoFlow Delta 3",
-  "price": 35000,
+  "price": 36341,
   "in_stock": true,
   "pa": true,
   "pa_price": 32400,
@@ -94,5 +95,7 @@
       "label": "Вага",
       "value": "≈12 кг"
     }
-  ]
+  ],
+  "feed_price": 36341,
+  "feed_in_stock": true
 }

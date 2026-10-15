@@ -1,11 +1,12 @@
 {
   "id": 17,
+  "avtonomka_id": "152265",
   "enabled": true,
   "order": 170,
   "category": 2,
   "vendor": "Must",
   "name": "Акумулятор MUST LP16-48300",
-  "price": 81000,
+  "price": 83819,
   "in_stock": true,
   "pa": true,
   "pa_price": 80100,
@@ -110,5 +111,7 @@
       "label": "Вага",
       "value": "117 кг"
     }
-  ]
+  ],
+  "feed_price": 83819,
+  "feed_in_stock": true
 }

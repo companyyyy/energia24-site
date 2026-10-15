@@ -1,9 +1,11 @@
 name: Update site catalog
 
 on:
-  # Ціни й наявність з фіду avtonomka - щогодини.
+  # Ціни й наявність з фіду avtonomka - о 08:00, 13:00, 18:00 за Києвом.
+  # Cron у GitHub - лише UTC, а Київ то UTC+3 (літо), то UTC+2 (зима), тому запускаємо
+  # в обидва варіанти, а зайвий запуск пропускає крок «Kyiv time check».
   schedule:
-    - cron: '17 * * * *'
+    - cron: '3 5,6,10,11,15,16 * * *'
   # Збереження в адмінці сайту (/admin/site.html) - перебудувати сторінку одразу.
   push:
     branches: [ main ]
@@ -25,7 +27,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Sync prices and build index.html, commit if changed
+      - name: Kyiv time check
+        id: time
+        run: |
+          h=$(TZ=Europe/Kyiv date +%H)
+          if [ "${{ github.event_name }}" != "schedule" ] || [[ "$h" =~ ^(08|13|18)$ ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Зараз $h:xx за Києвом - не час оновлення"
+          fi
+
+      - name: Sync prices, build index.html and feed.xml, commit if changed
+        if: steps.time.outputs.run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -35,12 +48,15 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             python3 scripts/site_catalog.py sync build
-            git add data/site/catalog.json index.html
+            # Коміти бота не запускають «Update product feed», тож фіди Prom - тут же.
+            # pa.xml перезаписується, лише якщо змінились його товари (ціни PA sync не чіпає).
+            python3 scripts/update_feed.py
+            git add data/site/catalog.json index.html data/products feed.xml pa.xml
             if git diff --cached --quiet; then
               echo "Змін немає"
               exit 0
             fi
-            git commit -m "Оновлення каталогу сайту з фіду avtonomka"
+            git commit -m "Оновлення цін з фіду avtonomka (сайт і feed.xml)"
             if git push origin HEAD:main; then
               exit 0
             fi

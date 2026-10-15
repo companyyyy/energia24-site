@@ -1,11 +1,12 @@
 {
   "id": 2,
+  "avtonomka_id": "152517",
   "enabled": true,
   "order": 20,
   "category": 1,
   "vendor": "Must",
   "name": "Гібридний інвертор Must PV18-1512 VPM II",
-  "price": 11500,
+  "price": 11571,
   "in_stock": true,
   "pa": true,
   "pa_price": 9450,
@@ -134,5 +135,7 @@
       "label": "Вага нетто / брутто",
       "value": "5.5 кг / 6.0 кг"
     }
-  ]
+  ],
+  "feed_price": 11571,
+  "feed_in_stock": true
 }

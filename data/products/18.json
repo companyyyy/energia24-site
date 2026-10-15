@@ -1,11 +1,12 @@
 {
   "id": 18,
+  "avtonomka_id": "152639",
   "enabled": true,
   "order": 180,
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLA12100PG2",
-  "price": 13700,
+  "price": 13032,
   "in_stock": true,
   "pa": true,
   "pa_price": 12150,
@@ -90,5 +91,7 @@
       "label": "Вага нетто / брутто",
       "value": "10.3 кг / 12.3 кг"
     }
-  ]
+  ],
+  "feed_price": 13032,
+  "feed_in_stock": true
 }

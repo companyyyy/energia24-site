@@ -50,6 +50,15 @@ collections:
         hint: >-
           Унікальне число. Для нового товару - наступне вільне (найбільший ID + 1).
           У наявних товарів НЕ змінювати: за ID Prom.ua пов'язує товар.
+      - name: avtonomka_id
+        label: ID у фіді avtonomka
+        widget: string
+        required: false
+        hint: >-
+          Якщо заповнено, роздрібна ціна й наявність (feed.xml) беруться з фіду avtonomka
+          3 рази на день. Ручна ціна діє, поки ціна у фіді avtonomka не зміниться. На ціни PA не впливає.
+      - { name: feed_price, label: Остання ціна з фіду avtonomka, widget: hidden, required: false }
+      - { name: feed_in_stock, label: Остання наявність з фіду avtonomka, widget: hidden, required: false }
       - name: enabled
         label: Показувати у фідах
         widget: boolean

@@ -1,11 +1,12 @@
 {
   "id": 23,
+  "avtonomka_id": "152297",
   "enabled": true,
   "order": 230,
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLB48230WG1-H",
-  "price": 70500,
+  "price": 77300,
   "in_stock": true,
   "pa": false,
   "pa_price": null,
@@ -110,5 +111,7 @@
       "label": "Вага",
       "value": "91 кг"
     }
-  ]
+  ],
+  "feed_price": 77300,
+  "feed_in_stock": true
 }

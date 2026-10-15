@@ -1,11 +1,12 @@
 {
   "id": 26,
+  "avtonomka_id": "152270",
   "enabled": true,
   "order": 260,
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLB48314TG1-H",
-  "price": 85500,
+  "price": 90336,
   "in_stock": true,
   "pa": true,
   "pa_price": 80550,
@@ -110,5 +111,7 @@
       "label": "Вага",
       "value": "121 кг"
     }
-  ]
+  ],
+  "feed_price": 90336,
+  "feed_in_stock": true
 }

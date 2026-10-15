@@ -1,11 +1,12 @@
 {
   "id": 5,
+  "avtonomka_id": "142725",
   "enabled": true,
   "order": 50,
   "category": 1,
   "vendor": "Must",
   "name": "Гібридний інвертор Must PV19-6048EXP",
-  "price": 23000,
+  "price": 24945,
   "in_stock": true,
   "pa": true,
   "pa_price": 18000,
@@ -126,5 +127,7 @@
       "label": "Розміри (Ш×В×Г)",
       "value": "309×505×147 мм"
     }
-  ]
+  ],
+  "feed_price": 24945,
+  "feed_in_stock": true
 }

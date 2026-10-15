@@ -1,12 +1,13 @@
 {
   "id": 27,
+  "avtonomka_id": "152723",
   "enabled": true,
   "order": 280,
   "category": 3,
   "vendor": "Must",
   "name": "Система зберігання енергії 2в1 MUST HBP18-1212 OS",
-  "price": 25000,
-  "in_stock": false,
+  "price": 20673,
+  "in_stock": true,
   "pa": false,
   "pa_price": 20250,
   "pa_in_stock": false,
@@ -142,5 +143,7 @@
       "label": "Вага нетто / брутто",
       "value": "17 кг / 18.5 кг"
     }
-  ]
+  ],
+  "feed_price": 20673,
+  "feed_in_stock": true
 }

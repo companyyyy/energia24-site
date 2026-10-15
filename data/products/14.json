@@ -1,11 +1,12 @@
 {
   "id": 14,
+  "avtonomka_id": "143477",
   "enabled": true,
   "order": 140,
   "category": 2,
   "vendor": "Must",
   "name": "Акумулятор MUST LP16-24100",
-  "price": 30000,
+  "price": 31672,
   "in_stock": true,
   "pa": true,
   "pa_price": 24750,
@@ -98,5 +99,7 @@
       "label": "Вага",
       "value": "27 кг"
     }
-  ]
+  ],
+  "feed_price": 31672,
+  "feed_in_stock": true
 }

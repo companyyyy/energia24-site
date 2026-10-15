@@ -221,8 +221,19 @@ def main():
     date_str = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M")
     for cfg in FEEDS:
         path = cfg["path"]
-        path.write_text(build_feed(products, cfg, date_str), encoding="utf-8")
+        new = build_feed(products, cfg, date_str)
+        # Якщо змінилась лише дата в заголовку - файл не чіпаємо, щоб фід (напр. pa.xml)
+        # не «оновлювався» без жодних змін у товарах.
+        old = path.read_text(encoding="utf-8") if path.exists() else ""
+        if strip_date(old) == strip_date(new):
+            print(f"{path.name}: змін немає")
+            continue
+        path.write_text(new, encoding="utf-8")
         print(f"{path.name} оновлено ({date_str} UTC)")
+
+
+def strip_date(text):
+    return re.sub(r'<yml_catalog date="[^"]*">', "<yml_catalog>", text, count=1)
 
 
 if __name__ == "__main__":

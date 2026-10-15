@@ -16,10 +16,15 @@
              * товари, яких немає у фіді, видаляються із сайту;
              * нові товари й категорії з фіду додаються одразу ввімкненими
                (вимкнути можна в адмінці; товар вимкненої категорії на сайті не видно).
+           Те саме для роздрібних цін фіду Prom feed.xml: товари data/products/*.json
+           з полем avtonomka_id отримують price/in_stock з фіду avtonomka за тими ж правилами
+           (вимкнені не оновлюються, ручна ціна з /admin/ діє до зміни ціни у фіді).
+           Зник із фіду - «немає в наявності» (з фіду Prom не видаляємо: за id його знає Prom).
+           Ціни PA (pa_price, pa_in_stock, pa) не змінюються.
   build  - генерує картки товарів і меню в index.html між маркерами
            <!-- CATALOG:START/END --> і <!-- NAV:START/END -->.
 
-Запускається з .github/workflows/site-catalog.yml (щогодини і після збережень в адмінці).
+Запускається з .github/workflows/site-catalog.yml (3 рази на день і після збережень в адмінці).
 """
 
 import datetime
@@ -33,6 +38,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "data" / "site" / "catalog.json"
+PRODUCTS_DIR = ROOT / "data" / "products"
 INDEX = ROOT / "index.html"
 
 
@@ -156,7 +162,44 @@ def sync(cat):
         cat["synced_at"] = now()
     for c in changes:
         print("  " + c)
-    print(f"sync: {len(feed_items)} товарів у фіді, змін: {len(changes)}")
+    print(f"sync: {len(feed_items)} товарів у фіді, змін на сайті: {len(changes)}")
+    return feed_items
+
+
+def sync_products(feed_items):
+    """Роздрібні ціни фіду Prom (data/products/*.json, лише price/in_stock) з фіду avtonomka."""
+    files = []
+    for path in sorted(PRODUCTS_DIR.glob("*.json")):
+        p = json.loads(path.read_text(encoding="utf-8"))
+        if p.get("avtonomka_id"):
+            files.append((path, p))
+    missing = [p for _, p in files if p["avtonomka_id"] not in feed_items]
+    trust_missing = len(missing) <= len(files) / 2
+    if not trust_missing:
+        print(f"::warning::у фіді немає {len(missing)} з {len(files)} товарів Prom - схоже на збій фіду, наявність не змінено")
+
+    changes = []
+    for path, p in files:
+        if p.get("enabled") is False:
+            continue
+        before = dict(p)
+        f = feed_items.get(p["avtonomka_id"])
+        if f is None:
+            if trust_missing and p.get("feed_in_stock") is not False:
+                p["feed_in_stock"] = p["in_stock"] = False
+                changes.append(f"Prom {p['id']} {p['name']}: зник із фіду avtonomka -> немає в наявності")
+        else:
+            if f["price"] is not None and f["price"] != p.get("feed_price"):
+                changes.append(f"Prom {p['id']} {p['name']}: ціна {p.get('price')} -> {f['price']}")
+                p["feed_price"] = p["price"] = f["price"]
+            if f["available"] != p.get("feed_in_stock"):
+                changes.append(f"Prom {p['id']} {p['name']}: наявність -> {'є' if f['available'] else 'немає'}")
+                p["feed_in_stock"] = p["in_stock"] = f["available"]
+        if p != before:
+            path.write_text(json.dumps(p, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    for c in changes:
+        print("  " + c)
+    print(f"sync: товари фіду Prom, змін: {len(changes)}")
 
 
 # ---------------------------------------------------------------- build
@@ -249,8 +292,9 @@ def main():
     cat = load_catalog()
     if "sync" in cmds:
         try:
-            sync(cat)
+            feed_items = sync(cat)
             save_catalog(cat)
+            sync_products(feed_items)
         except Exception as e:  # фід недоступний - сайт все одно збираємо з наявних даних
             print(f"::warning::не вдалося оновити ціни з фіду: {e}")
     if "build" in cmds:

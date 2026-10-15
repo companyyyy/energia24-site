@@ -1,11 +1,12 @@
 {
   "id": 22,
+  "avtonomka_id": "152175",
   "enabled": true,
   "order": 220,
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLA48230",
-  "price": 70000,
+  "price": 77277,
   "in_stock": true,
   "pa": false,
   "pa_price": null,
@@ -98,5 +99,7 @@
       "label": "Вага",
       "value": "92 кг"
     }
-  ]
+  ],
+  "feed_price": 77277,
+  "feed_in_stock": true
 }
