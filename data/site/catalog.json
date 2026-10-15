@@ -58,7 +58,7 @@
     },
     {
       "id": "7",
-      "enabled": true,
+      "enabled": false,
       "anchor": "cat-7",
       "nav": "АВР",
       "eyebrow": "Каталог",
