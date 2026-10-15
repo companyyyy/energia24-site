@@ -4,9 +4,9 @@ on:
   push:
     branches: [ main ]
   # Коміти бота з оновленими фідами (через GITHUB_TOKEN) не запускають push-подію,
-  # тому викладаємо на сервер ще й після кожного оновлення фідів.
+  # тому викладаємо на сервер ще й після кожного оновлення фідів і каталогу сайту.
   workflow_run:
-    workflows: [ "Update product feed" ]
+    workflows: [ "Update product feed", "Update site catalog" ]
     types: [ completed ]
 
 concurrency:

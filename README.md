@@ -12,6 +12,8 @@
 | `style.css` | Стилі (зелений `#7CB342` / чорний / білий), адаптивна верстка, hover-ефекти |
 | `script.js` | Мобільне меню, кнопки «Замовити», валідація та обробка форм |
 | `admin/` | Адмінка для XML-фідів Prom.ua: таблиця цін (`/admin/`) і редактор товарів на Sveltia CMS (`/admin/cms/`), див. [admin/README.md](admin/README.md) |
+| `admin/site.html` | Адмінка сайту: які товари й категорії показувати, ручні ціни (ціни з фіду avtonomka) |
+| `data/site/catalog.json` | Товари каталогу на головній; картки в `index.html` генерує `scripts/site_catalog.py` |
 | `data/products/` | Товари для фідів (по файлу на товар), редагуються через адмінку |
 | `scripts/update_feed.py` | Генерація `feed.xml` і `pa.xml` з `data/products/` |
 
