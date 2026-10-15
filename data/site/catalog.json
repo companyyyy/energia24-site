@@ -49,7 +49,7 @@
     },
     {
       "id": "6",
-      "enabled": true,
+      "enabled": false,
       "anchor": "cat-6",
       "nav": "ДБЖ для роутера",
       "eyebrow": "Каталог",
