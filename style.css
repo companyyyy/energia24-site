@@ -126,26 +126,11 @@ h3 { font-size: 1.15rem; }
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   flex-shrink: 0;
   font-weight: 800;
   font-size: 1.5rem;
   letter-spacing: -0.03em;
   line-height: 1;
-}
-
-.logo__img {
-  height: 40px;
-  width: auto;
-  display: block;
-}
-
-/* На темному фоні (футер) іконка отримує світлу підкладку, бо лого чорне */
-.logo--onlight .logo__img {
-  background: var(--white);
-  border-radius: 8px;
-  padding: 4px 6px;
-  height: 44px;
 }
 
 .logo__mark {
@@ -917,9 +902,7 @@ h3 { font-size: 1.15rem; }
   .section { padding: 52px 0; }
   .grid-2 { grid-template-columns: 1fr; }
   .header__bar { padding: 12px 14px; gap: 10px 12px; }
-  .logo { gap: 5px; font-size: 1.05rem; }
-  .logo__img { height: 26px; }
-  .logo--onlight .logo__img { height: 30px; padding: 3px 4px; }
+  .logo { font-size: 1.05rem; }
   .logo__mark { padding: 4px 6px 4px 7px; }
   .logo__num { padding: 4px 7px 4px 5px; }
   .header__actions { gap: 10px; }
