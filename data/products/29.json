@@ -9,7 +9,7 @@
   "price": 71917,
   "in_stock": true,
   "wholesale_usd": 0,
-  "off": false,
+  "off": true,
   "photo": "/images/products/avt-150416.jpg",
   "summary": "Система зберігання енергії 2в1 MUST HBP19-5548 VPM. Потужність: 5.5 кВт. Ємність: 5120 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі. Вага: 58 кг.",
   "specs_source": "screenshot: Must HBP19 VPM",

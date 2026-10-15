@@ -8,7 +8,7 @@
   "price": 95145,
   "in_stock": true,
   "wholesale_usd": 0,
-  "off": false,
+  "off": true,
   "photo": "/images/products/bat-sef16-c.jpg",
   "summary": "Акумулятор Deye SE-F16-C. Напруга/ємність: 51.2 В · 314 Аг. Енергія: 16 кВт·год. Тип комірок: LiFePO4. Вага: 109 кг.",
   "specs_source": "deye-se-f16-c.pdf",
