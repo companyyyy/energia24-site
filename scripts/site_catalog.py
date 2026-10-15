@@ -111,6 +111,130 @@ def specs_from_description(desc):
     return [html.unescape(re.sub(r"<[^>]+>", "", li)).strip() for li in re.findall(r"<li>(.*?)</li>", m.group(1))]
 
 
+# Згадки постачальника в текстах avtonomka - на energia24 не потрібні.
+SUPPLIER_TEXT = [
+    (re.compile(r"\bМенеджери Автономки\b"), "Наші менеджери"),
+    (re.compile(r"\bменеджери Автономки\b"), "наші менеджери"),
+    (re.compile(r"\bМенеджеры Автономки\b"), "Наши менеджеры"),
+    (re.compile(r"\bменеджеры Автономки\b"), "наши менеджеры"),
+]
+
+
+def clean_supplier(text):
+    for pattern, repl in SUPPLIER_TEXT:
+        text = pattern.sub(repl, text or "")
+    return text
+
+
+# Порядок, у якому характеристики потрапляють на картку (не більше CARD_SPECS).
+CARD_SPECS = 5
+SPEC_PRIORITY = ["потужн", "напруг", "ємніст", "енерг", "тип", "переріз", "довжин", "колір", "струм",
+                 "полюс", "фаз", "вихід", "порт", "розмір", "вага", "монтаж"]
+SPEC_SKIP = ("виробник", "модель", "країна")
+
+
+def short_title(name, code):
+    """«Акумуляторна батарея Deye SE-F16-С 51.2V …» -> «Deye SE-F16-C»: від першого латинського
+    слова до артикула. Без артикула - повна назва."""
+    code_n = model_key(code)
+    if len(code_n) < 4:
+        return name
+    words = name.split()
+    start = next((i for i, w in enumerate(words) if re.match(r"[A-Za-z]", w)), None)
+    if start is None:
+        return name
+    for end in range(start, len(words)):
+        if code_n in model_key("".join(words[start:end + 1])):
+            return " ".join(words[start:end + 1]).translate(LOOKALIKE).rstrip(",")
+    return name
+
+
+def card_specs(desc, name):
+    rows = specs_from_description(desc)
+    if not rows:
+        # Немає блоку «Основні характеристики» - беремо головне з назви.
+        text = html.unescape(re.sub(r"<[^>]+>", " ", desc or ""))
+        n = f"{name} {text}".replace(",", " ")
+        volt = re.search(r"(\d+(?:[.,]\d+)?)\s*(?:V|В)\b", f"{name} {text}")
+        cap = re.search(r"(\d+)\s*(?:А·год|Аh|Ah|ah|Аг)", n)
+        kwh = re.search(r"(\d+(?:[.,]\d+)?)\s*(?:kWh|кВт·год)", f"{name} {text}", re.I)
+        kg = re.search(r"(\d+(?:[.,]\d+)?)\s*кг", n)
+        if volt and cap:
+            rows.append(f"Напруга / ємність: {volt.group(1).replace(',', '.')} В · {cap.group(1)} Аг")
+        if kwh:
+            rows.append(f"Енергія: {kwh.group(1).replace(',', '.')} кВт·год")
+        if re.search(r"LiFePO4", n, re.I):
+            rows.append("Тип комірок: LiFePO4")
+        if kg:
+            rows.append(f"Вага: {kg.group(1)} кг")
+    rows = [r for r in rows if not r.lower().startswith(SPEC_SKIP)]
+    rows = battery_specs(rows) or rows
+
+    def rank(r):
+        low = r.lower().split(":")[0]
+        return next((i for i, k in enumerate(SPEC_PRIORITY) if k in low), len(SPEC_PRIORITY))
+    return sorted(rows, key=rank)[:CARD_SPECS]
+
+
+def battery_specs(rows):
+    """Акумулятор: характеристики у форматі карток сайту
+    («Напруга / ємність: 51.2 В · 100 Аг», «Енергія», «Тип комірок», «Вага»). Інакше - None."""
+    get = {}
+    for r in rows:
+        label, _, value = r.partition(":")
+        get[label.strip().lower()] = value.strip()
+    def find(*keys):
+        return next((v for k, v in get.items() if any(k.startswith(x) for x in keys)), None)
+    volt, cap = find("номінальна напруга", "напруга"), find("ємність")
+    if not (volt and cap and re.search(r"А·год|Аг", cap)):
+        return None
+    num = lambda v: re.sub(r"\s*(В|А·год|Аг)$", "", v).replace(",", ".")
+    out = [f"Напруга / ємність: {num(volt)} В · {num(cap)} Аг"]
+    energy = find("енергоємність", "номінальна енергія", "енергія")
+    if energy:
+        out.append(f"Енергія: {energy.replace(',', '.')}")
+    else:
+        try:
+            kwh = float(num(volt)) * float(num(cap)) / 1000
+            out.append(f"Енергія: {kwh:.2f}".rstrip("0").rstrip(".") + " кВт·год")
+        except ValueError:
+            pass
+    cell = find("тип акумулятора", "тип комірок")
+    if cell:
+        out.append(f"Тип комірок: {cell}")
+    weight = find("вага")
+    if weight:
+        out.append(f"Вага: {weight.replace(',', '.')}")
+    return out
+
+
+def card_badge(name, specs):
+    text = " ".join([name] + specs)
+    badge = ""
+    m = re.search(r"(\d+(?:[.,]\d+)?)\s*кВт(?!·)", text)
+    cap = re.search(r"(\d+)\s*(?:А·год|Аh|Ah|ah|Аг)\b", text)
+    if cap:
+        badge = f"{cap.group(1)} Аг"
+    elif m:
+        badge = f"{m.group(1).replace(',', '.')} кВт"
+    if re.search(r"підігрів", name, re.I):
+        badge = f"{badge} · підігрів" if badge else "підігрів"
+    return badge
+
+
+def card_fields(fid, f):
+    """Поля картки сайту для товару з фіду: як у карток, зроблених вручну."""
+    specs = card_specs(f["description"], f["name"])
+    local = PHOTOS_DIR / f"avt-{re.sub(r'[^a-z0-9-]', '-', fid.lower())}.jpg"
+    image = f"images/products/{local.name}" if local.exists() else white_photo(fid, f["images"]).lstrip("/")
+    return {
+        "title": short_title(f["name"], f["code"]),
+        "badge": card_badge(f["name"], specs),
+        "image": image or f["image"],
+        "specs": specs,
+    }
+
+
 def parse_price(text):
     try:
         v = round(float((text or "").replace(",", ".")))
@@ -200,10 +324,7 @@ def sync(cat):
             "added_at": now(),
             "category": cid,
             "order": 1000,
-            "title": f["name"],
-            "badge": "",
-            "image": f["image"],
-            "specs": specs_from_description(f["description"]),
+            **card_fields(fid, f),
             "notes": [],
             "order_label": f["name"],
             "price": f["price"],
@@ -336,8 +457,8 @@ def add_new_products(feed_items):
             "off": False,
             "photo": white_photo(fid, f["images"]),
             "summary": first_paragraph(f["description"]) or f["name"],
-            "description_ua_html": f["description"],
-            "description_ru_html": f["description_ru"],
+            "description_ua_html": clean_supplier(f["description"]),
+            "description_ru_html": clean_supplier(f["description_ru"]),
             "specs": [],
             "feed_price": f["price"],
             "feed_in_stock": f["available"],
