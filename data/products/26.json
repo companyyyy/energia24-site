@@ -6,11 +6,10 @@
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLB48314TG1-H",
-  "price": 90336,
+  "price": 91049,
   "in_stock": true,
-  "pa": true,
-  "pa_price": 80550,
-  "pa_in_stock": true,
+  "wholesale_usd": 1790,
+  "off": false,
   "photo": "/images/products/bat-flb48314tg1.jpg",
   "summary": "Акумулятор Felicity FLB48314TG1-H. Напруга/ємність: 51.2 В · 314 Аг. Енергія: 16 кВт·год. Тип комірок: LiFePO4. Функція: вбудований підігрів. Конструкція: на колесах. Вага: 121 кг.",
   "specs_source": "felicity-flb48314tg1.pdf",
@@ -112,6 +111,6 @@
       "value": "121 кг"
     }
   ],
-  "feed_price": 90336,
+  "feed_price": 91049,
   "feed_in_stock": true
 }

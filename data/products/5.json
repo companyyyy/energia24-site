@@ -1,16 +1,15 @@
 {
   "id": 5,
-  "avtonomka_id": "142725",
+  "avtonomka_id": "150935",
   "enabled": true,
   "order": 50,
   "category": 1,
   "vendor": "Must",
   "name": "Гібридний інвертор Must PV19-6048EXP",
-  "price": 24945,
+  "price": 25782,
   "in_stock": true,
-  "pa": true,
-  "pa_price": 18000,
-  "pa_in_stock": true,
+  "wholesale_usd": 400,
+  "off": false,
   "photo": "/images/products/inv-pv19-6048exp.jpg",
   "summary": "Гібридний інвертор Must PV19-6048EXP. Потужність: 6 кВт. Напруга АКБ: 48 В. Вага: 14 кг.",
   "specs_source": "must-pv1900-exp.pdf",
@@ -128,6 +127,6 @@
       "value": "309×505×147 мм"
     }
   ],
-  "feed_price": 24945,
+  "feed_price": 25782,
   "feed_in_stock": true
 }

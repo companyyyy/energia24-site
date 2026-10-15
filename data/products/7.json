@@ -6,11 +6,10 @@
   "category": 1,
   "vendor": "Felicity",
   "name": "Гібридний інвертор Felicity IVEM6048-II",
-  "price": 22649,
+  "price": 22770,
   "in_stock": true,
-  "pa": true,
-  "pa_price": 21150,
-  "pa_in_stock": true,
+  "wholesale_usd": 470,
+  "off": false,
   "photo": "/images/products/inv-ivem6048.jpg",
   "summary": "Гібридний інвертор Felicity IVEM6048-II. Потужність: 6 кВт. Напруга АКБ: 48 В. Вага: 12.5 кг.",
   "specs_source": "felicity-ivem6048-ii.pdf",
@@ -124,6 +123,6 @@
       "value": "12.5 кг"
     }
   ],
-  "feed_price": 22649,
+  "feed_price": 22770,
   "feed_in_stock": true
 }

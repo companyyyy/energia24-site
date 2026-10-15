@@ -11,11 +11,11 @@
 | `partnership.html` | Сторінка «Співпраця» з анкетою партнера |
 | `style.css` | Стилі (зелений `#7CB342` / чорний / білий), адаптивна верстка, hover-ефекти |
 | `script.js` | Мобільне меню, кнопки «Замовити», валідація та обробка форм |
-| `admin/` | Адмінка для XML-фідів Prom.ua: таблиця цін (`/admin/`) і редактор товарів на Sveltia CMS (`/admin/cms/`), див. [admin/README.md](admin/README.md) |
+| `admin/` | Адмінка фідів Prom.ua (`/admin/`: роздріб, гурт, курс, клієнтські фіди) і редактор товарів на Sveltia CMS (`/admin/cms/`), див. [admin/README.md](admin/README.md) |
 | `admin/site.html` | Адмінка сайту: які товари й категорії показувати, ручні ціни (ціни з фіду avtonomka) |
 | `data/site/catalog.json` | Товари каталогу на головній; картки в `index.html` генерує `scripts/site_catalog.py` |
 | `data/products/` | Товари для фідів (по файлу на товар), редагуються через адмінку |
-| `scripts/update_feed.py` | Генерація `feed.xml` і `pa.xml` з `data/products/` |
+| `scripts/update_feed.py` | Генерація фідів `feed.xml`, `pa.xml`, `feed/*.xml` з `data/products/` і `data/feeds.json` |
 
 Чистий HTML/CSS/JS без фреймворків і бекенду. Форми виводять дані в консоль браузера
 та показують підтвердження користувачу.

@@ -6,6 +6,7 @@ on:
     branches: [ main ]
     paths:
       - 'data/products/**'
+      - 'data/feeds.json'
       - 'images/products/**'
       - 'images/pa/**'
       - 'scripts/**'
@@ -27,14 +28,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build feed.xml and pa.xml
+      - name: Build feeds (feed.xml, pa.xml, feed/*.xml)
         run: python3 scripts/update_feed.py
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add feed.xml pa.xml
+          git add -A feed.xml pa.xml feed data/feeds_built.json
           if git diff --cached --quiet; then
             echo "Змін немає"
           else

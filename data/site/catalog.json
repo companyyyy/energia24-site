@@ -1,6 +1,9 @@
 {
   "source": "https://avtonomka.com.ua/feed/enerhiia24.xml",
-  "synced_at": "2026-10-15 10:16",
+  "synced_at": "2026-10-15 14:30",
+  "excluded_categories": [
+    "11"
+  ],
   "categories": [
     {
       "id": "1",
@@ -83,9 +86,9 @@
       ],
       "notes": [],
       "order_label": "Інвертор Must PV18-1512 VPM II, 1.5 кВт",
-      "price": 11571,
+      "price": 11543,
       "available": true,
-      "feed_price": 11571,
+      "feed_price": 11543,
       "feed_available": true
     },
     {
@@ -104,9 +107,9 @@
       ],
       "notes": [],
       "order_label": "Інвертор Must PV18-3224VPM II, 3.2 кВт",
-      "price": 15137,
+      "price": 15808,
       "available": true,
-      "feed_price": 15137,
+      "feed_price": 15808,
       "feed_available": true
     },
     {
@@ -125,14 +128,14 @@
       ],
       "notes": [],
       "order_label": "Інвертор MUST PV19-4024 EXP, 4 кВт",
-      "price": 18660,
+      "price": 18603,
       "available": true,
-      "feed_price": 18660,
+      "feed_price": 18603,
       "feed_available": true
     },
     {
       "key": "inv-pv19-6048exp",
-      "feed_id": "142725",
+      "feed_id": "150935",
       "enabled": true,
       "category": "1",
       "order": 50,
@@ -146,9 +149,9 @@
       ],
       "notes": [],
       "order_label": "Інвертор Must PV19-6048EXP, 6 кВт",
-      "price": 24945,
+      "price": 25782,
       "available": true,
-      "feed_price": 24945,
+      "feed_price": 25782,
       "feed_available": true
     },
     {
@@ -167,31 +170,9 @@
       ],
       "notes": [],
       "order_label": "Інвертор Felicity IVEM6048-II, 6 кВт",
-      "price": 22649,
+      "price": 22770,
       "available": true,
-      "feed_price": 22649,
-      "feed_available": true
-    },
-    {
-      "key": "bat-sef5-proc",
-      "feed_id": "150676",
-      "enabled": true,
-      "category": "2",
-      "order": 10,
-      "title": "DEYE SE-F5 Pro-C",
-      "badge": "100 Аг",
-      "image": "images/products/bat-sef5-proc.jpg",
-      "specs": [
-        "Напруга / ємність: 51.2 В · 100 Аг",
-        "Енергія: 5.12 кВт·год",
-        "Тип комірок: LiFePO4",
-        "Вага: 45 кг"
-      ],
-      "notes": [],
-      "order_label": "Акумулятор DEYE SE-F5 Pro-C, 51.2V 100Ah",
-      "price": 40784,
-      "available": true,
-      "feed_price": 40784,
+      "feed_price": 22770,
       "feed_available": true
     },
     {
@@ -211,9 +192,9 @@
       ],
       "notes": [],
       "order_label": "Акумулятор MUST LP15-12100, 12V 100Ah",
-      "price": 14236,
+      "price": 14659,
       "available": true,
-      "feed_price": 14236,
+      "feed_price": 14659,
       "feed_available": true
     },
     {
@@ -235,9 +216,9 @@
         "Продається лише в комплекті з інвертором"
       ],
       "order_label": "Акумулятор MUST LP16-24100, 25.6V 100Ah",
-      "price": 31672,
+      "price": 31765,
       "available": true,
-      "feed_price": 31672,
+      "feed_price": 31765,
       "feed_available": true
     },
     {
@@ -259,9 +240,9 @@
         "Продається лише в комплекті з інвертором"
       ],
       "order_label": "Акумулятор MUST LP16-24200, 25.6V 200Ah",
-      "price": 42966,
+      "price": 43097,
       "available": true,
-      "feed_price": 42966,
+      "feed_price": 43097,
       "feed_available": true
     },
     {
@@ -282,9 +263,9 @@
       ],
       "notes": [],
       "order_label": "Акумулятор MUST LP16-48300, 51.2V 300Ah, на колесах",
-      "price": 83819,
+      "price": 83817,
       "available": true,
-      "feed_price": 83819,
+      "feed_price": 83817,
       "feed_available": true
     },
     {
@@ -304,9 +285,9 @@
       ],
       "notes": [],
       "order_label": "Акумулятор Felicity FLA12100PG2, 12.8V 100Ah",
-      "price": 13032,
+      "price": 13100,
       "available": true,
-      "feed_price": 13032,
+      "feed_price": 13100,
       "feed_available": true
     },
     {
@@ -326,9 +307,9 @@
       ],
       "notes": [],
       "order_label": "Акумулятор Felicity FLA48230, 51.2V 230Ah",
-      "price": 77277,
+      "price": 77295,
       "available": true,
-      "feed_price": 77277,
+      "feed_price": 77295,
       "feed_available": true
     },
     {
@@ -349,9 +330,9 @@
       ],
       "notes": [],
       "order_label": "Акумулятор Felicity FLB48230WG1-H, 51.2V 230Ah з підігрівом",
-      "price": 77300,
+      "price": 77284,
       "available": true,
-      "feed_price": 77300,
+      "feed_price": 77284,
       "feed_available": true
     },
     {
@@ -372,9 +353,9 @@
       ],
       "notes": [],
       "order_label": "Акумулятор Felicity FLA48314-EU, 51.2V 314Ah 16kWh, на колесах",
-      "price": 90015,
+      "price": 90843,
       "available": true,
-      "feed_price": 90015,
+      "feed_price": 90843,
       "feed_available": true
     },
     {
@@ -396,9 +377,9 @@
       ],
       "notes": [],
       "order_label": "Акумулятор Felicity FLB48314TG1-H, 51.2V 314Ah 16kWh з підігрівом, на колесах",
-      "price": 90336,
+      "price": 91049,
       "available": true,
-      "feed_price": 90336,
+      "feed_price": 91049,
       "feed_available": true
     },
     {
@@ -417,9 +398,9 @@
       ],
       "notes": [],
       "order_label": "Система 2в1 MUST HBP18-1212 OS, 1.2 кВт",
-      "price": 20673,
+      "price": 20798,
       "available": true,
-      "feed_price": 20673,
+      "feed_price": 20798,
       "feed_available": true
     },
     {
@@ -439,9 +420,9 @@
       ],
       "notes": [],
       "order_label": "Система 2в1 MUST HBP19-5548 VPM, 5.5 кВт",
-      "price": 71948,
+      "price": 71917,
       "available": true,
-      "feed_price": 71948,
+      "feed_price": 71917,
       "feed_available": true
     },
     {
@@ -459,9 +440,9 @@
       ],
       "notes": [],
       "order_label": "Зарядна станція EcoFlow Delta 2, 1800W 1024Wh",
-      "price": 36201,
+      "price": 36298,
       "available": true,
-      "feed_price": 36201,
+      "feed_price": 36298,
       "feed_available": true
     },
     {
@@ -479,9 +460,9 @@
       ],
       "notes": [],
       "order_label": "Зарядна станція EcoFlow Delta 3, 1800W 1024Wh",
-      "price": 36341,
+      "price": 36346,
       "available": true,
-      "feed_price": 36341,
+      "feed_price": 36346,
       "feed_available": true
     },
     {
@@ -502,9 +483,9 @@
       ],
       "notes": [],
       "order_label": "Акумуляторна батарея Felicity FLA24280 25,6 В 280 А·год LiFePO4",
-      "price": 56666,
+      "price": 56598,
       "available": true,
-      "feed_price": 56666,
+      "feed_price": 56598,
       "feed_available": true,
       "added_at": "2026-10-15 10:16"
     },
@@ -835,6 +816,80 @@
       "feed_price": 1379,
       "feed_available": true,
       "added_at": "2026-10-15 10:16"
+    },
+    {
+      "key": "feed-150590",
+      "feed_id": "150590",
+      "enabled": true,
+      "added_at": "2026-10-15 14:24",
+      "category": "2",
+      "order": 1000,
+      "title": "Акумуляторна батарея Dyness BX51100 51.2v 100ah, 5.12kwh LiFePo4, Trade IN",
+      "badge": "",
+      "image": "https://avtonomka.com.ua/assets/images/prom/150590_1.jpg",
+      "specs": [
+        "Виробник: Dyness",
+        "Модель: BX51100",
+        "Тип акумулятора: LiFePO4",
+        "Номінальна напруга: 51,2 В",
+        "Робоча напруга: 44,8 ~ 57,6 В",
+        "Номінальна енергія: 5,12 кВт·год",
+        "Ємність: 100 А·год",
+        "Рекомендований струм заряду/розряду: 50 А",
+        "Максимальний безперервний струм заряду/розряду: 75 А",
+        "Піковий струм заряду/розряду: 100 А (15 с)",
+        "Глибина розряду (DOD): 90%",
+        "Кількість циклів: 6000+",
+        "Температура заряду: 0…55 °C",
+        "Температура розряду: −20…55 °C",
+        "Зв'язок: CAN / RS485 / RS232",
+        "Кількість батарей при паралельному підключенні: до 30 шт.",
+        "Рівень захисту: IP20",
+        "Розміри: 558 × 545 × 150 мм",
+        "Вага: 50 кг"
+      ],
+      "notes": [],
+      "order_label": "Акумуляторна батарея Dyness BX51100 51.2v 100ah, 5.12kwh LiFePo4, Trade IN",
+      "price": 34842,
+      "available": true,
+      "feed_price": 34842,
+      "feed_available": true
+    },
+    {
+      "key": "feed-150674",
+      "feed_id": "150674",
+      "enabled": true,
+      "added_at": "2026-10-15 14:24",
+      "category": "2",
+      "order": 1000,
+      "title": "Акумулятор DAH Solar DHN-LVWES05-G1 100ah 51.2V, 480х500х155, 47 кг",
+      "badge": "",
+      "image": "https://avtonomka.com.ua/assets/images/prom/150674_1.jpg",
+      "specs": [],
+      "notes": [],
+      "order_label": "Акумулятор DAH Solar DHN-LVWES05-G1 100ah 51.2V, 480х500х155, 47 кг",
+      "price": 38561,
+      "available": true,
+      "feed_price": 38561,
+      "feed_available": true
+    },
+    {
+      "key": "feed-151057",
+      "feed_id": "151057",
+      "enabled": true,
+      "added_at": "2026-10-15 14:24",
+      "category": "2",
+      "order": 1000,
+      "title": "Акумуляторна батарея Deye SE-F16-С 51.2V 314 Аh, 400х708х233, 123 кг, 16kWh LiFePO4",
+      "badge": "",
+      "image": "https://avtonomka.com.ua/assets/images/prom/151057_1.jpg",
+      "specs": [],
+      "notes": [],
+      "order_label": "Акумуляторна батарея Deye SE-F16-С 51.2V 314 Аh, 400х708х233, 123 кг, 16kWh LiFePO4",
+      "price": 95145,
+      "available": true,
+      "feed_price": 95145,
+      "feed_available": true
     }
   ]
 }

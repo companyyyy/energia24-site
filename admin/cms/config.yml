@@ -1,4 +1,4 @@
-# Адмінка товарів для XML-фідів Prom.ua (feed.xml, pa.xml).
+# Редактор товарів для XML-фідів Prom.ua (feed.xml, pa.xml, feed/*.xml).
 # Кожне збереження - коміт у GitHub; після нього GitHub Actions
 # перебудовує фіди (.github/workflows/update-feed.yml) і викладає на сервер.
 # Ціни зручніше міняти масово на головній сторінці адмінки /admin/.
@@ -34,13 +34,17 @@ collections:
     delete: true
     slug: "{{fields.id}}"
     identifier_field: name
-    summary: "{{id}} · {{name}} — {{price | default('без ціни')}} · PA {{pa_price | default('—')}}"
-    sortable_fields: [id, name, category, order, price, pa_price]
+    summary: "{{id}} · {{name}} — {{price | default('без ціни')}} · гурт ${{wholesale_usd | default('—')}}"
+    sortable_fields: [id, name, category, order, price, wholesale_usd]
     view_filters:
       - { label: Інвертори, field: category, eq: 1 }
       - { label: Акумулятори, field: category, eq: 2 }
       - { label: "Системи 2 в 1", field: category, eq: 3 }
       - { label: Зарядні станції, field: category, eq: 4 }
+      - { label: Кабелі, field: category, eq: 5 }
+      - { label: ДБЖ для роутерів, field: category, eq: 6 }
+      - { label: АВР, field: category, eq: 7 }
+      - { label: Комплекти, field: category, eq: 8 }
       - { label: Приховані, field: enabled, pattern: false }
     fields:
       - name: id
@@ -56,7 +60,8 @@ collections:
         required: false
         hint: >-
           Якщо заповнено, роздрібна ціна й наявність (feed.xml) беруться з фіду avtonomka
-          3 рази на день. Ручна ціна діє, поки ціна у фіді avtonomka не зміниться. На ціни PA не впливає.
+          3 рази на день. Ручна ціна діє, поки ціна у фіді avtonomka не зміниться.
+          Гуртову ціну (pa.xml) не змінює.
       - { name: feed_price, label: Остання ціна з фіду avtonomka, widget: hidden, required: false }
       - { name: feed_in_stock, label: Остання наявність з фіду avtonomka, widget: hidden, required: false }
       - name: enabled
@@ -72,6 +77,10 @@ collections:
           - { label: Акумулятори, value: 2 }
           - { label: "Системи зберігання енергії 2 в 1", value: 3 }
           - { label: Зарядні станції, value: 4 }
+          - { label: Кабельна продукція, value: 5 }
+          - { label: Безперебійники для роутерів, value: 6 }
+          - { label: "Автоматичне введення резерву (АВР)", value: 7 }
+          - { label: Комплекти автономного енергоживлення, value: 8 }
       - name: order
         label: Порядок у категорії
         widget: number
@@ -87,30 +96,27 @@ collections:
         widget: string
         hint: "Напр.: Акумулятор Felicity FLA48460TG2-EU. Російська назва для Prom будується автоматично."
       - name: price
-        label: Ціна, грн (feed.xml)
+        label: Роздрібна ціна, грн (feed.xml)
         widget: number
         value_type: int
         required: false
         min: 1
-        hint: Порожньо - товар у фіді без ціни і «немає в наявності».
-      - name: in_stock
-        label: В наявності (feed.xml)
-        widget: boolean
-        default: true
-      - name: pa
-        label: Є у фіді PA (pa.xml)
+        hint: Порожньо - товар у фіди не йде. Для товарів з avtonomka підтягується автоматично.
+      - name: wholesale_usd
+        label: Гуртова ціна, $ (pa.xml)
+        widget: number
+        value_type: float
+        required: false
+        min: 0
+        hint: Порожньо або 0 - товар у фід опту не йде. У гривні - за курсом з адмінки /admin/.
+      - name: off
+        label: Немає в наявності (в усіх фідах)
         widget: boolean
         default: false
-      - name: pa_price
-        label: Ціна PA, грн (pa.xml)
-        widget: number
-        value_type: int
-        required: false
-        min: 1
-      - name: pa_in_stock
-        label: В наявності (pa.xml)
-        widget: boolean
-        default: true
+        hint: Те саме, що знята галочка «В наявності» в адмінці /admin/.
+      - { name: in_stock, label: Наявність у avtonomka, widget: hidden, required: false }
+      - { name: description_ua_html, label: Опис UA з avtonomka, widget: hidden, required: false }
+      - { name: description_ru_html, label: Опис RU з avtonomka, widget: hidden, required: false }
       - name: photo
         label: Фото
         widget: image

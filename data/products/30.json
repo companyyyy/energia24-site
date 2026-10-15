@@ -6,11 +6,10 @@
   "category": 4,
   "vendor": "EcoFlow",
   "name": "Портативна зарядна станція EcoFlow Delta 2",
-  "price": 36201,
+  "price": 36298,
   "in_stock": true,
-  "pa": true,
-  "pa_price": 32850,
-  "pa_in_stock": true,
+  "wholesale_usd": 730,
+  "off": false,
   "photo": "/images/products/station-delta2.jpg",
   "summary": "Портативна зарядна станція EcoFlow Delta 2. Потужність: 1800 Вт. Ємність: 1024 Вт·год.",
   "specs_source": "screenshot: EcoFlow Delta 2",
@@ -108,6 +107,6 @@
       "value": "≈12 кг"
     }
   ],
-  "feed_price": 36201,
+  "feed_price": 36298,
   "feed_in_stock": true
 }

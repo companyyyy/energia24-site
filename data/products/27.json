@@ -6,11 +6,10 @@
   "category": 3,
   "vendor": "Must",
   "name": "Система зберігання енергії 2в1 MUST HBP18-1212 OS",
-  "price": 20673,
+  "price": 20798,
   "in_stock": true,
-  "pa": false,
-  "pa_price": 20250,
-  "pa_in_stock": false,
+  "wholesale_usd": 0,
+  "off": false,
   "photo": "/images/products/sys-hbp18-1012.jpg",
   "summary": "Система зберігання енергії 2в1 MUST HBP18-1212 OS. Потужність: 1.2 кВт. Ємність: 1280 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі.",
   "specs_source": "screenshot: Must HBP18 OS",
@@ -144,6 +143,6 @@
       "value": "17 кг / 18.5 кг"
     }
   ],
-  "feed_price": 20673,
+  "feed_price": 20798,
   "feed_in_stock": true
 }

@@ -6,11 +6,10 @@
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLA48230",
-  "price": 77277,
+  "price": 77295,
   "in_stock": true,
-  "pa": false,
-  "pa_price": null,
-  "pa_in_stock": false,
+  "wholesale_usd": 0,
+  "off": false,
   "photo": "/images/products/bat-fla48230.jpg",
   "summary": "Акумулятор Felicity FLA48230. Напруга/ємність: 51.2 В · 230 Аг. Енергія: 11.78 кВт·год. Тип комірок: LiFePO4. Вага: 97 кг.",
   "specs_source": "felicity-fla48230.pdf",
@@ -100,6 +99,6 @@
       "value": "92 кг"
     }
   ],
-  "feed_price": 77277,
+  "feed_price": 77295,
   "feed_in_stock": true
 }

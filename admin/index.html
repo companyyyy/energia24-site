@@ -4,22 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Адмінка ENERGIA24</title>
-  <!-- Головна сторінка адмінки: ціни й наявність усіх товарів для фідів feed.xml і pa.xml.
-       Читає й комітить data/products/*.json через GitHub API тим самим токеном,
-       що й повна адмінка товарів Sveltia CMS (/admin/cms/). Зміни - одним комітом,
-       після нього GitHub Actions перебудовує фіди. -->
+  <title>Фіди Prom</title>
+  <!-- Адмінка фідів Prom.ua: роздрібні й гуртові ціни, курс $, галочка «В наявності»,
+       клієнтські фіди з правилом ціни. Читає й комітить data/products/*.json і
+       data/feeds.json через GitHub API; після коміту GitHub Actions перебудовує фіди
+       (scripts/update_feed.py). Опис: admin/README.md. -->
   <style>
     :root {
       --bg: #f6f7f9; --surface: #fff; --text: #1b1f24; --muted: #6b7280;
       --border: #e3e6ea; --accent: #2f6fde; --accent-text: #fff;
       --changed: #fff6d6; --error: #c62828; --ok: #2e7d32; --row-hover: #f1f4f8;
+      --manual: #b26a00;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #16181c; --surface: #1e2126; --text: #e6e8eb; --muted: #9aa1ab;
         --border: #30343b; --accent: #4a86f0; --accent-text: #fff;
         --changed: #3a3320; --error: #ef6b6b; --ok: #6cc070; --row-hover: #252930;
+        --manual: #f0b04a;
       }
     }
     * { box-sizing: border-box; }
@@ -29,95 +31,138 @@
       border-bottom: 1px solid var(--border); padding: 12px 16px;
       display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
     header h1 { font-size: 18px; margin: 0 8px 0 0; }
-    header a { color: var(--accent); text-decoration: none; }
+    a { color: var(--accent); text-decoration: none; }
     .spacer { flex: 1; }
-    input[type=search], input[type=password], input.price {
+    .muted { color: var(--muted); font-size: 13px; }
+    .small { font-size: 13px; }
+    input[type=search], input[type=password], input[type=text], input.num, select {
       font: inherit; color: var(--text); background: var(--bg);
       border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; }
     input[type=search] { width: 240px; max-width: 100%; }
-    input.price { width: 110px; text-align: right; font-variant-numeric: tabular-nums; }
-    input.price:focus, input[type=search]:focus, input[type=password]:focus {
-      outline: 2px solid var(--accent); outline-offset: -1px; }
-    input.price.invalid { outline: 2px solid var(--error); }
+    input.num { width: 104px; text-align: right; font-variant-numeric: tabular-nums; }
+    input.num.short { width: 72px; }
+    input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+    input.invalid { outline: 2px solid var(--error); }
     input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
     button { font: inherit; border-radius: 6px; padding: 7px 14px; cursor: pointer;
       border: 1px solid var(--border); background: var(--surface); color: var(--text); }
     button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+    button.sm { padding: 3px 10px; font-size: 13px; }
     button:disabled { opacity: .5; cursor: default; }
     .cats { display: flex; gap: 4px; flex-wrap: wrap; }
     .cats button { padding: 5px 10px; font-size: 14px; }
     .cats button.active { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
-    main { padding: 16px; max-width: 1200px; margin: 0 auto; }
-    .table-wrap { overflow-x: auto; background: var(--surface);
-      border: 1px solid var(--border); border-radius: 8px; }
-    table { border-collapse: collapse; width: 100%; min-width: 760px; }
-    th, td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: middle; }
-    th { font-size: 13px; color: var(--muted); font-weight: 600; white-space: nowrap; }
-    th.group { text-align: center; border-left: 1px solid var(--border); }
-    td.sep, th.sep { border-left: 1px solid var(--border); }
+    main { padding: 16px; max-width: 1400px; margin: 0 auto; }
+    h2 { font-size: 16px; margin: 20px 0 8px; }
+    .box { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+    tr:last-child > td { border-bottom: 0; }
+    th { font-size: 13px; color: var(--muted); font-weight: 600; white-space: nowrap; vertical-align: bottom; }
     td.c, th.c { text-align: center; }
-    tbody tr:hover { background: var(--row-hover); }
-    tbody tr.changed { background: var(--changed); }
-    tbody tr.disabled td.name { opacity: .5; }
+    td.r, th.r { text-align: right; }
+    td .sub { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+    td .err { display: block; color: var(--error); font-size: 13px; margin-top: 2px; }
+    .tag { display: inline-block; font-size: 12px; border-radius: 4px; padding: 0 6px; border: 1px solid currentColor; color: var(--manual); }
+    #feeds-table td { vertical-align: middle; }
+    #feeds-table tr.changed { background: var(--changed); }
+    .link { font-size: 13px; word-break: break-all; }
+    .newfeed { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 12px; border-top: 1px solid var(--border); }
+    .rate { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 12px; }
+    .help { color: var(--muted); font-size: 13px; margin: 12px 0; max-width: 1000px; }
+    .help p { margin: 4px 0; }
+    #products { min-width: 900px; }
+    #products tbody tr:hover { background: var(--row-hover); }
+    #products tbody tr.changed { background: var(--changed); }
+    #products tbody tr.dim td.name, #products tbody tr.dim td.img { opacity: .5; }
     td.id { color: var(--muted); font-variant-numeric: tabular-nums; width: 40px; }
     td.img { width: 52px; }
     td.img img { width: 40px; height: 40px; object-fit: contain; background: #fff; border-radius: 4px; display: block; }
-    td.name .cat { display: block; color: var(--muted); font-size: 13px; }
-    td.name a { color: inherit; text-decoration: none; }
+    td.name a { color: inherit; }
     td.name a:hover { text-decoration: underline; }
-    .status { min-height: 20px; margin: 0 0 12px; }
+    td.client { white-space: nowrap; font-variant-numeric: tabular-nums; text-align: right; }
+    .status { min-height: 20px; margin: 0 0 8px; }
     .status.error { color: var(--error); }
     .status.ok { color: var(--ok); }
     .login { max-width: 520px; margin: 40px auto; background: var(--surface);
       border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
     .login input { width: 100%; margin: 8px 0 12px; }
     .login p { color: var(--muted); margin: 0 0 8px; }
+    .empty { padding: 20px; text-align: center; color: var(--muted); }
     .savebar { position: sticky; bottom: 0; background: var(--surface); border-top: 1px solid var(--border);
       padding: 10px 16px; display: flex; gap: 10px; align-items: center; justify-content: flex-end; }
-    .savebar[hidden] { display: none; }
     [hidden] { display: none !important; }
-    @media (max-width: 640px) {
-      header { gap: 8px; }
-      input[type=search] { width: 100%; }
-    }
+    @media (max-width: 640px) { header { gap: 8px; } input[type=search] { width: 100%; } }
   </style>
 </head>
 <body>
   <header>
-    <h1>Товари і ціни</h1>
+    <h1>Фіди Prom</h1>
     <a href="cms/" title="Фото, описи, характеристики, нові товари">Редагувати товари →</a>
-    <a href="site.html" title="Які товари й категорії показувати на energia24.com.ua, ціни на сайті">Товари на сайті →</a>
+    <a href="site.html" title="Які товари й категорії показувати на energia24.com.ua">Товари на сайті →</a>
     <span class="spacer"></span>
     <div class="cats" id="cats"></div>
-    <input type="search" id="search" placeholder="Пошук за назвою або ID" />
+    <input type="search" id="search" placeholder="Пошук за назвою або ID" autocomplete="off" />
   </header>
 
   <main>
-    <div class="login" id="login" hidden>
+    <form class="login" id="login" autocomplete="off" hidden>
       <h2>Вхід</h2>
-      <p>Вставте токен GitHub (або увійдіть у <a href="cms/">редактор товарів</a> через Sign In with Token і поверніться сюди):</p>
+      <p>Вставте токен GitHub (fine-grained, доступ до репозиторію сайту: Contents - Read and write):</p>
       <input type="password" id="token" placeholder="github_pat_…" autocomplete="off" />
-      <button class="primary" id="login-btn">Увійти</button>
-    </div>
+      <button class="primary" id="login-btn" type="submit">Увійти</button>
+    </form>
 
     <p class="status" id="status"></p>
 
-    <div class="table-wrap" id="table-wrap" hidden>
-      <table>
-        <thead>
-          <tr>
-            <th colspan="3"></th>
-            <th class="group" colspan="2" title="Для товарів з фіду avtonomka оновлюється о 08:00, 13:00, 18:00; ручна ціна діє до зміни ціни у фіді">Роздріб · feed.xml ⟳</th>
-            <th class="group" colspan="3">PA · pa.xml</th>
-          </tr>
-          <tr>
-            <th>ID</th><th></th><th>Товар</th>
-            <th class="sep">Ціна, грн</th><th class="c">В наявності</th>
-            <th class="sep c">У фіді</th><th>Ціна, грн</th><th class="c">В наявності</th>
-          </tr>
-        </thead>
-        <tbody id="rows"></tbody>
-      </table>
+    <div id="app" hidden>
+      <h2>Фіди</h2>
+      <div class="box">
+        <table id="feeds-table">
+          <thead>
+            <tr><th>Назва</th><th>Основа</th><th>Від основи, %</th><th>Випадкова надбавка, грн</th><th>Посилання</th><th></th></tr>
+          </thead>
+          <tbody id="feeds"></tbody>
+        </table>
+        <form class="newfeed" id="newfeed" autocomplete="off">
+          <b>Новий фід:</b>
+          <input type="text" id="nf-name" placeholder="Назва клієнта" required />
+          <select id="nf-base"><option value="">від роздрібу</option><option value="wholesale">від опту</option></select>
+          <input class="num short" id="nf-pct" placeholder="%" inputmode="decimal" />
+          <span class="muted">надбавка</span>
+          <input class="num short" id="nf-min" placeholder="від" inputmode="numeric" />
+          <input class="num short" id="nf-max" placeholder="до" inputmode="numeric" />
+          <button class="primary" type="submit">Створити</button>
+        </form>
+      </div>
+
+      <h2>Курс $ для гурту</h2>
+      <div class="box">
+        <form class="rate" id="rate-form" autocomplete="off">
+          <input class="num" id="rate" inputmode="decimal" /> <span>грн за $1</span>
+          <button class="primary" id="rate-save" type="submit" hidden>Зберегти курс</button>
+          <span class="muted">Гуртова ціна у фіді опту (pa.xml) = ціна в $ × курс.</span>
+        </form>
+      </div>
+
+      <div class="help">
+        <p><b>Роздрібна ціна</b> (feed.xml) для товарів з фіду avtonomka оновлюється о 08:00, 13:00 і 18:00.
+          Змінена тут вручну (позначка <span class="tag">ручна</span>) діє, поки ціна у фіді avtonomka не зміниться.
+          Нові товари avtonomka з'являються тут і у фідах самі.</p>
+        <p><b>Гуртова ціна, $</b> (pa.xml) - лише вручну; порожньо = товар у фід опту не йде.</p>
+        <p><b>В наявності</b> - для всіх фідів. Знята галочка = «немає в наявності» в усіх фідах (товар лишається у фідах).
+          Стоїть - наявність як у avtonomka. Товар без ціни або без фото у фіди не йде.</p>
+        <p>Після збереження фіди оновлюються на сайті приблизно за 1–2 хвилини.</p>
+      </div>
+
+      <h2>Товари</h2>
+      <div class="box">
+        <table id="products">
+          <thead id="products-head"></thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <div class="empty" id="empty" hidden>Нічого не знайдено. <button class="sm" id="clear-filter">Скинути фільтр</button></div>
+      </div>
     </div>
   </main>
 
@@ -132,24 +177,27 @@
     const REPO = "companyyyy/energia24-site";
     const BRANCH = "main";
     const DIR = "data/products";
+    const FEEDS_FILE = "data/feeds.json";
+    const PA_PHOTOS = "images/pa";
+    const SITE = location.origin;
     const API = "https://api.github.com";
     const OWN_TOKEN_KEY = "energia24-prices.token";
-    const CATEGORIES = { 1: "Інвертори", 2: "Акумулятори", 3: "Системи 2 в 1", 4: "Зарядні станції" };
+    const CATEGORIES = { 1: "Інвертори", 2: "Акумулятори", 3: "Системи 2 в 1", 4: "Зарядні станції",
+      5: "Кабелі", 6: "ДБЖ для роутерів", 7: "АВР", 8: "Комплекти" };
+    const RESERVED = ["feed.xml", "pa.xml", "sitemap.xml", "prom.xml"];
+    const FIELDS = ["price", "wholesale_usd", "off"];
 
     const $ = (id) => document.getElementById(id);
     let token = null;
-    // id -> { file, sha, data (як у репозиторії), edit (поточні значення в формі) }
-    let products = new Map();
+    let products = new Map();   // id -> { file, sha, data, edit, row }
+    let feedsCfg = { feeds: [], usd_rate: 45 };
+    let paPhotos = new Set();
     let filterCat = 0;
 
-    function storageGet(key) {
-      try { return localStorage.getItem(key); } catch { return null; }
-    }
+    function storageGet(key) { try { return localStorage.getItem(key); } catch { return null; } }
     function storageSet(key, value) {
       try { value == null ? localStorage.removeItem(key) : localStorage.setItem(key, value); } catch {}
     }
-
-    // Токен беремо з адмінки Sveltia CMS (той самий сайт), інакше - введений тут.
     function findToken() {
       try {
         const user = JSON.parse(storageGet("sveltia-cms.user") || "null");
@@ -157,16 +205,12 @@
       } catch {}
       return storageGet(OWN_TOKEN_KEY);
     }
-
-    function setStatus(text, kind = "") {
-      const el = $("status");
-      el.textContent = text;
-      el.className = "status " + kind;
-    }
+    function setStatus(text, kind = "") { const el = $("status"); el.textContent = text; el.className = "status " + kind; }
 
     async function gh(path, options = {}) {
       const res = await fetch(API + path, {
         ...options,
+        cache: "no-store",
         headers: {
           Accept: "application/vnd.github+json",
           Authorization: "Bearer " + token,
@@ -181,156 +225,267 @@
       }
       return res.json();
     }
-
-    // UTF-8 base64 у обидва боки.
     const b64decode = (b64) => new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\s/g, "")), (c) => c.charCodeAt(0)));
+    const toJson = (data) => JSON.stringify(data, null, 2) + "\n";
 
-    async function listFiles(ref) {
-      const items = await gh(`/repos/${REPO}/contents/${DIR}?ref=${encodeURIComponent(ref)}`);
-      return items.filter((i) => i.type === "file" && i.name.endsWith(".json"));
+    async function listDir(dir, ref) {
+      try {
+        return await gh(`/repos/${REPO}/contents/${dir}?ref=${encodeURIComponent(ref)}`);
+      } catch (e) {
+        if (e.status === 404) return [];
+        throw e;
+      }
+    }
+    async function readJson(path, ref) {
+      try {
+        const f = await gh(`/repos/${REPO}/contents/${path}?ref=${encodeURIComponent(ref)}`);
+        return JSON.parse(b64decode(f.content));
+      } catch (e) {
+        if (e.status === 404) return null;
+        throw e;
+      }
+    }
+    async function readProducts(ref) {
+      const files = (await listDir(DIR, ref)).filter((i) => i.type === "file" && i.name.endsWith(".json"));
+      return Promise.all(files.map(async (f) => {
+        const blob = await gh(`/repos/${REPO}/git/blobs/${f.sha}`);
+        return { file: f.path, sha: f.sha, data: JSON.parse(b64decode(blob.content)) };
+      }));
     }
 
     async function load() {
       setStatus("Завантаження…");
-      $("table-wrap").hidden = true;
-      const files = await listFiles(BRANCH);
-      const loaded = await Promise.all(files.map(async (f) => {
-        const blob = await gh(`/repos/${REPO}/git/blobs/${f.sha}`);
-        return { file: f.path, sha: f.sha, data: JSON.parse(b64decode(blob.content)) };
-      }));
+      const [loaded, cfg, photos] = await Promise.all([readProducts(BRANCH), readJson(FEEDS_FILE, BRANCH), listDir(PA_PHOTOS, BRANCH)]);
+      feedsCfg = { feeds: [], usd_rate: 45, ...(cfg || {}) };
+      paPhotos = new Set(photos.map((f) => f.name));
       products = new Map();
       loaded
         .sort((a, b) => (a.data.category - b.data.category) || ((a.data.order || 0) - (b.data.order || 0)) || (a.data.id - b.data.id))
-        .forEach((p) => products.set(p.data.id, { ...p, edit: pickEditable(p.data) }));
-      render();
-      $("table-wrap").hidden = false;
+        .forEach((p) => products.set(p.data.id, { ...p, edit: pick(p.data) }));
+      renderCats();
+      renderFeeds();
+      renderRate();
+      renderProducts();
+      $("app").hidden = false;
       setStatus("");
     }
 
-    function pickEditable(d) {
-      return {
-        price: d.price ?? null,
-        in_stock: d.in_stock ?? false,
-        pa: d.pa ?? false,
-        pa_price: d.pa_price ?? null,
-        pa_in_stock: d.pa_in_stock ?? false,
-      };
-    }
+    const pick = (d) => ({ price: d.price ?? null, wholesale_usd: d.wholesale_usd || 0, off: !!d.off });
+    const isChanged = (p) => FIELDS.some((k) => pick(p.data)[k] !== p.edit[k]);
+    const rate = () => feedsCfg.usd_rate || 45;
+    const round2 = (v) => Math.round(v * 100) / 100;
+    const fmt = (v) => v == null ? "—" : round2(v).toLocaleString("uk-UA", { maximumFractionDigits: 2 }).replace(/ | /g, " ");
 
-    function isChanged(p) {
-      const orig = pickEditable(p.data);
-      return Object.keys(orig).some((k) => orig[k] !== p.edit[k]);
-    }
-
-    // "12 500" / "12500,00" -> 12500; порожньо -> null; помилка -> NaN
-    function parsePrice(text) {
-      const t = text.replace(/[\s ]/g, "").replace(",", ".");
+    // "12 500" -> 12500; порожньо -> null; помилка -> NaN
+    function parseInt0(text) {
+      const t = text.replace(/[\s ]/g, "").replace(",", ".");
       if (t === "") return null;
       if (!/^\d+(\.\d+)?$/.test(t)) return NaN;
       const n = Math.round(parseFloat(t));
       return n > 0 ? n : NaN;
     }
-
-    function priceInput(p, field) {
-      const input = document.createElement("input");
-      input.className = "price";
-      input.inputMode = "numeric";
-      input.dataset.field = field;
-      input.value = p.edit[field] ?? "";
-      input.addEventListener("input", () => {
-        const v = parsePrice(input.value);
-        input.classList.toggle("invalid", Number.isNaN(v));
-        p.edit[field] = Number.isNaN(v) ? NaN : v;
-        refreshRow(p);
-      });
-      // Enter - до того самого поля в наступному рядку.
-      input.addEventListener("keydown", (e) => {
-        if (e.key !== "Enter") return;
-        e.preventDefault();
-        const all = [...document.querySelectorAll(`input.price[data-field="${field}"]`)];
-        const next = all[all.indexOf(input) + (e.shiftKey ? -1 : 1)];
-        if (next) { next.focus(); next.select(); }
-      });
-      return input;
+    // "250,5" -> 250.5; порожньо -> 0
+    function parseUsd(text) {
+      const t = text.replace(/[\s ]/g, "").replace(",", ".");
+      if (t === "") return 0;
+      if (!/^\d+(\.\d{1,2})?$/.test(t)) return NaN;
+      return parseFloat(t);
+    }
+    function parseSigned(text) {
+      const t = text.replace(/[\s ]/g, "").replace(",", ".").replace("−", "-");
+      if (t === "") return null;
+      if (!/^[-+]?\d+(\.\d+)?$/.test(t)) return NaN;
+      return parseFloat(t);
     }
 
-    function checkbox(p, field) {
-      const input = document.createElement("input");
-      input.type = "checkbox";
-      input.checked = !!p.edit[field];
-      input.addEventListener("change", () => {
-        p.edit[field] = input.checked;
-        refreshRow(p);
-      });
-      return input;
+    // ---------------------------------------------------------------- ціни фідів
+
+    function basePrice(e, base) {
+      if (base === "wholesale") return e.wholesale_usd > 0 ? round2(e.wholesale_usd * rate()) : null;
+      return Number.isFinite(e.price) ? e.price : null;
+    }
+    // Ціна в клієнтському фіді: [від, до] або null (товар у фід не йде).
+    function clientRange(e, f) {
+      const base = basePrice(e, f.base);
+      if (base == null) return null;
+      const k = 1 + (f.percent || 0) / 100;
+      if (f.add_min == null) return [round2(base * k), round2(base * k)];
+      return [round2(Math.max(1, base * k + f.add_min)), round2(Math.max(1, base * k + f.add_max))];
+    }
+    function ruleText(f) {
+      const parts = [];
+      if (f.percent) parts.push(`${f.percent > 0 ? "+" : ""}${f.percent}%`);
+      if (f.add_min != null) parts.push(`${f.add_min >= 0 ? "+" : ""}${f.add_min}…${f.add_max >= 0 ? "+" : ""}${f.add_max} грн (випадково для кожного товару)`);
+      return `Ціна: ціна ${f.base === "wholesale" ? "гурт" : "роздріб"}${parts.length ? " " + parts.join(" ") : ""}`;
     }
 
-    function td(className, ...children) {
-      const cell = document.createElement("td");
-      if (className) cell.className = className;
-      children.forEach((c) => cell.append(c));
+    // ---------------------------------------------------------------- блок «Фіди»
+
+    function el(tag, props = {}, ...children) {
+      const e = Object.assign(document.createElement(tag), props);
+      children.forEach((c) => c != null && e.append(c));
+      return e;
+    }
+
+    function linkCell(file) {
+      const url = `${SITE}/${file}`;
+      const cell = el("td", { className: "link" }, el("a", { href: url, target: "_blank", rel: "noopener", textContent: url }), " ");
+      const copy = el("button", { className: "sm", type: "button", textContent: "Копіювати" });
+      copy.addEventListener("click", async () => {
+        try { await navigator.clipboard.writeText(url); copy.textContent = "Скопійовано"; } catch { copy.textContent = "Не вдалося"; }
+        setTimeout(() => { copy.textContent = "Копіювати"; }, 1500);
+      });
+      cell.append(copy);
+      const pending = el("span", { className: "sub", textContent: "ще формується (1–2 хв)", hidden: true });
+      cell.append(pending);
+      fetch(url, { method: "HEAD", cache: "no-store" }).then((r) => { pending.hidden = r.ok; }).catch(() => {});
       return cell;
     }
 
-    function render() {
-      const tbody = $("rows");
+    function renderFeeds() {
+      const tbody = $("feeds");
       tbody.textContent = "";
-      for (const p of products.values()) {
-        const d = p.data;
-        const tr = document.createElement("tr");
-        p.row = tr;
-        tr.dataset.cat = d.category;
-        tr.dataset.search = `${d.id} ${d.name}`.toLowerCase();
-        tr.classList.toggle("disabled", d.enabled === false);
+      tbody.append(
+        el("tr", {}, el("td", {}, el("b", { textContent: "Роздрібні ціни (основний)" })), el("td", { textContent: "Роздріб" }),
+          el("td", { textContent: "0%" }), el("td", { textContent: "—" }), linkCell("feed.xml"), el("td")),
+        el("tr", {}, el("td", {}, el("b", { textContent: "Гуртові ціни (опт, PA)" })), el("td", { textContent: "Опт" }),
+          el("td", { textContent: "ціни вручну" }), el("td", { textContent: "—" }), linkCell("pa.xml"), el("td")),
+      );
+      for (const f of feedsCfg.feeds) tbody.append(feedRow(f));
+    }
 
-        const img = document.createElement("img");
-        img.alt = "";
-        img.loading = "lazy";
-        if (d.photo) img.src = "/" + d.photo.replace(/^\//, "");
-        else img.hidden = true;
+    function feedRow(f) {
+      const tr = el("tr");
+      const name = el("input", { type: "text", value: f.name || "", autocomplete: "off" });
+      const base = el("select", {}, el("option", { value: "", textContent: "Роздріб" }), el("option", { value: "wholesale", textContent: "Опт" }));
+      base.value = f.base || "";
+      const pct = el("input", { className: "num short", inputMode: "decimal", value: f.percent ? String(f.percent) : "" });
+      const min = el("input", { className: "num short", inputMode: "numeric", value: f.add_min ?? "", placeholder: "від" });
+      const max = el("input", { className: "num short", inputMode: "numeric", value: f.add_max ?? "", placeholder: "до" });
+      const rule = el("span", { className: "sub", textContent: ruleText(f) });
+      const save = el("button", { className: "sm primary", type: "button", textContent: "Зберегти", hidden: true });
+      const del = el("button", { className: "sm", type: "button", textContent: "Видалити" });
 
-        const link = document.createElement("a");
-        link.href = `cms/#/collections/products/entries/${d.id}`;
-        link.textContent = d.name;
-        link.title = "Відкрити товар: фото, опис, характеристики";
-        const cat = document.createElement("span");
-        cat.className = "cat";
-        cat.textContent = (CATEGORIES[d.category] || "") + (d.enabled === false ? " · прихований" : "");
+      const read = () => readRule(name.value, base.value, pct.value, min.value, max.value);
+      const onInput = () => {
+        const r = read();
+        [pct, min, max].forEach((i) => i.classList.remove("invalid"));
+        if (r.error) r.bad.forEach((i) => ({ pct, min, max })[i].classList.add("invalid"));
+        else rule.textContent = ruleText(r.rule);
+        const changed = JSON.stringify(r.rule || {}) !== JSON.stringify(normalize(f));
+        save.hidden = !changed;
+        tr.classList.toggle("changed", changed);
+      };
+      [name, base, pct, min, max].forEach((i) => i.addEventListener("input", onInput));
+      save.addEventListener("click", async () => {
+        const r = read();
+        if (r.error) { setStatus(r.error, "error"); return; }
+        await saveFeeds((cfg) => {
+          const t = cfg.feeds.find((x) => x.file === f.file);
+          if (!t) throw new Error("Цей фід щойно видалили. Оновіть сторінку.");
+          for (const k of ["percent", "add_min", "add_max", "base"]) delete t[k];
+          Object.assign(t, r.rule);
+        }, `Адмінка Prom: фід «${r.rule.name}» (${ruleText(r.rule).replace("Ціна: ", "")})`);
+      });
+      del.addEventListener("click", async () => {
+        if (!confirm(`Видалити фід «${f.name}»? Посилання ${SITE}/${f.file} перестане працювати.`)) return;
+        await saveFeeds((cfg) => { cfg.feeds = cfg.feeds.filter((x) => x.file !== f.file); }, `Адмінка Prom: видалити фід «${f.name}»`);
+      });
 
-        const paPrice = priceInput(p, "pa_price");
-        const paStock = checkbox(p, "pa_in_stock");
-        p.paInputs = [paPrice, paStock];
+      tr.append(el("td", {}, name, rule), el("td", {}, base), el("td", {}, pct, " %"),
+        el("td", {}, min, " … ", max), linkCell(f.file), el("td", {}, save, " ", del));
+      return tr;
+    }
 
-        tr.append(
-          td("id", String(d.id)),
-          td("img", img),
-          td("name", link, cat),
-          td("sep", priceInput(p, "price")),
-          td("c", checkbox(p, "in_stock")),
-          td("sep c", checkbox(p, "pa")),
-          td("", paPrice),
-          td("c", paStock),
-        );
-        tbody.append(tr);
-        refreshRow(p);
+    function normalize(f) {
+      const r = { name: f.name };
+      if (f.percent) r.percent = f.percent; else r.percent = 0;
+      if (f.add_min != null) { r.add_min = f.add_min; r.add_max = f.add_max; }
+      if (f.base === "wholesale") r.base = "wholesale";
+      return r;
+    }
+
+    // Перевірка правила ціни. Повертає {rule} або {error, bad: [поля]}.
+    function readRule(name, base, pctText, minText, maxText) {
+      name = name.trim();
+      if (!name) return { error: "Вкажіть назву фіду.", bad: [] };
+      const pct = parseSigned(pctText), min = parseSigned(minText), max = parseSigned(maxText);
+      if (Number.isNaN(pct) || (pct != null && (pct < -90 || pct > 500))) return { error: "Відсоток - число від −90 до +500.", bad: ["pct"] };
+      if ((min == null) !== (max == null)) return { error: "Надбавка: вкажіть і «від», і «до» (або жодного).", bad: ["min", "max"] };
+      if (min != null && (!Number.isInteger(min) || !Number.isInteger(max) || min > max))
+        return { error: "Надбавка - цілі числа, «від» не більше «до» (можна мінусові).", bad: ["min", "max"] };
+      if (pct == null && min == null && base !== "wholesale") return { error: "Вкажіть відсоток або надбавку.", bad: ["pct"] };
+      const rule = { name, percent: pct || 0 };
+      if (min != null) { rule.add_min = min; rule.add_max = max; }
+      if (base === "wholesale") rule.base = "wholesale";
+      return { rule };
+    }
+
+    const TRANSLIT = { а: "a", б: "b", в: "v", г: "h", ґ: "g", д: "d", е: "e", є: "ie", ж: "zh", з: "z", и: "y", і: "i", ї: "i",
+      й: "i", к: "k", л: "l", м: "m", н: "n", о: "o", п: "p", р: "r", с: "s", т: "t", у: "u", ф: "f", х: "kh", ц: "ts",
+      ч: "ch", ш: "sh", щ: "shch", ь: "", ю: "iu", я: "ia", ё: "e", ы: "y", э: "e", ъ: "" };
+    function slug(name) {
+      const s = [...name.toLowerCase()].map((c) => TRANSLIT[c] ?? c).join("").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+      return s || "feed";
+    }
+
+    $("newfeed").addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      const r = readRule($("nf-name").value, $("nf-base").value, $("nf-pct").value, $("nf-min").value, $("nf-max").value);
+      if (r.error) { setStatus(r.error, "error"); return; }
+      if (unsavedPrices() && !confirm("Незбережені зміни цін зникнуть. Продовжити?")) return;
+      await saveFeeds((cfg) => {
+        const taken = new Set([...cfg.feeds.map((f) => f.file), ...RESERVED]);
+        let file = `feed/${slug(r.rule.name)}.xml`;
+        for (let n = 2; taken.has(file); n++) file = `feed/${slug(r.rule.name)}-${n}.xml`;
+        cfg.feeds.push({ file, ...r.rule });
+      }, `Адмінка Prom: новий фід «${r.rule.name}» (${ruleText(r.rule).replace("Ціна: ", "")})`);
+      $("newfeed").reset();
+    });
+
+    // ---------------------------------------------------------------- курс
+
+    function renderRate() {
+      $("rate").value = String(rate()).replace(".", ",");
+      $("rate-save").hidden = true;
+    }
+    $("rate").addEventListener("input", () => {
+      const v = parseSigned($("rate").value);
+      $("rate").classList.toggle("invalid", !(v >= 1 && v <= 1000));
+      $("rate-save").hidden = v === rate();
+    });
+    $("rate-form").addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      const v = parseSigned($("rate").value);
+      if (!(v >= 1 && v <= 1000)) { setStatus("Курс - число від 1 до 1000.", "error"); return; }
+      if (unsavedPrices() && !confirm("Незбережені зміни цін зникнуть. Продовжити?")) return;
+      await saveFeeds((cfg) => { cfg.usd_rate = v; }, `Адмінка Prom: курс $ для гурту ${v}`);
+    });
+
+    async function saveFeeds(mutate, message, attempt = 1) {
+      setStatus("Збереження…");
+      try {
+        const head = (await gh(`/repos/${REPO}/git/ref/heads/${BRANCH}`)).object.sha;
+        const cfg = { feeds: [], usd_rate: 45, ...((await readJson(FEEDS_FILE, head)) || {}) };
+        mutate(cfg);
+        await commitFiles(head, [{ path: FEEDS_FILE, content: toJson(cfg) }], message);
+        await load();
+        setStatus("Збережено. Фіди оновляться на сайті приблизно за 1–2 хвилини.", "ok");
+      } catch (e) {
+        if (e.status === 422 && attempt < 3) return saveFeeds(mutate, message, attempt + 1);
+        setStatus(e.message, "error");
       }
-      applyFilter();
     }
 
-    function refreshRow(p) {
-      p.row.classList.toggle("changed", isChanged(p));
-      p.paInputs.forEach((el) => { el.disabled = !p.edit.pa; });
-      const changed = [...products.values()].filter(isChanged);
-      $("savebar").hidden = changed.length === 0;
-      $("changed-count").textContent = `Змінено товарів: ${changed.length}`;
-    }
+    // ---------------------------------------------------------------- товари
 
     function renderCats() {
       const box = $("cats");
-      const entries = [[0, "Усі"], ...Object.entries(CATEGORIES)];
+      box.textContent = "";
+      const used = new Set([...products.values()].map((p) => p.data.category));
+      const entries = [[0, "Усі"], ...Object.entries(CATEGORIES).filter(([id]) => used.has(Number(id)))];
       for (const [id, label] of entries) {
-        const b = document.createElement("button");
-        b.textContent = label;
+        const b = el("button", { textContent: label });
         b.classList.toggle("active", Number(id) === filterCat);
         b.addEventListener("click", () => {
           filterCat = Number(id);
@@ -341,27 +496,143 @@
       }
     }
 
+    function hasPhoto(d) { return !!d.photo || paPhotos.has(`${d.id}.jpg`); }
+
+    function problems(p) {
+      const d = p.data, e = p.edit, out = [];
+      if (d.enabled === false) out.push("вимкнено в редакторі товарів («Показувати у фідах»)");
+      if (!Number.isFinite(e.price)) out.push("немає ціни - у фіди не йде");
+      if (!hasPhoto(d)) out.push("немає фото на білому фоні - у фіди не йде");
+      return out;
+    }
+
+    function renderProducts() {
+      const head = $("products-head");
+      head.textContent = "";
+      const tr = el("tr", {}, el("th", { textContent: "ID" }), el("th"), el("th", { textContent: "Товар" }),
+        el("th", { textContent: "Ціна роздріб, грн" }), el("th", { textContent: "Ціна гурт, $" }),
+        el("th", { className: "c", textContent: "В наявності (усі фіди)" }));
+      for (const f of feedsCfg.feeds) tr.append(el("th", { className: "r", textContent: f.name, title: ruleText(f) }));
+      head.append(tr);
+
+      const tbody = $("rows");
+      tbody.textContent = "";
+      for (const p of products.values()) {
+        const d = p.data;
+        const row = el("tr");
+        p.row = row;
+        row.dataset.cat = d.category;
+        row.dataset.search = `${d.id} ${d.name}`.toLowerCase();
+
+        const img = el("img", { alt: "", loading: "lazy" });
+        const src = paPhotos.has(`${d.id}.jpg`) ? `/${PA_PHOTOS}/${d.id}.jpg` : d.photo ? "/" + d.photo.replace(/^\//, "") : "";
+        if (src) img.src = src; else img.hidden = true;
+
+        const name = el("td", { className: "name" },
+          el("a", { href: `cms/#/collections/products/entries/${d.id}`, textContent: d.name, title: "Відкрити товар: фото, опис, характеристики" }),
+          el("span", { className: "sub", textContent: (CATEGORIES[d.category] || "") + (d.avtonomka_id ? ` · avtonomka ${d.avtonomka_id}` : " · немає в avtonomka") }));
+        p.errEl = el("span", { className: "err" });
+        name.append(p.errEl);
+
+        const price = el("input", { className: "num", inputMode: "numeric", value: p.edit.price ?? "" });
+        price.dataset.field = "price";
+        price.addEventListener("input", () => { p.edit.price = parseInt0(price.value); price.classList.toggle("invalid", Number.isNaN(p.edit.price)); refreshRow(p); });
+        p.priceNote = el("span", { className: "sub" });
+
+        const usd = el("input", { className: "num", inputMode: "decimal", value: p.edit.wholesale_usd ? String(p.edit.wholesale_usd).replace(".", ",") : "" });
+        usd.dataset.field = "usd";
+        usd.addEventListener("input", () => { p.edit.wholesale_usd = parseUsd(usd.value); usd.classList.toggle("invalid", Number.isNaN(p.edit.wholesale_usd)); refreshRow(p); });
+        p.usdNote = el("span", { className: "sub" });
+
+        const stock = el("input", { type: "checkbox", checked: !p.edit.off });
+        stock.addEventListener("change", () => { p.edit.off = !stock.checked; refreshRow(p); });
+        p.stockNote = el("span", { className: "sub" });
+
+        [price, usd].forEach((input) => input.addEventListener("keydown", (ev) => {
+          if (ev.key !== "Enter") return;
+          ev.preventDefault();
+          const all = [...document.querySelectorAll(`#rows tr:not([hidden]) input.num[data-field="${input.dataset.field}"]`)];
+          const next = all[all.indexOf(input) + (ev.shiftKey ? -1 : 1)];
+          if (next) { next.focus(); next.select(); }
+        }));
+
+        row.append(el("td", { className: "id", textContent: String(d.id) }), el("td", { className: "img" }, img), name,
+          el("td", {}, price, p.priceNote), el("td", {}, usd, p.usdNote), el("td", { className: "c" }, stock, p.stockNote));
+        p.clientCells = feedsCfg.feeds.map((f) => { const c = el("td", { className: "client" }); row.append(c); return [f, c]; });
+        p.inputs = { price, usd, stock };
+        tbody.append(row);
+        refreshRow(p, false);
+      }
+      refreshBar();
+      applyFilter();
+    }
+
+    function refreshRow(p, bar = true) {
+      const d = p.data, e = p.edit;
+      p.row.classList.toggle("changed", isChanged(p));
+      const probs = problems(p);
+      p.errEl.textContent = probs.join("; ");
+      p.row.classList.toggle("dim", probs.length > 0);
+
+      p.priceNote.textContent = "";
+      if (d.avtonomka_id && d.feed_price != null) {
+        if (e.price !== d.feed_price) {
+          p.priceNote.append(el("span", { className: "tag", textContent: "ручна", title: "Діє, поки ціна у фіді avtonomka не зміниться" }), ` avtonomka: ${fmt(d.feed_price)} `);
+          const back = el("button", { className: "sm", type: "button", textContent: "↺", title: "Повернути ціну avtonomka" });
+          back.addEventListener("click", () => { e.price = d.feed_price; p.inputs.price.value = e.price; p.inputs.price.classList.remove("invalid"); refreshRow(p); });
+          p.priceNote.append(back);
+        } else {
+          p.priceNote.textContent = "з avtonomka";
+        }
+      }
+      p.usdNote.textContent = Number.isNaN(e.wholesale_usd) ? "" : e.wholesale_usd > 0 ? `≈ ${fmt(e.wholesale_usd * rate())} грн` : "у фід опту не йде";
+      p.stockNote.textContent = e.off ? "вимкнено у фідах" : d.avtonomka_id && !d.in_stock ? "у avtonomka немає" : "";
+
+      for (const [f, cell] of p.clientCells) {
+        const r = Number.isNaN(e.price) || Number.isNaN(e.wholesale_usd) ? null : clientRange(e, f);
+        cell.textContent = r == null ? "—" : r[0] === r[1] ? fmt(r[0]) : `${fmt(r[0])}–${fmt(r[1])}`;
+      }
+      if (bar) refreshBar();
+    }
+
+    const unsavedPrices = () => [...products.values()].some(isChanged);
+
+    function refreshBar() {
+      const n = [...products.values()].filter(isChanged).length;
+      $("savebar").hidden = n === 0;
+      $("changed-count").textContent = `Змінено товарів: ${n}`;
+    }
+
     function applyFilter() {
       const q = $("search").value.trim().toLowerCase();
+      let shown = 0;
       for (const p of products.values()) {
         const r = p.row;
         r.hidden = (filterCat && Number(r.dataset.cat) !== filterCat) || (q && !r.dataset.search.includes(q));
+        shown += !r.hidden;
       }
+      $("empty").hidden = shown > 0 || products.size === 0;
     }
+    $("clear-filter").addEventListener("click", () => {
+      $("search").value = "";
+      filterCat = 0;
+      [...$("cats").children].forEach((c, i) => c.classList.toggle("active", i === 0));
+      applyFilter();
+    });
 
-    async function save() {
+    async function saveProducts() {
       const changed = [...products.values()].filter(isChanged);
-      if (changed.some((p) => Number.isNaN(p.edit.price) || Number.isNaN(p.edit.pa_price))) {
-        setStatus("Виправте ціни, підсвічені червоним: лише число більше нуля або порожньо.", "error");
+      if (changed.some((p) => Number.isNaN(p.edit.price) || Number.isNaN(p.edit.wholesale_usd))) {
+        setStatus("Виправте значення, підсвічені червоним: роздріб - ціле число більше нуля або порожньо, гурт - число до центів або порожньо.", "error");
         return;
       }
       $("save-btn").disabled = true;
       setStatus("Збереження…");
       try {
-        await commit(changed);
-        setStatus(`Збережено (${changed.length} товарів). Фіди оновляться на сайті приблизно за 1–2 хвилини.`, "ok");
+        await commitProducts(changed);
+        const msg = `Збережено (${changed.length} товарів). Фіди оновляться на сайті приблизно за 1–2 хвилини.`;
         await load();
-        setStatus(`Збережено (${changed.length} товарів). Фіди оновляться на сайті приблизно за 1–2 хвилини.`, "ok");
+        setStatus(msg, "ok");
       } catch (e) {
         setStatus(e.message, "error");
       } finally {
@@ -369,57 +640,55 @@
       }
     }
 
-    // Один коміт на всі змінені товари. Якщо поки редагували, хтось змінив
-    // ці ж файли - не перезаписуємо, просимо оновити сторінку.
-    async function commit(changed, attempt = 1) {
-      const ref = await gh(`/repos/${REPO}/git/ref/heads/${BRANCH}`);
-      const head = ref.object.sha;
-      const current = new Map((await listFiles(head)).map((f) => [f.path, f.sha]));
-      const conflicts = changed.filter((p) => current.get(p.file) !== p.sha);
-      if (conflicts.length) {
-        throw new Error("Ці товари щойно змінив хтось інший: " +
-          conflicts.map((p) => p.data.name).join(", ") + ". Оновіть сторінку і внесіть зміни ще раз.");
+    // Беремо свіжі файли й міняємо лише відредаговані поля. Якщо те саме поле тим часом
+    // змінив хтось інший (напр. ціну оновило з avtonomka) - не перезаписуємо.
+    async function commitProducts(changed, attempt = 1) {
+      const head = (await gh(`/repos/${REPO}/git/ref/heads/${BRANCH}`)).object.sha;
+      const fresh = new Map((await readProducts(head)).map((f) => [f.file, f]));
+      const files = [], conflicts = [];
+      for (const p of changed) {
+        const cur = fresh.get(p.file);
+        if (!cur) { conflicts.push(p.data.name); continue; }
+        const orig = pick(p.data), now = pick(cur.data), data = { ...cur.data };
+        for (const k of FIELDS) {
+          if (orig[k] === p.edit[k]) continue;
+          if (now[k] !== orig[k]) conflicts.push(p.data.name);
+          data[k] = p.edit[k];
+        }
+        files.push({ path: p.file, content: toJson(data) });
       }
-      const headCommit = await gh(`/repos/${REPO}/git/commits/${head}`);
-      const tree = await gh(`/repos/${REPO}/git/trees`, {
-        method: "POST",
-        body: JSON.stringify({
-          base_tree: headCommit.tree.sha,
-          tree: changed.map((p) => ({
-            path: p.file,
-            mode: "100644",
-            type: "blob",
-            content: JSON.stringify({ ...p.data, ...p.edit }, null, 2) + "\n",
-          })),
-        }),
-      });
-      const names = changed.map((p) => p.data.id).join(", ");
-      const newCommit = await gh(`/repos/${REPO}/git/commits`, {
-        method: "POST",
-        body: JSON.stringify({
-          message: `Адмінка: ціни (товари ${names})`,
-          tree: tree.sha,
-          parents: [head],
-        }),
-      });
+      if (conflicts.length) {
+        throw new Error("Ці товари щойно змінились (інша вкладка, інша людина або оновлення з avtonomka): " +
+          [...new Set(conflicts)].join(", ") + ". Оновіть сторінку і внесіть зміни ще раз.");
+      }
+      const ids = changed.map((p) => p.data.id).join(", ");
       try {
-        await gh(`/repos/${REPO}/git/refs/heads/${BRANCH}`, {
-          method: "PATCH",
-          body: JSON.stringify({ sha: newCommit.sha, force: false }),
-        });
+        await commitFiles(head, files, `Адмінка Prom: ціни (товари ${ids})`);
       } catch (e) {
-        // main встиг посунутися (напр., коміт бота з фідами) - пробуємо ще раз від нової вершини.
-        if (e.status === 422 && attempt < 3) return commit(changed, attempt + 1);
+        if (e.status === 422 && attempt < 3) return commitProducts(changed, attempt + 1);
         throw e;
       }
     }
 
+    // Один коміт з кількома файлами (Git Data API).
+    async function commitFiles(head, files, message) {
+      const headCommit = await gh(`/repos/${REPO}/git/commits/${head}`);
+      const tree = await gh(`/repos/${REPO}/git/trees`, {
+        method: "POST",
+        body: JSON.stringify({ base_tree: headCommit.tree.sha, tree: files.map((f) => ({ path: f.path, mode: "100644", type: "blob", content: f.content })) }),
+      });
+      const commit = await gh(`/repos/${REPO}/git/commits`, {
+        method: "POST",
+        body: JSON.stringify({ message, tree: tree.sha, parents: [head] }),
+      });
+      await gh(`/repos/${REPO}/git/refs/heads/${BRANCH}`, { method: "PATCH", body: JSON.stringify({ sha: commit.sha, force: false }) });
+    }
+
+    // ---------------------------------------------------------------- старт
+
     async function start() {
       token = findToken();
-      if (!token) {
-        $("login").hidden = false;
-        return;
-      }
+      if (!token) { $("login").hidden = false; return; }
       try {
         await load();
       } catch (e) {
@@ -433,7 +702,8 @@
       }
     }
 
-    $("login-btn").addEventListener("click", () => {
+    $("login").addEventListener("submit", (ev) => {
+      ev.preventDefault();
       const t = $("token").value.trim();
       if (!t) return;
       storageSet(OWN_TOKEN_KEY, t);
@@ -442,13 +712,10 @@
       start();
     });
     $("search").addEventListener("input", applyFilter);
-    $("save-btn").addEventListener("click", save);
-    $("reset-btn").addEventListener("click", () => { for (const p of products.values()) p.edit = pickEditable(p.data); render(); });
-    window.addEventListener("beforeunload", (e) => {
-      if ([...products.values()].some(isChanged)) e.preventDefault();
-    });
+    $("save-btn").addEventListener("click", saveProducts);
+    $("reset-btn").addEventListener("click", () => { for (const p of products.values()) p.edit = pick(p.data); renderProducts(); });
+    window.addEventListener("beforeunload", (e) => { if (unsavedPrices()) e.preventDefault(); });
 
-    renderCats();
     start();
   })();
   </script>
