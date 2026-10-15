@@ -57,7 +57,8 @@ jobs:
             # Коміти бота не запускають «Update product feed», тож фіди Prom - тут же.
             # Гуртові ціни sync не чіпає, тож pa.xml змінюється лише через наявність чи нові тексти.
             python scripts/update_feed.py
-            git add -A data/site/catalog.json index.html data/products images/products feed.xml pa.xml feed data/feeds_built.json
+            git add -A data/site/catalog.json index.html data/products images/products feed.xml pa.xml data/feeds_built.json
+            git add -A feed 2>/dev/null || true
             if git diff --cached --quiet; then
               echo "Змін немає"
               exit 0
