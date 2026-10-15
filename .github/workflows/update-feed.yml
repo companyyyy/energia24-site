@@ -9,6 +9,8 @@ on:
       - 'images/products/**'
       - 'images/pa/**'
       - 'scripts/**'
+      # Каталог сайту (index.html) фідів Prom не стосується.
+      - '!scripts/site_catalog.py'
   workflow_dispatch: {}
 
 permissions:
