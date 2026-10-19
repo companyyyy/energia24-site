@@ -6,7 +6,7 @@
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLA12100PG2",
-  "price": 13100,
+  "price": 13146,
   "in_stock": true,
   "wholesale_usd": 270,
   "off": false,
@@ -91,6 +91,6 @@
       "value": "10.3 кг / 12.3 кг"
     }
   ],
-  "feed_price": 13100,
+  "feed_price": 13146,
   "feed_in_stock": true
 }

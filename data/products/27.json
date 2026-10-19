@@ -6,7 +6,7 @@
   "category": 3,
   "vendor": "Must",
   "name": "Система зберігання енергії 2в1 MUST HBP18-1212 OS",
-  "price": 20798,
+  "price": 20747,
   "in_stock": true,
   "wholesale_usd": 0,
   "off": false,
@@ -143,6 +143,6 @@
       "value": "17 кг / 18.5 кг"
     }
   ],
-  "feed_price": 20798,
+  "feed_price": 20747,
   "feed_in_stock": true
 }

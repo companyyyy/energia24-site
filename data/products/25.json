@@ -6,7 +6,7 @@
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLA48314-EU",
-  "price": 90843,
+  "price": 90959,
   "in_stock": true,
   "wholesale_usd": 1770,
   "off": false,
@@ -95,6 +95,6 @@
       "value": "121.5 кг"
     }
   ],
-  "feed_price": 90843,
+  "feed_price": 90959,
   "feed_in_stock": true
 }
