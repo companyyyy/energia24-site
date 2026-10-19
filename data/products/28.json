@@ -8,7 +8,7 @@
   "price": 47400,
   "in_stock": true,
   "wholesale_usd": 0,
-  "off": false,
+  "off": true,
   "photo": "",
   "summary": "Система зберігання енергії 2в1 MUST HBP18-3024OS. Потужність: 3 кВт. Ємність: 3072 Вт·год. Конструкція: інвертор + акумулятор в одному корпусі, на колесах. Вага: 33 кг.",
   "specs_source": "screenshot: Must HBP18 OS",
