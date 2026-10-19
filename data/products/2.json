@@ -9,7 +9,7 @@
   "price": 11585,
   "in_stock": true,
   "wholesale_usd": 210,
-  "off": false,
+  "off": true,
   "photo": "/images/products/inv-pv18-1512vpm.jpg",
   "summary": "Гібридний інвертор Must PV18-1512 VPM II. Потужність: 1.5 кВт. Напруга АКБ: 12 В. Вага: 5.5 кг.",
   "specs_source": "must-pv1800-vpm-ii.pdf",
