@@ -1,4 +1,11 @@
 {
-  "feeds": [],
+  "feeds": [
+    {
+      "file": "feed/escore.xml",
+      "name": "escore",
+      "percent": 0,
+      "base": "wholesale"
+    }
+  ],
   "usd_rate": 45
 }
