@@ -8,7 +8,7 @@
   "name": "Комплект автономного енергоживлення: Felicity IVEM6048-II 6 кВт 48 В + DAH Solar DHN-LVWES05-G1 100ah 51.2V",
   "name_ru": "Комплект автономного енергоживлення: Felicity IVEM6048-II 6 кВт 48 В + DAH Solar DHN-LVWES05-G1 100ah 51.2V",
   "price": 61273,
-  "in_stock": true,
+  "in_stock": false,
   "wholesale_usd": 0,
   "off": true,
   "photo": "/images/products/avt-152205.jpg",
@@ -17,5 +17,5 @@
   "description_ru_html": "",
   "specs": [],
   "feed_price": 61273,
-  "feed_in_stock": true
+  "feed_in_stock": false
 }

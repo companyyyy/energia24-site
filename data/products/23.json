@@ -6,7 +6,7 @@
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLB48230WG1-H",
-  "price": 77337,
+  "price": 77329,
   "in_stock": true,
   "wholesale_usd": 0,
   "off": false,
@@ -111,6 +111,6 @@
       "value": "91 кг"
     }
   ],
-  "feed_price": 77337,
+  "feed_price": 77329,
   "feed_in_stock": true
 }

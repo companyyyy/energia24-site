@@ -7,7 +7,7 @@
   "vendor": "Must",
   "name": "Акумулятор MUST LP16-24200",
   "price": 43095,
-  "in_stock": true,
+  "in_stock": false,
   "wholesale_usd": 850,
   "off": true,
   "photo": "/images/products/bat-lp16-24200.jpg",
@@ -100,5 +100,5 @@
     }
   ],
   "feed_price": 43095,
-  "feed_in_stock": true
+  "feed_in_stock": false
 }

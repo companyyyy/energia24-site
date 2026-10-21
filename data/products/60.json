@@ -8,7 +8,7 @@
   "name": "Акумуляторна батарея Dyness BX51100 51.2v 100ah, 5.12kwh LiFePo4, Trade IN",
   "name_ru": "Акумуляторна батарея Dyness BX51100 51.2v 100ah, 5.12kwh LiFePo4, Trade IN",
   "price": 34827,
-  "in_stock": true,
+  "in_stock": false,
   "wholesale_usd": 0,
   "off": true,
   "photo": "/images/products/avt-150590.jpg",
@@ -17,5 +17,5 @@
   "description_ru_html": "",
   "specs": [],
   "feed_price": 34827,
-  "feed_in_stock": true
+  "feed_in_stock": false
 }

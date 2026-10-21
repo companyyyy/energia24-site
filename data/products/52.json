@@ -8,7 +8,7 @@
   "name": "Комплект автономного енергоживлення: MUST PV19-4024 EXP 4 кВт, 24V + Felicity FLA24280 25.6V 280Ah",
   "name_ru": "Комплект автономного енергоживлення: MUST PV19-4024 EXP 4 кВт, 24V + Felicity FLA24280 25.6V 280Ah",
   "price": 74743,
-  "in_stock": true,
+  "in_stock": false,
   "wholesale_usd": 0,
   "off": true,
   "photo": "/images/products/avt-152730.jpg",
@@ -17,5 +17,5 @@
   "description_ru_html": "",
   "specs": [],
   "feed_price": 74743,
-  "feed_in_stock": true
+  "feed_in_stock": false
 }

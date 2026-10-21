@@ -8,7 +8,7 @@
   "name": "Комплект автономного енергоживлення: MUST PV19-6048EXP 48V 6 kW + MUST LP16-48300, 51.2V 300Ah",
   "name_ru": "Комплект автономного енергоживлення: MUST PV19-6048EXP 48V 6 kW + MUST LP16-48300, 51.2V 300Ah",
   "price": 108972,
-  "in_stock": true,
+  "in_stock": false,
   "wholesale_usd": 0,
   "off": true,
   "photo": "/images/products/avt-152732.jpg",
@@ -17,5 +17,5 @@
   "description_ru_html": "",
   "specs": [],
   "feed_price": 108972,
-  "feed_in_stock": true
+  "feed_in_stock": false
 }

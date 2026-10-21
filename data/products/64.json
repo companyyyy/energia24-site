@@ -8,7 +8,7 @@
   "name": "Комплект автономного енергоживлення: Must PV18-3224VPM II+ Felicity FLA24280 25.6V 280Ah",
   "name_ru": "Комплект автономного енергоживлення: Must PV18-3224VPM II+ Felicity FLA24280 25.6V 280Ah",
   "price": 69808,
-  "in_stock": true,
+  "in_stock": false,
   "wholesale_usd": 0,
   "off": true,
   "photo": "/images/products/avt-152221.jpg",
@@ -17,5 +17,5 @@
   "description_ru_html": "",
   "specs": [],
   "feed_price": 69808,
-  "feed_in_stock": true
+  "feed_in_stock": false
 }

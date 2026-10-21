@@ -8,7 +8,7 @@
   "name": "Комплект автономного енергоживлення: Must PV19-6048EXP 6 кВт 48 В + Felicity FLB48230WG1-H 51.2V 230Ah, з підігрівом",
   "name_ru": "Комплект автономного енергоживлення: Must PV19-6048EXP 6 кВт 48 В + Felicity FLB48230WG1-H 51.2V 230Ah, з підігрівом",
   "price": 102450,
-  "in_stock": true,
+  "in_stock": false,
   "wholesale_usd": 0,
   "off": true,
   "photo": "/images/products/avt-152699.jpg",
@@ -17,5 +17,5 @@
   "description_ru_html": "",
   "specs": [],
   "feed_price": 102450,
-  "feed_in_stock": true
+  "feed_in_stock": false
 }

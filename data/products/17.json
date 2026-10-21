@@ -6,7 +6,7 @@
   "category": 2,
   "vendor": "Must",
   "name": "Акумулятор MUST LP16-48300",
-  "price": 83993,
+  "price": 83928,
   "in_stock": true,
   "wholesale_usd": 1780,
   "off": false,
@@ -111,6 +111,6 @@
       "value": "117 кг"
     }
   ],
-  "feed_price": 83993,
+  "feed_price": 83928,
   "feed_in_stock": true
 }

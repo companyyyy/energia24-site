@@ -8,7 +8,7 @@
   "name": "Комплект автономного енергоживлення: MUST PV19-6048EXP 48V 6 kW + Felicity FLA48314-EU 51.2V 314Ah 16kWh",
   "name_ru": "Комплект автономного енергоживлення: MUST PV19-6048EXP 48V 6 kW + Felicity FLA48314-EU 51.2V 314Ah 16kWh",
   "price": 115824,
-  "in_stock": true,
+  "in_stock": false,
   "wholesale_usd": 0,
   "off": true,
   "photo": "/images/products/avt-151790.jpg",
@@ -17,5 +17,5 @@
   "description_ru_html": "",
   "specs": [],
   "feed_price": 115824,
-  "feed_in_stock": true
+  "feed_in_stock": false
 }

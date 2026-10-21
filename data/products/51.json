@@ -8,7 +8,7 @@
   "name": "Комплект автономного енергоживлення: Must PV18-1512 VPM II 1.5 кВт 12 Вт+ MUST LP15-12100 12V 100Ah LiFePO4",
   "name_ru": "Комплект автономного енергоживлення: Must PV18-1512 VPM II 1.5 кВт 12 Вт+ MUST LP15-12100 12V 100Ah LiFePO4",
   "price": 26225,
-  "in_stock": true,
+  "in_stock": false,
   "wholesale_usd": 0,
   "off": true,
   "photo": "/images/products/avt-152726.jpg",
@@ -17,5 +17,5 @@
   "description_ru_html": "",
   "specs": [],
   "feed_price": 26225,
-  "feed_in_stock": true
+  "feed_in_stock": false
 }

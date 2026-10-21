@@ -6,7 +6,7 @@
   "category": 1,
   "vendor": "Must",
   "name": "Гібридний інвертор Must PV18-3224VPM II",
-  "price": 15642,
+  "price": 15779,
   "in_stock": true,
   "wholesale_usd": 275,
   "off": false,
@@ -135,6 +135,6 @@
       "value": "5.5 кг / 6.5 кг"
     }
   ],
-  "feed_price": 15642,
+  "feed_price": 15779,
   "feed_in_stock": true
 }

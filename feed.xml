@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2026-10-19 13:51">
+<yml_catalog date="2026-10-21 15:01">
   <shop>
     <name>ENERGIA24</name>
     <company>ENERGIA24</company>
@@ -34,7 +34,7 @@
       <offer id="2" available="false">
         <name>Гібридний інвертор Must PV18-1512 VPM II</name>
         <name_ua>Гібридний інвертор Must PV18-1512 VPM II</name_ua>
-        <price>11585</price>
+        <price>11579</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-pv18-1512vpm.jpg</picture>
@@ -45,7 +45,7 @@
       <offer id="3" available="true">
         <name>Гібридний інвертор Must PV18-3224VPM II</name>
         <name_ua>Гібридний інвертор Must PV18-3224VPM II</name_ua>
-        <price>15642</price>
+        <price>15779</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-pv18-3224vpm.jpg</picture>
@@ -56,7 +56,7 @@
       <offer id="4" available="true">
         <name>Гібридний інвертор MUST PV19-4024 EXP</name>
         <name_ua>Гібридний інвертор MUST PV19-4024 EXP</name_ua>
-        <price>18993</price>
+        <price>19096</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-pv19-4024exp.jpg</picture>
@@ -67,7 +67,7 @@
       <offer id="5" available="true">
         <name>Гібридний інвертор Must PV19-6048EXP</name>
         <name_ua>Гібридний інвертор Must PV19-6048EXP</name_ua>
-        <price>25802</price>
+        <price>25774</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-pv19-6048exp.jpg</picture>
@@ -78,7 +78,7 @@
       <offer id="7" available="true">
         <name>Гібридний інвертор Felicity IVEM6048-II</name>
         <name_ua>Гібридний інвертор Felicity IVEM6048-II</name_ua>
-        <price>22699</price>
+        <price>22756</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-ivem6048.jpg</picture>
@@ -90,7 +90,7 @@
       <offer id="11" available="false">
         <name>Акумулятор Deye SE-F16-C</name>
         <name_ua>Акумулятор Deye SE-F16-C</name_ua>
-        <price>95138</price>
+        <price>95172</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-sef16-c.jpg</picture>
@@ -101,7 +101,7 @@
       <offer id="12" available="true">
         <name>Акумулятор MUST LP15-12100</name>
         <name_ua>Акумулятор MUST LP15-12100</name_ua>
-        <price>14619</price>
+        <price>14543</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-lp15-12100.jpg</picture>
@@ -112,7 +112,7 @@
       <offer id="14" available="true">
         <name>Акумулятор MUST LP16-24100</name>
         <name_ua>Акумулятор MUST LP16-24100</name_ua>
-        <price>31808</price>
+        <price>31667</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-lp16-24100.jpg</picture>
@@ -134,7 +134,7 @@
       <offer id="17" available="true">
         <name>Акумулятор MUST LP16-48300</name>
         <name_ua>Акумулятор MUST LP16-48300</name_ua>
-        <price>83993</price>
+        <price>83928</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-lp16-48300.jpg</picture>
@@ -145,7 +145,7 @@
       <offer id="18" available="true">
         <name>Акумулятор Felicity FLA12100PG2</name>
         <name_ua>Акумулятор Felicity FLA12100PG2</name_ua>
-        <price>13146</price>
+        <price>13155</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-fla12100pg2.jpg</picture>
@@ -178,7 +178,7 @@
       <offer id="22" available="true">
         <name>Акумулятор Felicity FLA48230</name>
         <name_ua>Акумулятор Felicity FLA48230</name_ua>
-        <price>77377</price>
+        <price>77387</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-fla48230.jpg</picture>
@@ -189,7 +189,7 @@
       <offer id="23" available="true">
         <name>Акумулятор Felicity FLB48230WG1-H</name>
         <name_ua>Акумулятор Felicity FLB48230WG1-H</name_ua>
-        <price>77337</price>
+        <price>77329</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-flb48230wg1.jpg</picture>
@@ -200,7 +200,7 @@
       <offer id="25" available="true">
         <name>Акумулятор Felicity FLA48314-EU</name>
         <name_ua>Акумулятор Felicity FLA48314-EU</name_ua>
-        <price>90959</price>
+        <price>90831</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-fla48314eu.jpg</picture>
@@ -211,7 +211,7 @@
       <offer id="26" available="true">
         <name>Акумулятор Felicity FLB48314TG1-H</name>
         <name_ua>Акумулятор Felicity FLB48314TG1-H</name_ua>
-        <price>91047</price>
+        <price>90961</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-flb48314tg1.jpg</picture>
@@ -219,7 +219,7 @@
         <description><![CDATA[<p>Акумулятор Felicity FLB48314TG1-H. Функція: вбудований підігрів.</p><h3>Технічні характеристики</h3><ul><li><b>Тип акумулятора:</b> LiFePO4</li><li><b>Номінальна енергія:</b> 16 кВт·год</li><li><b>Номінальна ємність:</b> 314 А·год</li><li><b>Номінальна напруга:</b> 51.2 В</li><li><b>Робоча напруга:</b> 44.8–57.6 В</li><li><b>Рекомендований струм заряду / розряду:</b> 80 А</li><li><b>Макс. безперервний струм заряду / розряду:</b> 160 А</li><li><b>Піковий струм заряду / розряду (15 с):</b> 200 А</li><li><b>Масштабування:</b> до 32 шт. паралельно (512 кВт·год)</li><li><b>Глибина розряду (DOD):</b> ≥95%</li><li><b>Дисплей:</b> LED</li><li><b>Ступінь захисту:</b> IP65</li><li><b>Температура заряджання:</b> 0…+55 °C</li><li><b>Температура розряджання:</b> −20…+55 °C</li><li><b>Температура зберігання:</b> 0…+35 °C</li><li><b>Вологість:</b> 5–95%</li><li><b>Висота над рівнем моря:</b> до 2000 м</li><li><b>Комунікація:</b> RS485 / CAN, вбудовані Wi-Fi / Bluetooth</li><li><b>Ресурс:</b> ≥8000 циклів</li><li><b>Монтаж:</b> підлоговий</li><li><b>Захист:</b> вбудована Smart BMS, автомат, зовнішній запобіжник, аерозольна система пожежогасіння</li><li><b>Сертифікація:</b> UN38.3</li><li><b>Розміри:</b> 895×450×235 мм</li><li><b>Вага:</b> 121 кг</li></ul>]]></description>
         <description_ua><![CDATA[<p>Акумулятор Felicity FLB48314TG1-H. Функція: вбудований підігрів.</p><h3>Технічні характеристики</h3><ul><li><b>Тип акумулятора:</b> LiFePO4</li><li><b>Номінальна енергія:</b> 16 кВт·год</li><li><b>Номінальна ємність:</b> 314 А·год</li><li><b>Номінальна напруга:</b> 51.2 В</li><li><b>Робоча напруга:</b> 44.8–57.6 В</li><li><b>Рекомендований струм заряду / розряду:</b> 80 А</li><li><b>Макс. безперервний струм заряду / розряду:</b> 160 А</li><li><b>Піковий струм заряду / розряду (15 с):</b> 200 А</li><li><b>Масштабування:</b> до 32 шт. паралельно (512 кВт·год)</li><li><b>Глибина розряду (DOD):</b> ≥95%</li><li><b>Дисплей:</b> LED</li><li><b>Ступінь захисту:</b> IP65</li><li><b>Температура заряджання:</b> 0…+55 °C</li><li><b>Температура розряджання:</b> −20…+55 °C</li><li><b>Температура зберігання:</b> 0…+35 °C</li><li><b>Вологість:</b> 5–95%</li><li><b>Висота над рівнем моря:</b> до 2000 м</li><li><b>Комунікація:</b> RS485 / CAN, вбудовані Wi-Fi / Bluetooth</li><li><b>Ресурс:</b> ≥8000 циклів</li><li><b>Монтаж:</b> підлоговий</li><li><b>Захист:</b> вбудована Smart BMS, автомат, зовнішній запобіжник, аерозольна система пожежогасіння</li><li><b>Сертифікація:</b> UN38.3</li><li><b>Розміри:</b> 895×450×235 мм</li><li><b>Вага:</b> 121 кг</li></ul>]]></description_ua>
       </offer>
-      <offer id="33" available="true">
+      <offer id="33" available="false">
         <name>Акумуляторна батарея Felicity FLA24280 25,6 В 280 А·год LiFePO4</name>
         <name_ua>Акумуляторна батарея Felicity FLA24280 25,6 В 280 А·год LiFePO4</name_ua>
         <price>56607</price>
@@ -244,12 +244,22 @@
       <offer id="61" available="false">
         <name>Акумулятор DAH Solar DHN-LVWES05-G1 100ah 51.2V, 480х500х155, 47 кг</name>
         <name_ua>Акумулятор DAH Solar DHN-LVWES05-G1 100ah 51.2V, 480х500х155, 47 кг</name_ua>
-        <price>38483</price>
+        <price>38469</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-150674.jpg</picture>
         <description><![CDATA[<p>Акумулятор DAH Solar DHN-LVWES05-G1 51,2 В 100 А·год 5,12 кВт·год</p><p>DAH Solar DHN-LVWES05-G1 – літій-залізо-фосфатний акумулятор LiFePO4 з номінальною напругою 51,2 В та ємністю 100 А·год. Запас енергії становить 5,12 кВт·год, тому батарея добре підходить як основний накопичувач для системи резервного живлення квартири, будинку чи невеликого офісу.</p><p>Акумулятор розрахований на роботу з гібридними інверторами 48 В: вдень він накопичує енергію від сонячних панелей або мережі, а під час відключення електроенергії віддає її на живлення холодильника, освітлення, роутера, котла та іншої побутової техніки. Робочий діапазон напруги – 43,2…58,4 В.</p><p>Корпус настінного типу має розміри 480 × 500 × 155 мм, вага батареї – 47 кг. Компактний плаский корпус зручно розмістити на стіні в коридорі, технічному приміщенні чи котельні, не займаючи місця на підлозі.</p><p>Де використовується</p><ul><li>резервне живлення будинку або квартири</li><li>робота в парі з гібридним інвертором 48 В</li><li>накопичення енергії від сонячних панелей</li><li>живлення обладнання під час відключень електроенергії</li><li>автономні та гібридні сонячні електростанції</li></ul><p>Важливо: перед підключенням перевірте сумісність акумулятора з інвертором за напругою, струмами заряду та розряду і протоколом зв&apos;язку BMS. Наші менеджери допоможуть підібрати сумісний інвертор.</p>]]></description>
         <description_ua><![CDATA[<p>Акумулятор DAH Solar DHN-LVWES05-G1 51,2 В 100 А·год 5,12 кВт·год</p><p>DAH Solar DHN-LVWES05-G1 – літій-залізо-фосфатний акумулятор LiFePO4 з номінальною напругою 51,2 В та ємністю 100 А·год. Запас енергії становить 5,12 кВт·год, тому батарея добре підходить як основний накопичувач для системи резервного живлення квартири, будинку чи невеликого офісу.</p><p>Акумулятор розрахований на роботу з гібридними інверторами 48 В: вдень він накопичує енергію від сонячних панелей або мережі, а під час відключення електроенергії віддає її на живлення холодильника, освітлення, роутера, котла та іншої побутової техніки. Робочий діапазон напруги – 43,2…58,4 В.</p><p>Корпус настінного типу має розміри 480 × 500 × 155 мм, вага батареї – 47 кг. Компактний плаский корпус зручно розмістити на стіні в коридорі, технічному приміщенні чи котельні, не займаючи місця на підлозі.</p><p>Де використовується</p><ul><li>резервне живлення будинку або квартири</li><li>робота в парі з гібридним інвертором 48 В</li><li>накопичення енергії від сонячних панелей</li><li>живлення обладнання під час відключень електроенергії</li><li>автономні та гібридні сонячні електростанції</li></ul><p>Важливо: перед підключенням перевірте сумісність акумулятора з інвертором за напругою, струмами заряду та розряду і протоколом зв&apos;язку BMS. Наші менеджери допоможуть підібрати сумісний інвертор.</p>]]></description_ua>
+      </offer>
+      <offer id="66" available="true">
+        <name>Акумуляторна батарея Felicity LPBA48100-OL 51.2V 100Ah LiFePO4</name>
+        <name_ua>Акумуляторна батарея Felicity LPBA48100-OL 51.2V 100Ah LiFePO4</name_ua>
+        <price>40887</price>
+        <currencyId>UAH</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://energia24.com.ua/images/products/avt-152520.jpg</picture>
+        <description><![CDATA[<p>Продається тільки в комплекті з інвертором.</p><p><strong>Де використовується:</strong></p><ul><li>резервне живлення будинку або квартири</li><li>автономне електроживлення</li><li>робота з гібридним інвертором</li><li>накопичення енергії від сонячних панелей</li></ul>]]></description>
+        <description_ua><![CDATA[<p>Продається тільки в комплекті з інвертором.</p><p><strong>Де використовується:</strong></p><ul><li>резервне живлення будинку або квартири</li><li>автономне електроживлення</li><li>робота з гібридним інвертором</li><li>накопичення енергії від сонячних панелей</li></ul>]]></description_ua>
       </offer>
 
       <offer id="27" available="false">
@@ -266,7 +276,7 @@
       <offer id="29" available="false">
         <name>Система зберігання енергії 2в1 MUST HBP19-5548 VPM</name>
         <name_ua>Система зберігання енергії 2в1 MUST HBP19-5548 VPM</name_ua>
-        <price>73512</price>
+        <price>73447</price>
         <currencyId>UAH</currencyId>
         <categoryId>3</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-150416.jpg</picture>
@@ -278,7 +288,7 @@
       <offer id="30" available="true">
         <name>Портативна зарядна станція EcoFlow Delta 2</name>
         <name_ua>Портативна зарядна станція EcoFlow Delta 2</name_ua>
-        <price>36352</price>
+        <price>36275</price>
         <currencyId>UAH</currencyId>
         <categoryId>4</categoryId>
         <picture>https://energia24.com.ua/images/products/station-delta2.jpg</picture>
@@ -289,7 +299,7 @@
       <offer id="31" available="true">
         <name>Портативна зарядна станція EcoFlow Delta 3</name>
         <name_ua>Портативна зарядна станція EcoFlow Delta 3</name_ua>
-        <price>36330</price>
+        <price>36348</price>
         <currencyId>UAH</currencyId>
         <categoryId>4</categoryId>
         <picture>https://energia24.com.ua/images/products/station-delta3.jpg</picture>
@@ -301,7 +311,7 @@
       <offer id="34" available="false">
         <name>Сонячний кабель KBE Solar 6 мм², 500 м (бухта), червоний, Німеччина</name>
         <name_ua>Сонячний кабель KBE Solar 6 мм², 500 м (бухта), червоний, Німеччина</name_ua>
-        <price>34073</price>
+        <price>34096</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-152253.jpg</picture>
@@ -312,7 +322,7 @@
       <offer id="35" available="false">
         <name>Сонячний кабель KBE Solar 6 мм², 500 м (бухта), чорний, Німеччина</name>
         <name_ua>Сонячний кабель KBE Solar 6 мм², 500 м (бухта), чорний, Німеччина</name_ua>
-        <price>34051</price>
+        <price>34154</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-146741.jpg</picture>
@@ -323,7 +333,7 @@
       <offer id="36" available="false">
         <name>Сонячний кабель KBE 6 мм² 1 м, Німеччина</name>
         <name_ua>Сонячний кабель KBE 6 мм² 1 м, Німеччина</name_ua>
-        <price>143</price>
+        <price>215</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151777.jpg</picture>
@@ -334,7 +344,7 @@
       <offer id="37" available="false">
         <name>Комплект силових кабелів 25 мм² 1,5 м, 2 шт., мідь, мідні наконечники М8</name>
         <name_ua>Комплект силових кабелів 25 мм² 1,5 м, 2 шт., мідь, мідні наконечники М8</name_ua>
-        <price>1446</price>
+        <price>1565</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151849.jpg</picture>
@@ -344,7 +354,7 @@
       <offer id="38" available="false">
         <name>Комплект силових кабелів 25 мм² 1,5 м, 2 шт., мідь, мідні наконечники М10</name>
         <name_ua>Комплект силових кабелів 25 мм² 1,5 м, 2 шт., мідь, мідні наконечники М10</name_ua>
-        <price>1452</price>
+        <price>1573</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151853.jpg</picture>
@@ -354,7 +364,7 @@
       <offer id="39" available="false">
         <name>Комплект силових кабелів 25 мм² 1 м, 2 шт., мідь, мідні наконечники М8</name>
         <name_ua>Комплект силових кабелів 25 мм² 1 м, 2 шт., мідь, мідні наконечники М8</name_ua>
-        <price>1007</price>
+        <price>869</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151847.jpg</picture>
@@ -364,7 +374,7 @@
       <offer id="40" available="false">
         <name>Комплект силових кабелів 25 мм² 1 м, 2 шт., мідь, мідні наконечники М10</name>
         <name_ua>Комплект силових кабелів 25 мм² 1 м, 2 шт., мідь, мідні наконечники М10</name_ua>
-        <price>893</price>
+        <price>930</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151851.jpg</picture>
@@ -374,7 +384,7 @@
       <offer id="41" available="false">
         <name>Комплект силових кабелів 25 мм² 75 см, 2 шт., мідь, мідні наконечники М8</name>
         <name_ua>Комплект силових кабелів 25 мм² 75 см, 2 шт., мідь, мідні наконечники М8</name_ua>
-        <price>828</price>
+        <price>803</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151850.jpg</picture>
@@ -384,7 +394,7 @@
       <offer id="42" available="false">
         <name>Комплект силових кабелів 25 мм² 75 см, 2 шт., мідь, мідні наконечники М10</name>
         <name_ua>Комплект силових кабелів 25 мм² 75 см, 2 шт., мідь, мідні наконечники М10</name_ua>
-        <price>889</price>
+        <price>874</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151854.jpg</picture>
@@ -394,7 +404,7 @@
       <offer id="43" available="false">
         <name>Комплект силових кабелів 25 мм² 50 см, 2 шт., мідь, мідні наконечники М8</name>
         <name_ua>Комплект силових кабелів 25 мм² 50 см, 2 шт., мідь, мідні наконечники М8</name_ua>
-        <price>562</price>
+        <price>529</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151848.jpg</picture>
@@ -404,7 +414,7 @@
       <offer id="44" available="false">
         <name>Комплект силових кабелів 25 мм² 50 см, 2 шт., мідь, мідні наконечники М10</name>
         <name_ua>Комплект силових кабелів 25 мм² 50 см, 2 шт., мідь, мідні наконечники М10</name_ua>
-        <price>477</price>
+        <price>488</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151852.jpg</picture>
@@ -415,7 +425,7 @@
       <offer id="45" available="false">
         <name>Безперебійник для роутера TTN DC1036P 12000 mAh, виходи 5/9/12 В, USB, PoE</name>
         <name_ua>Безперебійник для роутера TTN DC1036P 12000 mAh, виходи 5/9/12 В, USB, PoE</name_ua>
-        <price>1747</price>
+        <price>1740</price>
         <currencyId>UAH</currencyId>
         <categoryId>6</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-150649.jpg</picture>
@@ -426,7 +436,7 @@
       <offer id="46" available="false">
         <name>Автоматичний перемикач введення резерву АВР TOMZN TOQ5-100/2P 1 фаза 100 А</name>
         <name_ua>Автоматичний перемикач введення резерву АВР TOMZN TOQ5-100/2P 1 фаза 100 А</name_ua>
-        <price>1303</price>
+        <price>1131</price>
         <currencyId>UAH</currencyId>
         <categoryId>7</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-ud-avr-2p.jpg</picture>
@@ -436,7 +446,7 @@
       <offer id="47" available="false">
         <name>Автоматичний перемикач введення резерву АВР TOMZN TOQ5-100/4P 3 фази 100 А</name>
         <name_ua>Автоматичний перемикач введення резерву АВР TOMZN TOQ5-100/4P 3 фази 100 А</name_ua>
-        <price>1313</price>
+        <price>1316</price>
         <currencyId>UAH</currencyId>
         <categoryId>7</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-ud-avr-4p.jpg</picture>
