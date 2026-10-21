@@ -5,6 +5,12 @@
       "name": "escore",
       "percent": 0,
       "base": "wholesale"
+    },
+    {
+      "file": "feed/malynovskyifop.xml",
+      "name": "МалиновськийФОП",
+      "percent": 0,
+      "base": "wholesale"
     }
   ],
   "usd_rate": 45
