@@ -6,7 +6,7 @@
   "category": 1,
   "vendor": "Felicity",
   "name": "Гібридний інвертор Felicity IVEM6048-II",
-  "price": 22756,
+  "price": 22674,
   "in_stock": true,
   "wholesale_usd": 425,
   "off": false,
@@ -123,6 +123,6 @@
       "value": "12.5 кг"
     }
   ],
-  "feed_price": 22756,
+  "feed_price": 22674,
   "feed_in_stock": true
 }

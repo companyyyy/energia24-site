@@ -6,7 +6,7 @@
   "category": 1,
   "vendor": "Must",
   "name": "Гібридний інвертор Must PV19-6048EXP",
-  "price": 25774,
+  "price": 25866,
   "in_stock": true,
   "wholesale_usd": 440,
   "off": false,
@@ -127,6 +127,6 @@
       "value": "309×505×147 мм"
     }
   ],
-  "feed_price": 25774,
+  "feed_price": 25866,
   "feed_in_stock": true
 }
