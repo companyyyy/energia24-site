@@ -5,12 +5,15 @@
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLA48171",
-  "price": 60100,
-  "in_stock": false,
+  "price": 58020,
+  "in_stock": true,
   "wholesale_usd": 0,
   "off": true,
   "photo": "/images/products/bat-fla48171.jpg",
   "summary": "Акумулятор Felicity FLA48171. Напруга/ємність: 51.2 В · 171 Аг. Енергія: 8.76 кВт·год. Тип комірок: LiFePO4. Вага: 68 кг.",
   "specs_source": "",
-  "specs": []
+  "specs": [],
+  "avtonomka_id": "152469",
+  "feed_price": 58020,
+  "feed_in_stock": true
 }

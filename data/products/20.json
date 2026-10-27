@@ -5,8 +5,8 @@
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLB48100WG1-H",
-  "price": 40000,
-  "in_stock": false,
+  "price": 39975,
+  "in_stock": true,
   "wholesale_usd": 0,
   "off": true,
   "photo": "/images/products/bat-flb48100wg1.jpg",
@@ -109,5 +109,8 @@
       "label": "Вага",
       "value": "48.5 кг"
     }
-  ]
+  ],
+  "avtonomka_id": "152296",
+  "feed_price": 39975,
+  "feed_in_stock": true
 }

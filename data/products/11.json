@@ -5,8 +5,8 @@
   "category": 2,
   "vendor": "Deye",
   "name": "Акумулятор Deye SE-F16-C",
-  "price": 95172,
-  "in_stock": false,
+  "price": 97266,
+  "in_stock": true,
   "wholesale_usd": 0,
   "off": true,
   "photo": "/images/products/bat-sef16-c.jpg",
@@ -107,6 +107,6 @@
     }
   ],
   "avtonomka_id": "151057",
-  "feed_price": 95172,
-  "feed_in_stock": false
+  "feed_price": 97266,
+  "feed_in_stock": true
 }
