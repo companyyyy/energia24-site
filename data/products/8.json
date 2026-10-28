@@ -8,7 +8,7 @@
   "price": 35712,
   "in_stock": true,
   "wholesale_usd": 0,
-  "off": true,
+  "off": false,
   "photo": "/images/products/inv-ivem8048.jpg",
   "summary": "Гібридний інвертор Felicity IVEM8048-II. Потужність: 8 кВт. Напруга АКБ: 48 В. Вага: 23.7 кг.",
   "specs_source": "felicity-ivem8048-ii.pdf",
