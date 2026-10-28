@@ -6,7 +6,7 @@
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLA48230",
-  "price": 71779,
+  "price": 71773,
   "in_stock": true,
   "wholesale_usd": 1400,
   "off": false,
@@ -99,6 +99,6 @@
       "value": "92 кг"
     }
   ],
-  "feed_price": 71779,
+  "feed_price": 71773,
   "feed_in_stock": true
 }
