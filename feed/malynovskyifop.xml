@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2026-10-28 11:11">
+<yml_catalog date="2026-10-29 17:42">
   <shop>
     <name>ENERGIA24</name>
     <company>ENERGIA24</company>
@@ -19,7 +19,7 @@
       <offer id="2" available="false">
         <name>Гибридный инвертор Must PV18-1512 VPM II</name>
         <name_ua>Гібридний інвертор Must PV18-1512 VPM II</name_ua>
-        <price>9723</price>
+        <price>9765</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/pa/2.jpg</picture>
@@ -30,7 +30,7 @@
       <offer id="3" available="true">
         <name>Гибридный инвертор Must PV18-3224VPM II</name>
         <name_ua>Гібридний інвертор Must PV18-3224VPM II</name_ua>
-        <price>12732.50</price>
+        <price>12787.50</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/pa/3.jpg</picture>
@@ -41,7 +41,7 @@
       <offer id="4" available="true">
         <name>Гибридный инвертор MUST PV19-4024 EXP</name>
         <name_ua>Гібридний інвертор MUST PV19-4024 EXP</name_ua>
-        <price>14816</price>
+        <price>14880</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/pa/4.jpg</picture>
@@ -52,7 +52,7 @@
       <offer id="5" available="true">
         <name>Гибридный инвертор Must PV19-6048EXP</name>
         <name_ua>Гібридний інвертор Must PV19-6048EXP</name_ua>
-        <price>20372</price>
+        <price>20460</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/pa/5.jpg</picture>
@@ -63,7 +63,7 @@
       <offer id="7" available="true">
         <name>Гибридный инвертор Felicity IVEM6048-II</name>
         <name_ua>Гібридний інвертор Felicity IVEM6048-II</name_ua>
-        <price>19677.50</price>
+        <price>19762.50</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/pa/7.jpg</picture>
@@ -75,7 +75,7 @@
       <offer id="12" available="true">
         <name>Аккумулятор MUST LP15-12100</name>
         <name_ua>Акумулятор MUST LP15-12100</name_ua>
-        <price>11575</price>
+        <price>11625</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/pa/12.jpg</picture>
@@ -86,7 +86,7 @@
       <offer id="14" available="true">
         <name>Аккумулятор MUST LP16-24100</name>
         <name_ua>Акумулятор MUST LP16-24100</name_ua>
-        <price>25465</price>
+        <price>25575</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/pa/14.jpg</picture>
@@ -97,7 +97,7 @@
       <offer id="15" available="false">
         <name>Аккумулятор MUST LP16-24200</name>
         <name_ua>Акумулятор MUST LP16-24200</name_ua>
-        <price>39355</price>
+        <price>39525</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/pa/15.jpg</picture>
@@ -108,7 +108,7 @@
       <offer id="17" available="false">
         <name>Аккумулятор MUST LP16-48300</name>
         <name_ua>Акумулятор MUST LP16-48300</name_ua>
-        <price>82414</price>
+        <price>82770</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/pa/17.jpg</picture>
@@ -119,7 +119,7 @@
       <offer id="18" available="true">
         <name>Аккумулятор Felicity FLA12100PG2</name>
         <name_ua>Акумулятор Felicity FLA12100PG2</name_ua>
-        <price>12501</price>
+        <price>12555</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/pa/18.jpg</picture>
@@ -130,7 +130,7 @@
       <offer id="20" available="true">
         <name>Аккумулятор Felicity FLB48100WG1-H</name>
         <name_ua>Акумулятор Felicity FLB48100WG1-H</name_ua>
-        <price>37040</price>
+        <price>37200</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/pa/20.jpg</picture>
@@ -141,7 +141,7 @@
       <offer id="22" available="true">
         <name>Аккумулятор Felicity FLA48230</name>
         <name_ua>Акумулятор Felicity FLA48230</name_ua>
-        <price>64820</price>
+        <price>65100</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/pa/22.jpg</picture>
@@ -152,7 +152,7 @@
       <offer id="23" available="true">
         <name>Аккумулятор Felicity FLB48230WG1-H</name>
         <name_ua>Акумулятор Felicity FLB48230WG1-H</name_ua>
-        <price>65746</price>
+        <price>66030</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/pa/23.jpg</picture>
@@ -163,7 +163,7 @@
       <offer id="25" available="true">
         <name>Аккумулятор Felicity FLA48314-EU</name>
         <name_ua>Акумулятор Felicity FLA48314-EU</name_ua>
-        <price>78710</price>
+        <price>79050</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/pa/25.jpg</picture>
@@ -174,7 +174,7 @@
       <offer id="26" available="true">
         <name>Аккумулятор Felicity FLB48314TG1-H</name>
         <name_ua>Акумулятор Felicity FLB48314TG1-H</name_ua>
-        <price>81025</price>
+        <price>81375</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/pa/26.jpg</picture>
@@ -185,7 +185,7 @@
       <offer id="33" available="true">
         <name>Аккумуляторная батарея Felicity FLA24280 25,6 В 280 А·ч LiFePO4</name>
         <name_ua>Акумуляторна батарея Felicity FLA24280 25,6 В 280 А·год LiFePO4</name_ua>
-        <price>50930</price>
+        <price>51150</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-152174.jpg</picture>
@@ -197,7 +197,7 @@
       <offer id="30" available="true">
         <name>Портативная зарядная станция EcoFlow Delta 2</name>
         <name_ua>Портативна зарядна станція EcoFlow Delta 2</name_ua>
-        <price>33799</price>
+        <price>33945</price>
         <currencyId>UAH</currencyId>
         <categoryId>4</categoryId>
         <picture>https://energia24.com.ua/images/pa/30.jpg</picture>
@@ -208,7 +208,7 @@
       <offer id="31" available="true">
         <name>Портативная зарядная станция EcoFlow Delta 3</name>
         <name_ua>Портативна зарядна станція EcoFlow Delta 3</name_ua>
-        <price>33336</price>
+        <price>33480</price>
         <currencyId>UAH</currencyId>
         <categoryId>4</categoryId>
         <picture>https://energia24.com.ua/images/pa/31.jpg</picture>
