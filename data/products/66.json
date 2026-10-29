@@ -7,7 +7,7 @@
   "vendor": "",
   "name": "Акумуляторна батарея Felicity LPBA48100-OL 51.2V 100Ah LiFePO4",
   "name_ru": "Акумуляторна батарея Felicity LPBA48100-OL 51.2V 100Ah LiFePO4",
-  "price": 37912,
+  "price": 37921,
   "in_stock": true,
   "wholesale_usd": 0,
   "off": false,
@@ -16,6 +16,6 @@
   "description_ua_html": "<p>Продається тільки в комплекті з інвертором.</p><p><strong>Де використовується:</strong></p><ul><li>резервне живлення будинку або квартири</li><li>автономне електроживлення</li><li>робота з гібридним інвертором</li><li>накопичення енергії від сонячних панелей</li></ul>",
   "description_ru_html": "",
   "specs": [],
-  "feed_price": 37912,
+  "feed_price": 37921,
   "feed_in_stock": true
 }

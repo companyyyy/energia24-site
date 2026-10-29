@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE yml_catalog SYSTEM "shops.dtd">
-<yml_catalog date="2026-10-28 11:11">
+<yml_catalog date="2026-10-29 11:24">
   <shop>
     <name>ENERGIA24</name>
     <company>ENERGIA24</company>
@@ -34,7 +34,7 @@
       <offer id="2" available="false">
         <name>Гібридний інвертор Must PV18-1512 VPM II</name>
         <name_ua>Гібридний інвертор Must PV18-1512 VPM II</name_ua>
-        <price>11885</price>
+        <price>11862</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-pv18-1512vpm.jpg</picture>
@@ -45,7 +45,7 @@
       <offer id="3" available="true">
         <name>Гібридний інвертор Must PV18-3224VPM II</name>
         <name_ua>Гібридний інвертор Must PV18-3224VPM II</name_ua>
-        <price>14717</price>
+        <price>14808</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-pv18-3224vpm.jpg</picture>
@@ -56,7 +56,7 @@
       <offer id="4" available="true">
         <name>Гібридний інвертор MUST PV19-4024 EXP</name>
         <name_ua>Гібридний інвертор MUST PV19-4024 EXP</name_ua>
-        <price>19479</price>
+        <price>19517</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-pv19-4024exp.jpg</picture>
@@ -67,7 +67,7 @@
       <offer id="5" available="true">
         <name>Гібридний інвертор Must PV19-6048EXP</name>
         <name_ua>Гібридний інвертор Must PV19-6048EXP</name_ua>
-        <price>24168</price>
+        <price>24249</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-pv19-6048exp.jpg</picture>
@@ -78,7 +78,7 @@
       <offer id="7" available="true">
         <name>Гібридний інвертор Felicity IVEM6048-II</name>
         <name_ua>Гібридний інвертор Felicity IVEM6048-II</name_ua>
-        <price>22150</price>
+        <price>22278</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-ivem6048.jpg</picture>
@@ -89,13 +89,23 @@
       <offer id="8" available="true">
         <name>Гібридний інвертор Felicity IVEM8048-II</name>
         <name_ua>Гібридний інвертор Felicity IVEM8048-II</name_ua>
-        <price>35758</price>
+        <price>35921</price>
         <currencyId>UAH</currencyId>
         <categoryId>1</categoryId>
         <picture>https://energia24.com.ua/images/products/inv-ivem8048.jpg</picture>
         <vendor>Felicity</vendor>
         <description><![CDATA[<p>Гібридний інвертор Felicity IVEM8048-II.</p><h3>Технічні характеристики</h3><ul><li><b>Номінальна потужність:</b> 8000 Вт (8000 ВА)</li><li><b>Номінальна напруга АКБ:</b> 48 В</li><li><b>Номінальна вхідна напруга AC:</b> 230 В</li><li><b>Макс. вхідна напруга AC:</b> 280 В</li><li><b>Діапазон вхідної напруги (мережа / генератор):</b> 90–280 В AC</li><li><b>Частота:</b> 50 / 60 Гц (автовизначення)</li><li><b>Робота без акумулятора:</b> так</li><li><b>Макс. струм заряджання від мережі/генератора:</b> 150 А (регулювання 10–150 А, крок 1 А)</li><li><b>Макс. напруга холостого ходу PV:</b> 500 В</li><li><b>Робочий діапазон напруги PV:</b> 90–450 В</li><li><b>Макс. потужність PV:</b> 10000 Вт (5000 Вт на 1 вхід PV)</li><li><b>Макс. струм сонячного заряджання:</b> 150 А</li><li><b>Макс. сумарний струм заряджання (PV + мережа):</b> 150 А</li><li><b>Макс. вхідний струм PV:</b> 20 А × 2 (макс. 40 А)</li><li><b>Мін. стартова напруга PV:</b> 100 В</li><li><b>Форма вихідного сигналу:</b> чиста синусоїда</li><li><b>Вихідна напруга:</b> 230 В AC ±5%</li><li><b>Вихідна частота:</b> 50 / 60 Гц ±0.3 Гц (налаштовується)</li><li><b>Паралельна робота:</b> так, до 6 пристроїв</li><li><b>Тип сонячного контролера:</b> MPPT</li><li><b>Моніторинг:</b> вбудований Wi-Fi (застосунок)</li><li><b>Захист:</b> від перевантаження, перегріву, короткого замикання на виході</li><li><b>Робоча температура:</b> −10…+50 °C</li><li><b>Температура зберігання:</b> −15…+60 °C</li><li><b>Сертифікація:</b> CE-EMC, IEC 62109-1/2</li><li><b>Розміри:</b> 607×464×141 мм</li><li><b>Вага:</b> 23.7 кг</li></ul>]]></description>
         <description_ua><![CDATA[<p>Гібридний інвертор Felicity IVEM8048-II.</p><h3>Технічні характеристики</h3><ul><li><b>Номінальна потужність:</b> 8000 Вт (8000 ВА)</li><li><b>Номінальна напруга АКБ:</b> 48 В</li><li><b>Номінальна вхідна напруга AC:</b> 230 В</li><li><b>Макс. вхідна напруга AC:</b> 280 В</li><li><b>Діапазон вхідної напруги (мережа / генератор):</b> 90–280 В AC</li><li><b>Частота:</b> 50 / 60 Гц (автовизначення)</li><li><b>Робота без акумулятора:</b> так</li><li><b>Макс. струм заряджання від мережі/генератора:</b> 150 А (регулювання 10–150 А, крок 1 А)</li><li><b>Макс. напруга холостого ходу PV:</b> 500 В</li><li><b>Робочий діапазон напруги PV:</b> 90–450 В</li><li><b>Макс. потужність PV:</b> 10000 Вт (5000 Вт на 1 вхід PV)</li><li><b>Макс. струм сонячного заряджання:</b> 150 А</li><li><b>Макс. сумарний струм заряджання (PV + мережа):</b> 150 А</li><li><b>Макс. вхідний струм PV:</b> 20 А × 2 (макс. 40 А)</li><li><b>Мін. стартова напруга PV:</b> 100 В</li><li><b>Форма вихідного сигналу:</b> чиста синусоїда</li><li><b>Вихідна напруга:</b> 230 В AC ±5%</li><li><b>Вихідна частота:</b> 50 / 60 Гц ±0.3 Гц (налаштовується)</li><li><b>Паралельна робота:</b> так, до 6 пристроїв</li><li><b>Тип сонячного контролера:</b> MPPT</li><li><b>Моніторинг:</b> вбудований Wi-Fi (застосунок)</li><li><b>Захист:</b> від перевантаження, перегріву, короткого замикання на виході</li><li><b>Робоча температура:</b> −10…+50 °C</li><li><b>Температура зберігання:</b> −15…+60 °C</li><li><b>Сертифікація:</b> CE-EMC, IEC 62109-1/2</li><li><b>Розміри:</b> 607×464×141 мм</li><li><b>Вага:</b> 23.7 кг</li></ul>]]></description_ua>
+      </offer>
+      <offer id="88" available="true">
+        <name>Гібридний інвертор Felicity T-REX-6KLP1G01 6 кВт 48 В</name>
+        <name_ua>Гібридний інвертор Felicity T-REX-6KLP1G01 6 кВт 48 В</name_ua>
+        <price>35814</price>
+        <currencyId>UAH</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://energia24.com.ua/images/products/avt-152932.jpg</picture>
+        <description><![CDATA[<p>Felicity T-REX-6KLP1G01 – гібридний інвертор потужністю 6 кВт для систем резервного та автономного живлення. Працює з акумуляторами 48 В і підходить для будинку, квартири, дачі чи офісу.</p><p>Інвертор поєднує перетворювач, зарядний пристрій від мережі та сонячний контролер: енергія може надходити від сонячних панелей, накопичуватися в акумуляторі або братися з мережі. На виході 230 В для живлення побутової техніки та електроніки.</p><p>Розміри 530 × 493 × 228 мм, вага 32,4 кг.</p>]]></description>
+        <description_ua><![CDATA[<p>Felicity T-REX-6KLP1G01 – гібридний інвертор потужністю 6 кВт для систем резервного та автономного живлення. Працює з акумуляторами 48 В і підходить для будинку, квартири, дачі чи офісу.</p><p>Інвертор поєднує перетворювач, зарядний пристрій від мережі та сонячний контролер: енергія може надходити від сонячних панелей, накопичуватися в акумуляторі або братися з мережі. На виході 230 В для живлення побутової техніки та електроніки.</p><p>Розміри 530 × 493 × 228 мм, вага 32,4 кг.</p>]]></description_ua>
       </offer>
 
       <offer id="11" available="false">
@@ -112,7 +122,7 @@
       <offer id="12" available="true">
         <name>Акумулятор MUST LP15-12100</name>
         <name_ua>Акумулятор MUST LP15-12100</name_ua>
-        <price>14900</price>
+        <price>14934</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-lp15-12100.jpg</picture>
@@ -123,7 +133,7 @@
       <offer id="14" available="true">
         <name>Акумулятор MUST LP16-24100</name>
         <name_ua>Акумулятор MUST LP16-24100</name_ua>
-        <price>30779</price>
+        <price>30872</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-lp16-24100.jpg</picture>
@@ -156,7 +166,7 @@
       <offer id="18" available="true">
         <name>Акумулятор Felicity FLA12100PG2</name>
         <name_ua>Акумулятор Felicity FLA12100PG2</name_ua>
-        <price>13427</price>
+        <price>13379</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-fla12100pg2.jpg</picture>
@@ -167,7 +177,7 @@
       <offer id="20" available="true">
         <name>Акумулятор Felicity FLB48100WG1-H</name>
         <name_ua>Акумулятор Felicity FLB48100WG1-H</name_ua>
-        <price>40125</price>
+        <price>40255</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-flb48100wg1.jpg</picture>
@@ -178,7 +188,7 @@
       <offer id="21" available="false">
         <name>Акумулятор Felicity FLA48171</name>
         <name_ua>Акумулятор Felicity FLA48171</name_ua>
-        <price>58187</price>
+        <price>58338</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-fla48171.jpg</picture>
@@ -189,7 +199,7 @@
       <offer id="22" available="true">
         <name>Акумулятор Felicity FLA48230</name>
         <name_ua>Акумулятор Felicity FLA48230</name_ua>
-        <price>71773</price>
+        <price>72162</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-fla48230.jpg</picture>
@@ -200,7 +210,7 @@
       <offer id="23" available="true">
         <name>Акумулятор Felicity FLB48230WG1-H</name>
         <name_ua>Акумулятор Felicity FLB48230WG1-H</name_ua>
-        <price>73346</price>
+        <price>73600</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-flb48230wg1.jpg</picture>
@@ -211,7 +221,7 @@
       <offer id="25" available="true">
         <name>Акумулятор Felicity FLA48314-EU</name>
         <name_ua>Акумулятор Felicity FLA48314-EU</name_ua>
-        <price>86977</price>
+        <price>87281</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-fla48314eu.jpg</picture>
@@ -222,7 +232,7 @@
       <offer id="26" available="true">
         <name>Акумулятор Felicity FLB48314TG1-H</name>
         <name_ua>Акумулятор Felicity FLB48314TG1-H</name_ua>
-        <price>87955</price>
+        <price>88331</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/bat-flb48314tg1.jpg</picture>
@@ -233,7 +243,7 @@
       <offer id="33" available="true">
         <name>Акумуляторна батарея Felicity FLA24280 25,6 В 280 А·год LiFePO4</name>
         <name_ua>Акумуляторна батарея Felicity FLA24280 25,6 В 280 А·год LiFePO4</name_ua>
-        <price>58029</price>
+        <price>58278</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-152174.jpg</picture>
@@ -255,7 +265,7 @@
       <offer id="61" available="false">
         <name>Акумулятор DAH Solar DHN-LVWES05-G1 100ah 51.2V, 480х500х155, 47 кг</name>
         <name_ua>Акумулятор DAH Solar DHN-LVWES05-G1 100ah 51.2V, 480х500х155, 47 кг</name_ua>
-        <price>36994</price>
+        <price>37241</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-150674.jpg</picture>
@@ -265,7 +275,7 @@
       <offer id="66" available="true">
         <name>Акумуляторна батарея Felicity LPBA48100-OL 51.2V 100Ah LiFePO4</name>
         <name_ua>Акумуляторна батарея Felicity LPBA48100-OL 51.2V 100Ah LiFePO4</name_ua>
-        <price>37912</price>
+        <price>37921</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-152520.jpg</picture>
@@ -286,13 +296,33 @@
       <offer id="85" available="true">
         <name>Акумуляторна батарея Felicity FLA48280 51.2V 280Ah LiFePO4</name>
         <name_ua>Акумуляторна батарея Felicity FLA48280 51.2V 280Ah LiFePO4</name_ua>
-        <price>78395</price>
+        <price>78857</price>
         <currencyId>UAH</currencyId>
         <categoryId>2</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-152352.jpg</picture>
         <vendor>Felicity</vendor>
         <description><![CDATA[<p>Акумуляторна батарея Felicity FLA48280 51,2 В 280 А·год LiFePO4, 480 × 1100 × 300 мм, 135 кг</p><p>Felicity FLA48280 – це літій-залізо-фосфатна акумуляторна батарея LiFePO4 ємністю 280 А·год та номінальною напругою 51,2 В. Акумулятор призначений для систем резервного та автономного живлення, а також для роботи разом з інвертором.</p><p>Ємність 280 А·год дозволяє накопичувати енергію для живлення побутового та іншого обладнання під час відключень електроенергії. Номінальна енергоємність батареї становить 14,34 кВт·год, а напруга 51,2 В підходить для систем, розрахованих на 48 В.</p><p>Акумулятор виконаний за технологією LiFePO4, яка добре підходить для систем накопичення енергії з регулярними циклами заряджання та розряджання. Такий формат часто використовують у домашніх системах резервного живлення, сонячних електростанціях та автономних енергетичних комплексах.</p><p>Корпус має розміри 480 × 1100 × 300 мм, вага акумулятора становить 135 кг. Компактні розміри дозволяють встановлювати батарею в спеціально підготовленому місці або акумуляторній шафі з урахуванням необхідного простору для монтажу та обслуговування.</p><p>Де використовується</p><p>Акумулятор Felicity FLA48280 280 А·год можна використовувати як джерело накопичення енергії у таких системах:</p><ul><li>резервного живлення будинку або квартири</li><li>автономного електроживлення</li><li>роботи з інвертором</li><li>накопичення енергії від сонячних панелей</li><li>живлення обладнання під час відключень електроенергії</li></ul><p>Важливо: перед підключенням необхідно перевірити сумісність акумулятора з інвертором за напругою, параметрами заряджання та способом комунікації, якщо вона передбачена.</p><p><strong>Основні характеристики:</strong></p><ul><li>Виробник: Felicity</li><li>Модель: FLA48280</li><li>Тип акумулятора: LiFePO4</li><li>Номінальна напруга: 51,2 В</li><li>Номінальна енергія: 14,34 кВт·год</li><li>Ємність: 280 А·год</li><li>Розміри: 480 × 1100 × 300 мм</li><li>Вага: 135 кг</li></ul>]]></description>
         <description_ua><![CDATA[<p>Акумуляторна батарея Felicity FLA48280 51,2 В 280 А·год LiFePO4, 480 × 1100 × 300 мм, 135 кг</p><p>Felicity FLA48280 – це літій-залізо-фосфатна акумуляторна батарея LiFePO4 ємністю 280 А·год та номінальною напругою 51,2 В. Акумулятор призначений для систем резервного та автономного живлення, а також для роботи разом з інвертором.</p><p>Ємність 280 А·год дозволяє накопичувати енергію для живлення побутового та іншого обладнання під час відключень електроенергії. Номінальна енергоємність батареї становить 14,34 кВт·год, а напруга 51,2 В підходить для систем, розрахованих на 48 В.</p><p>Акумулятор виконаний за технологією LiFePO4, яка добре підходить для систем накопичення енергії з регулярними циклами заряджання та розряджання. Такий формат часто використовують у домашніх системах резервного живлення, сонячних електростанціях та автономних енергетичних комплексах.</p><p>Корпус має розміри 480 × 1100 × 300 мм, вага акумулятора становить 135 кг. Компактні розміри дозволяють встановлювати батарею в спеціально підготовленому місці або акумуляторній шафі з урахуванням необхідного простору для монтажу та обслуговування.</p><p>Де використовується</p><p>Акумулятор Felicity FLA48280 280 А·год можна використовувати як джерело накопичення енергії у таких системах:</p><ul><li>резервного живлення будинку або квартири</li><li>автономного електроживлення</li><li>роботи з інвертором</li><li>накопичення енергії від сонячних панелей</li><li>живлення обладнання під час відключень електроенергії</li></ul><p>Важливо: перед підключенням необхідно перевірити сумісність акумулятора з інвертором за напругою, параметрами заряджання та способом комунікації, якщо вона передбачена.</p><p><strong>Основні характеристики:</strong></p><ul><li>Виробник: Felicity</li><li>Модель: FLA48280</li><li>Тип акумулятора: LiFePO4</li><li>Номінальна напруга: 51,2 В</li><li>Номінальна енергія: 14,34 кВт·год</li><li>Ємність: 280 А·год</li><li>Розміри: 480 × 1100 × 300 мм</li><li>Вага: 135 кг</li></ul>]]></description_ua>
+      </offer>
+      <offer id="89" available="true">
+        <name>Акумуляторна батарея Felicity FLB48206WG1-H 51.2V 206Ah, з підігрівом, LiFePO4</name>
+        <name_ua>Акумуляторна батарея Felicity FLB48206WG1-H 51.2V 206Ah, з підігрівом, LiFePO4</name_ua>
+        <price>67593</price>
+        <currencyId>UAH</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://energia24.com.ua/images/products/avt-152640.jpg</picture>
+        <description><![CDATA[<p>Felicity FLB48206WG1-H – акумуляторна батарея LiFePO4 з номінальною напругою 51,2 В та ємністю 206 А·год для систем з гібридним інвертором на 48 В.</p><p>Запас енергії близько 10,55 кВт·год. Технологія LiFePO4 розрахована на регулярні цикли заряджання та розряджання, тому батарея підходить для резервного живлення будинку під час відключень і для сонячних електростанцій. Батарея має вбудований підігрів, тому її можна коректно заряджати й за низьких температур – наприклад, у неопалюваному приміщенні.</p><p>Розміри 715 × 450 × 258 мм, вага 91 кг.</p>]]></description>
+        <description_ua><![CDATA[<p>Felicity FLB48206WG1-H – акумуляторна батарея LiFePO4 з номінальною напругою 51,2 В та ємністю 206 А·год для систем з гібридним інвертором на 48 В.</p><p>Запас енергії близько 10,55 кВт·год. Технологія LiFePO4 розрахована на регулярні цикли заряджання та розряджання, тому батарея підходить для резервного живлення будинку під час відключень і для сонячних електростанцій. Батарея має вбудований підігрів, тому її можна коректно заряджати й за низьких температур – наприклад, у неопалюваному приміщенні.</p><p>Розміри 715 × 450 × 258 мм, вага 91 кг.</p>]]></description_ua>
+      </offer>
+      <offer id="90" available="true">
+        <name>Акумуляторна батарея Felicity FLB48280TG1-H 51.2V 280Ah, з підігрівом, LiFePO4</name>
+        <name_ua>Акумуляторна батарея Felicity FLB48280TG1-H 51.2V 280Ah, з підігрівом, LiFePO4</name_ua>
+        <price>81939</price>
+        <currencyId>UAH</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://energia24.com.ua/images/products/avt-152745.jpg</picture>
+        <description><![CDATA[<p>Felicity FLB48280TG1-H – акумуляторна батарея LiFePO4 з номінальною напругою 51,2 В та ємністю 280 А·год для систем з гібридним інвертором на 48 В.</p><p>Запас енергії близько 14,34 кВт·год. Технологія LiFePO4 розрахована на регулярні цикли заряджання та розряджання, тому батарея підходить для резервного живлення будинку під час відключень і для сонячних електростанцій. Батарея має вбудований підігрів, тому її можна коректно заряджати й за низьких температур – наприклад, у неопалюваному приміщенні.</p><p>Розміри 895 × 450 × 235 мм, вага 114,5 кг.</p>]]></description>
+        <description_ua><![CDATA[<p>Felicity FLB48280TG1-H – акумуляторна батарея LiFePO4 з номінальною напругою 51,2 В та ємністю 280 А·год для систем з гібридним інвертором на 48 В.</p><p>Запас енергії близько 14,34 кВт·год. Технологія LiFePO4 розрахована на регулярні цикли заряджання та розряджання, тому батарея підходить для резервного живлення будинку під час відключень і для сонячних електростанцій. Батарея має вбудований підігрів, тому її можна коректно заряджати й за низьких температур – наприклад, у неопалюваному приміщенні.</p><p>Розміри 895 × 450 × 235 мм, вага 114,5 кг.</p>]]></description_ua>
       </offer>
 
       <offer id="27" available="false">
@@ -309,7 +339,7 @@
       <offer id="29" available="false">
         <name>Система зберігання енергії 2в1 MUST HBP19-5548 VPM</name>
         <name_ua>Система зберігання енергії 2в1 MUST HBP19-5548 VPM</name_ua>
-        <price>64196</price>
+        <price>64465</price>
         <currencyId>UAH</currencyId>
         <categoryId>3</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-150416.jpg</picture>
@@ -321,7 +351,7 @@
       <offer id="30" available="true">
         <name>Портативна зарядна станція EcoFlow Delta 2</name>
         <name_ua>Портативна зарядна станція EcoFlow Delta 2</name_ua>
-        <price>33435</price>
+        <price>33586</price>
         <currencyId>UAH</currencyId>
         <categoryId>4</categoryId>
         <picture>https://energia24.com.ua/images/products/station-delta2.jpg</picture>
@@ -332,7 +362,7 @@
       <offer id="31" available="true">
         <name>Портативна зарядна станція EcoFlow Delta 3</name>
         <name_ua>Портативна зарядна станція EcoFlow Delta 3</name_ua>
-        <price>33294</price>
+        <price>33614</price>
         <currencyId>UAH</currencyId>
         <categoryId>4</categoryId>
         <picture>https://energia24.com.ua/images/products/station-delta3.jpg</picture>
@@ -344,7 +374,7 @@
       <offer id="34" available="false">
         <name>Сонячний кабель KBE Solar 6 мм², 500 м (бухта), червоний, Німеччина</name>
         <name_ua>Сонячний кабель KBE Solar 6 мм², 500 м (бухта), червоний, Німеччина</name_ua>
-        <price>34876</price>
+        <price>34861</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-152253.jpg</picture>
@@ -355,7 +385,7 @@
       <offer id="35" available="false">
         <name>Сонячний кабель KBE Solar 6 мм², 500 м (бухта), чорний, Німеччина</name>
         <name_ua>Сонячний кабель KBE Solar 6 мм², 500 м (бухта), чорний, Німеччина</name_ua>
-        <price>34761</price>
+        <price>34935</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-146741.jpg</picture>
@@ -366,7 +396,7 @@
       <offer id="36" available="false">
         <name>Сонячний кабель KBE 6 мм² 1 м, Німеччина</name>
         <name_ua>Сонячний кабель KBE 6 мм² 1 м, Німеччина</name_ua>
-        <price>176</price>
+        <price>232</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151777.jpg</picture>
@@ -377,7 +407,7 @@
       <offer id="37" available="false">
         <name>Комплект силових кабелів 25 мм² 1,5 м, 2 шт., мідь, мідні наконечники М8</name>
         <name_ua>Комплект силових кабелів 25 мм² 1,5 м, 2 шт., мідь, мідні наконечники М8</name_ua>
-        <price>1641</price>
+        <price>1481</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151849.jpg</picture>
@@ -387,7 +417,7 @@
       <offer id="38" available="false">
         <name>Комплект силових кабелів 25 мм² 1,5 м, 2 шт., мідь, мідні наконечники М10</name>
         <name_ua>Комплект силових кабелів 25 мм² 1,5 м, 2 шт., мідь, мідні наконечники М10</name_ua>
-        <price>1457</price>
+        <price>1498</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151853.jpg</picture>
@@ -397,7 +427,7 @@
       <offer id="39" available="false">
         <name>Комплект силових кабелів 25 мм² 1 м, 2 шт., мідь, мідні наконечники М8</name>
         <name_ua>Комплект силових кабелів 25 мм² 1 м, 2 шт., мідь, мідні наконечники М8</name_ua>
-        <price>1058</price>
+        <price>1070</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151847.jpg</picture>
@@ -407,7 +437,7 @@
       <offer id="40" available="false">
         <name>Комплект силових кабелів 25 мм² 1 м, 2 шт., мідь, мідні наконечники М10</name>
         <name_ua>Комплект силових кабелів 25 мм² 1 м, 2 шт., мідь, мідні наконечники М10</name_ua>
-        <price>1063</price>
+        <price>884</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151851.jpg</picture>
@@ -417,7 +447,7 @@
       <offer id="41" available="false">
         <name>Комплект силових кабелів 25 мм² 75 см, 2 шт., мідь, мідні наконечники М8</name>
         <name_ua>Комплект силових кабелів 25 мм² 75 см, 2 шт., мідь, мідні наконечники М8</name_ua>
-        <price>926</price>
+        <price>911</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151850.jpg</picture>
@@ -427,7 +457,7 @@
       <offer id="42" available="false">
         <name>Комплект силових кабелів 25 мм² 75 см, 2 шт., мідь, мідні наконечники М10</name>
         <name_ua>Комплект силових кабелів 25 мм² 75 см, 2 шт., мідь, мідні наконечники М10</name_ua>
-        <price>818</price>
+        <price>938</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151854.jpg</picture>
@@ -437,7 +467,7 @@
       <offer id="43" available="false">
         <name>Комплект силових кабелів 25 мм² 50 см, 2 шт., мідь, мідні наконечники М8</name>
         <name_ua>Комплект силових кабелів 25 мм² 50 см, 2 шт., мідь, мідні наконечники М8</name_ua>
-        <price>469</price>
+        <price>534</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151848.jpg</picture>
@@ -447,7 +477,7 @@
       <offer id="44" available="false">
         <name>Комплект силових кабелів 25 мм² 50 см, 2 шт., мідь, мідні наконечники М10</name>
         <name_ua>Комплект силових кабелів 25 мм² 50 см, 2 шт., мідь, мідні наконечники М10</name_ua>
-        <price>500</price>
+        <price>560</price>
         <currencyId>UAH</currencyId>
         <categoryId>5</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-151852.jpg</picture>
@@ -458,7 +488,7 @@
       <offer id="45" available="false">
         <name>Безперебійник для роутера TTN DC1036P 12000 mAh, виходи 5/9/12 В, USB, PoE</name>
         <name_ua>Безперебійник для роутера TTN DC1036P 12000 mAh, виходи 5/9/12 В, USB, PoE</name_ua>
-        <price>1716</price>
+        <price>1848</price>
         <currencyId>UAH</currencyId>
         <categoryId>6</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-150649.jpg</picture>
@@ -479,7 +509,7 @@
       <offer id="47" available="false">
         <name>Автоматичний перемикач введення резерву АВР TOMZN TOQ5-100/4P 3 фази 100 А</name>
         <name_ua>Автоматичний перемикач введення резерву АВР TOMZN TOQ5-100/4P 3 фази 100 А</name_ua>
-        <price>1470</price>
+        <price>1308</price>
         <currencyId>UAH</currencyId>
         <categoryId>7</categoryId>
         <picture>https://energia24.com.ua/images/products/avt-ud-avr-4p.jpg</picture>
