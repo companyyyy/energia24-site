@@ -6,7 +6,7 @@
   "category": 2,
   "vendor": "Must",
   "name": "Акумулятор MUST LP15-12100",
-  "price": 14934,
+  "price": 14993,
   "in_stock": true,
   "wholesale_usd": 250,
   "off": false,
@@ -83,6 +83,6 @@
       "value": "≈12 кг"
     }
   ],
-  "feed_price": 14934,
+  "feed_price": 14993,
   "feed_in_stock": true
 }

@@ -1,0 +1,21 @@
+{
+  "id": 91,
+  "avtonomka_id": "152273",
+  "enabled": true,
+  "order": 360,
+  "category": 8,
+  "vendor": "",
+  "name": "Комплект автономного енергоживлення: Felicity IVEM8048-II 8 кВт 48 В + Deye SE-F16-С 51.2V 314 Аh",
+  "name_ru": "Комплект автономного енергоживлення: Felicity IVEM8048-II 8 кВт 48 В + Deye SE-F16-С 51.2V 314 Аh",
+  "price": 121862,
+  "in_stock": true,
+  "wholesale_usd": 0,
+  "off": false,
+  "photo": "/images/products/avt-152273.jpg",
+  "summary": "Комплект автономного енергоживлення: Felicity IVEM8048-II 8 кВт 48 В + Deye SE-F16-С 51.2V 314 Аh",
+  "description_ua_html": "<p>Комплект автономного енергоживлення: Felicity IVEM8048-II 8 кВт 48 В + Deye SE-F16-С 51.2V 314 Аh</p><p><strong>Де використовується:</strong></p><ul><li>резервне живлення будинку, квартири, дачі чи офісу</li><li>автономна система живлення під ключ</li><li>робота разом із сонячними панелями</li></ul>",
+  "description_ru_html": "",
+  "specs": [],
+  "feed_price": 121862,
+  "feed_in_stock": true
+}

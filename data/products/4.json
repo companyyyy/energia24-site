@@ -6,7 +6,7 @@
   "category": 1,
   "vendor": "Must",
   "name": "Гібридний інвертор MUST PV19-4024 EXP",
-  "price": 19517,
+  "price": 19609,
   "in_stock": true,
   "wholesale_usd": 320,
   "off": false,
@@ -123,6 +123,6 @@
       "value": "322×486×134 мм"
     }
   ],
-  "feed_price": 19517,
+  "feed_price": 19609,
   "feed_in_stock": true
 }

@@ -6,7 +6,7 @@
   "category": 2,
   "vendor": "Must",
   "name": "Акумулятор MUST LP16-24100",
-  "price": 30872,
+  "price": 27978,
   "in_stock": true,
   "wholesale_usd": 550,
   "off": false,
@@ -99,6 +99,6 @@
       "value": "27 кг"
     }
   ],
-  "feed_price": 30872,
+  "feed_price": 27978,
   "feed_in_stock": true
 }
