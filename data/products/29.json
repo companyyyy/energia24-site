@@ -6,7 +6,7 @@
   "category": 3,
   "vendor": "Must",
   "name": "Система зберігання енергії 2в1 MUST HBP19-5548 VPM",
-  "price": 64618,
+  "price": 64608,
   "in_stock": true,
   "wholesale_usd": 0,
   "off": true,
@@ -139,6 +139,6 @@
       "value": "58 кг / 61 кг"
     }
   ],
-  "feed_price": 64618,
+  "feed_price": 64608,
   "feed_in_stock": true
 }

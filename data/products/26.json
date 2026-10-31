@@ -6,7 +6,7 @@
   "category": 2,
   "vendor": "Felicity",
   "name": "Акумулятор Felicity FLB48314TG1-H",
-  "price": 86103,
+  "price": 85998,
   "in_stock": true,
   "wholesale_usd": 1750,
   "off": false,
@@ -111,6 +111,6 @@
       "value": "121 кг"
     }
   ],
-  "feed_price": 86103,
+  "feed_price": 85998,
   "feed_in_stock": true
 }
