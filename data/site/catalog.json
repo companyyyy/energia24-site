@@ -1,6 +1,6 @@
 {
   "source": "https://avtonomka.com.ua/feed/enerhiia24.xml",
-  "synced_at": "2026-11-01 11:45",
+  "synced_at": "2026-11-07 11:37",
   "excluded_categories": [
     "11"
   ],
@@ -67,30 +67,18 @@
       "eyebrow": "Каталог",
       "title": "Автоматичне введення резерву (АВР)",
       "lead": "Автоматичне перемикання між мережею та резервним джерелом живлення."
+    },
+    {
+      "id": "14",
+      "enabled": true,
+      "anchor": "cat-14",
+      "nav": "Генератори",
+      "eyebrow": "Каталог",
+      "title": "Генератори",
+      "lead": ""
     }
   ],
   "items": [
-    {
-      "key": "inv-pv18-1512vpm",
-      "feed_id": "152517",
-      "enabled": true,
-      "category": "1",
-      "order": 20,
-      "title": "Must PV18-1512 VPM II",
-      "badge": "1.5 кВт",
-      "image": "images/products/inv-pv18-1512vpm.jpg",
-      "specs": [
-        "Потужність: 1.5 кВт",
-        "Напруга АКБ: 12 В",
-        "Вага: 5.5 кг"
-      ],
-      "notes": [],
-      "order_label": "Інвертор Must PV18-1512 VPM II, 1.5 кВт",
-      "price": 11957,
-      "available": true,
-      "feed_price": 11957,
-      "feed_available": true
-    },
     {
       "key": "inv-pv18-3224vpm",
       "feed_id": "142723",
@@ -107,9 +95,9 @@
       ],
       "notes": [],
       "order_label": "Інвертор Must PV18-3224VPM II, 3.2 кВт",
-      "price": 14415,
+      "price": 14858,
       "available": true,
-      "feed_price": 14415,
+      "feed_price": 14858,
       "feed_available": true
     },
     {
@@ -128,9 +116,9 @@
       ],
       "notes": [],
       "order_label": "Інвертор MUST PV19-4024 EXP, 4 кВт",
-      "price": 19588,
+      "price": 19829,
       "available": true,
-      "feed_price": 19588,
+      "feed_price": 19829,
       "feed_available": true
     },
     {
@@ -149,9 +137,9 @@
       ],
       "notes": [],
       "order_label": "Інвертор Must PV19-6048EXP, 6 кВт",
-      "price": 24245,
+      "price": 23753,
       "available": true,
-      "feed_price": 24245,
+      "feed_price": 23753,
       "feed_available": true
     },
     {
@@ -170,77 +158,9 @@
       ],
       "notes": [],
       "order_label": "Інвертор Felicity IVEM6048-II, 6 кВт",
-      "price": 21974,
+      "price": 22749,
       "available": true,
-      "feed_price": 21974,
-      "feed_available": true
-    },
-    {
-      "key": "bat-lp15-12100",
-      "feed_id": "150599",
-      "enabled": true,
-      "category": "2",
-      "order": 30,
-      "title": "MUST LP15-12100",
-      "badge": "100 Аг",
-      "image": "images/products/bat-lp15-12100.jpg",
-      "specs": [
-        "Напруга / ємність: 12 В · 100 Аг",
-        "Енергія: 1.2 кВт·год",
-        "Тип комірок: LiFePO4",
-        "Вага: 10.5 кг"
-      ],
-      "notes": [],
-      "order_label": "Акумулятор MUST LP15-12100, 12V 100Ah",
-      "price": 14924,
-      "available": true,
-      "feed_price": 14924,
-      "feed_available": true
-    },
-    {
-      "key": "bat-lp16-24100",
-      "feed_id": "143477",
-      "enabled": true,
-      "category": "2",
-      "order": 50,
-      "title": "MUST LP16-24100",
-      "badge": "100 Аг",
-      "image": "images/products/bat-lp16-24100.jpg",
-      "specs": [
-        "Напруга / ємність: 25.6 В · 100 Аг",
-        "Енергія: 2.56 кВт·год",
-        "Тип комірок: LiFePO4",
-        "Вага: 23 кг"
-      ],
-      "notes": [
-        "Продається лише в комплекті з інвертором"
-      ],
-      "order_label": "Акумулятор MUST LP16-24100, 25.6V 100Ah",
-      "price": 28030,
-      "available": true,
-      "feed_price": 28030,
-      "feed_available": true
-    },
-    {
-      "key": "bat-fla12100pg2",
-      "feed_id": "152639",
-      "enabled": true,
-      "category": "2",
-      "order": 90,
-      "title": "Felicity FLA12100PG2",
-      "badge": "100 Аг",
-      "image": "images/products/bat-fla12100pg2.jpg",
-      "specs": [
-        "Напруга / ємність: 12.8 В · 100 Аг",
-        "Енергія: 1.28 кВт·год",
-        "Тип комірок: LiFePO4",
-        "Вага: 10 кг"
-      ],
-      "notes": [],
-      "order_label": "Акумулятор Felicity FLA12100PG2, 12.8V 100Ah",
-      "price": 13343,
-      "available": true,
-      "feed_price": 13343,
+      "feed_price": 22749,
       "feed_available": true
     },
     {
@@ -260,9 +180,9 @@
       ],
       "notes": [],
       "order_label": "Акумулятор Felicity FLA48230, 51.2V 230Ah",
-      "price": 68944,
+      "price": 69702,
       "available": true,
-      "feed_price": 68944,
+      "feed_price": 69702,
       "feed_available": true
     },
     {
@@ -283,32 +203,9 @@
       ],
       "notes": [],
       "order_label": "Акумулятор Felicity FLB48230WG1-H, 51.2V 230Ah з підігрівом",
-      "price": 72008,
+      "price": 71856,
       "available": true,
-      "feed_price": 72008,
-      "feed_available": true
-    },
-    {
-      "key": "bat-fla48314eu",
-      "feed_id": "151617",
-      "enabled": true,
-      "category": "2",
-      "order": 160,
-      "title": "Felicity FLA48314-EU",
-      "badge": "314 Аг · на колесах",
-      "image": "images/products/bat-fla48314eu.jpg",
-      "specs": [
-        "Напруга / ємність: 51.2 В · 314 Аг",
-        "Енергія: 16 кВт·год",
-        "Тип комірок: LiFePO4",
-        "Конструкція: на колесах",
-        "Вага: 121.5 кг"
-      ],
-      "notes": [],
-      "order_label": "Акумулятор Felicity FLA48314-EU, 51.2V 314Ah 16kWh, на колесах",
-      "price": 86033,
-      "available": true,
-      "feed_price": 86033,
+      "feed_price": 71856,
       "feed_available": true
     },
     {
@@ -330,31 +227,9 @@
       ],
       "notes": [],
       "order_label": "Акумулятор Felicity FLB48314TG1-H, 51.2V 314Ah 16kWh з підігрівом, на колесах",
-      "price": 86043,
+      "price": 90220,
       "available": true,
-      "feed_price": 86043,
-      "feed_available": true
-    },
-    {
-      "key": "sys-hbp19-5548",
-      "feed_id": "150416",
-      "enabled": true,
-      "category": "3",
-      "order": 30,
-      "title": "MUST HBP19-5548 VPM",
-      "badge": "5.5 кВт",
-      "image": "images/products/avt-150416.jpg",
-      "specs": [
-        "Потужність: 5.5 кВт",
-        "Ємність: 5120 Вт·год",
-        "Конструкція: інвертор + акумулятор в одному корпусі",
-        "Вага: 58 кг"
-      ],
-      "notes": [],
-      "order_label": "Система 2в1 MUST HBP19-5548 VPM, 5.5 кВт",
-      "price": 64597,
-      "available": true,
-      "feed_price": 64597,
+      "feed_price": 90220,
       "feed_available": true
     },
     {
@@ -372,9 +247,9 @@
       ],
       "notes": [],
       "order_label": "Зарядна станція EcoFlow Delta 2, 1800W 1024Wh",
-      "price": 33542,
+      "price": 33320,
       "available": true,
-      "feed_price": 33542,
+      "feed_price": 33320,
       "feed_available": true
     },
     {
@@ -392,9 +267,9 @@
       ],
       "notes": [],
       "order_label": "Зарядна станція EcoFlow Delta 3, 1800W 1024Wh",
-      "price": 33466,
+      "price": 33474,
       "available": true,
-      "feed_price": 33466,
+      "feed_price": 33474,
       "feed_available": true
     },
     {
@@ -677,96 +552,6 @@
       "added_at": "2026-10-15 10:16"
     },
     {
-      "key": "feed-ud-avr-4p",
-      "feed_id": "ud-avr-4p",
-      "enabled": true,
-      "category": "7",
-      "order": 1000,
-      "title": "TOMZN TOQ5-100/4P",
-      "badge": "",
-      "image": "images/products/avt-ud-avr-4p.jpg",
-      "specs": [
-        "Номінальний струм: 100 А",
-        "Кількість полюсів: 4P",
-        "Кількість фаз: 3 фази",
-        "Монтаж: DIN-рейка"
-      ],
-      "notes": [],
-      "order_label": "Автоматичний перемикач введення резерву АВР TOMZN TOQ5-100/4P 3 фази 100 А",
-      "price": 1379,
-      "available": true,
-      "feed_price": 1379,
-      "feed_available": true,
-      "added_at": "2026-10-15 10:16"
-    },
-    {
-      "key": "feed-150674",
-      "feed_id": "150674",
-      "enabled": true,
-      "added_at": "2026-10-15 14:24",
-      "category": "2",
-      "order": 1000,
-      "title": "DAH Solar DHN-LVWES05-G1",
-      "badge": "100 Аг",
-      "image": "images/products/avt-150674.jpg",
-      "specs": [
-        "Напруга / ємність: 51.2 В · 100 Аг",
-        "Енергія: 5.12 кВт·год",
-        "Тип комірок: LiFePO4",
-        "Вага: 47 кг"
-      ],
-      "notes": [],
-      "order_label": "Акумулятор DAH Solar DHN-LVWES05-G1 100ah 51.2V, 480х500х155, 47 кг",
-      "price": 37296,
-      "available": true,
-      "feed_price": 37296,
-      "feed_available": true
-    },
-    {
-      "key": "feed-152520",
-      "feed_id": "152520",
-      "enabled": true,
-      "added_at": "2026-10-21 15:01",
-      "category": "2",
-      "order": 1000,
-      "title": "Felicity LPBA48100-OL",
-      "badge": "100 Аг",
-      "image": "images/products/avt-152520.jpg",
-      "specs": [
-        "Напруга / ємність: 51.2 В · 100 Аг",
-        "Тип комірок: LiFePO4"
-      ],
-      "notes": [],
-      "order_label": "Акумуляторна батарея Felicity LPBA48100-OL 51.2V 100Ah LiFePO4",
-      "price": 37991,
-      "available": true,
-      "feed_price": 37991,
-      "feed_available": true
-    },
-    {
-      "key": "feed-152296",
-      "feed_id": "152296",
-      "enabled": true,
-      "added_at": "2026-10-27 16:21",
-      "category": "2",
-      "order": 1000,
-      "title": "Felicity FLB48100WG1-H",
-      "badge": "100 Аг · підігрів",
-      "image": "images/products/avt-152296.jpg",
-      "specs": [
-        "Напруга / ємність: 51.2 В · 100 Аг",
-        "Енергія: 5.12 кВт·год",
-        "Тип комірок: LiFePO4",
-        "Вага: 48.5 кг"
-      ],
-      "notes": [],
-      "order_label": "Акумуляторна батарея Felicity FLB48100WG1-H 51,2 В 100 А·год LiFePO4 з підігрівом",
-      "price": 40099,
-      "available": true,
-      "feed_price": 40099,
-      "feed_available": true
-    },
-    {
       "key": "feed-152266",
       "feed_id": "152266",
       "enabled": true,
@@ -785,9 +570,9 @@
       ],
       "notes": [],
       "order_label": "Гібридний інвертор Felicity IVEM8048-II 48В 8 кВт",
-      "price": 35803,
+      "price": 35177,
       "available": true,
-      "feed_price": 35803,
+      "feed_price": 35177,
       "feed_available": true
     },
     {
@@ -808,9 +593,9 @@
       ],
       "notes": [],
       "order_label": "Акумуляторна батарея Felicity FLA48280 51.2V 280Ah LiFePO4",
-      "price": 77633,
+      "price": 77083,
       "available": true,
-      "feed_price": 77633,
+      "feed_price": 77083,
       "feed_available": true
     },
     {
@@ -831,9 +616,9 @@
       ],
       "notes": [],
       "order_label": "Акумуляторна батарея Felicity FLA48171 51.2V 171Ah LiFePO4",
-      "price": 58008,
+      "price": 59433,
       "available": true,
-      "feed_price": 58008,
+      "feed_price": 59433,
       "feed_available": true
     },
     {
@@ -854,9 +639,9 @@
       ],
       "notes": [],
       "order_label": "Акумуляторна батарея Felicity FLA24280 25,6 В 280 А·год LiFePO4",
-      "price": 54456,
+      "price": 56063,
       "available": true,
-      "feed_price": 54456,
+      "feed_price": 56063,
       "feed_available": true
     },
     {
@@ -877,9 +662,9 @@
       ],
       "notes": [],
       "order_label": "Акумуляторна батарея Felicity FLB48206WG1-H 51.2V 206Ah, з підігрівом, LiFePO4",
-      "price": 67530,
+      "price": 66481,
       "available": true,
-      "feed_price": 67530,
+      "feed_price": 66481,
       "feed_available": true
     },
     {
@@ -900,31 +685,29 @@
       ],
       "notes": [],
       "order_label": "Акумуляторна батарея Felicity FLB48280TG1-H 51.2V 280Ah, з підігрівом, LiFePO4",
-      "price": 81846,
+      "price": 79666,
       "available": true,
-      "feed_price": 81846,
+      "feed_price": 79666,
       "feed_available": true
     },
     {
-      "key": "feed-151057",
-      "feed_id": "151057",
+      "key": "feed-130059",
+      "feed_id": "130059",
       "enabled": true,
-      "added_at": "2026-10-30 11:16",
-      "category": "2",
+      "added_at": "2026-11-07 11:37",
+      "category": "14",
       "order": 1000,
-      "title": "Deye SE-F16-C",
-      "badge": "314 Аг",
-      "image": "images/products/avt-151057.jpg",
+      "title": "MaXpeedingRods MXR3500-EU",
+      "badge": "3.0 кВт",
+      "image": "images/products/avt-130059.jpg",
       "specs": [
-        "Напруга / ємність: 51.2 В · 314 Аг",
-        "Енергія: 16 кВт·год",
-        "Тип комірок: LiFePO4"
+        "Вага: 21 кг"
       ],
       "notes": [],
-      "order_label": "Акумуляторна батарея Deye SE-F16-С 51.2V 314 Аh, 16kWh LiFePO4",
-      "price": 86111,
+      "order_label": "Інверторний бензиновий генератор MaXpeedingRods MXR3500-EU, у кожусі, потужність ном/макс - 3.0кВт/3.3кВт, Витрата 0.45л/год, бак 4л, ручний стартер",
+      "price": 30048,
       "available": true,
-      "feed_price": 86111,
+      "feed_price": 30048,
       "feed_available": true
     }
   ]
